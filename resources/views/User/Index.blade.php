@@ -44,7 +44,7 @@
 
 
     <div class="content-wrapper hide-until-loading">
-        <!--
+
         <div class="section-content top-body">
             <div class="container">
                 <div class="row">
@@ -56,16 +56,14 @@
                              data-animdelay="0.2s"
                         >
                             <h4 class="h4-body-title">
-                                <i class="icon-settings-streamline"></i>
-                                Fully Customizable
+                                <i class="icon-notebook-streamline"></i>
+                                Estatutos
                             </h4>
                             <div class="content-box-text">
-                                Cras sem erat, aliquet in egestas cursus, ullamcorper vitae
-                                ligula. Nunc commodo lacinia eros ac condimentum
-
+                                Estatutos Internos Vigentes de la Caja de Ahorro Venezolana de Telefericos
                                 <div>
                                     <a href="#" class=" btn btn-sm">
-                                        <span>read more</span>
+                                        <span>Descargar</span>
                                     </a>
                                 </div>
 
@@ -81,16 +79,15 @@
                              data-animdelay="0.2s"
                         >
                             <h4 class="h4-body-title">
-                                <i class="icon-camera-streamline-video"></i>
-                                Animation Ready
+                                <i class="icon-book-read-streamline"></i>
+                                Ley de Cajas De Ahorros
                             </h4>
                             <div class="content-box-text">
-                                Cras sem erat, aliquet in egestas cursus, ullamcorper vitae
-                                ligula. Nunc commodo lacinia eros ac condimentum
+                                Ley Vigente de Cajas de Ahorro, Fondos de Ahorro y Asociaciones Similares
 
                                 <div>
                                     <a href="#" class=" btn btn-sm">
-                                        <span>read more</span>
+                                        <span>Descargar</span>
                                     </a>
                                 </div>
 
@@ -98,65 +95,14 @@
 
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-3">
-                        <div class="content-box content-style4 medium animated"
-                             data-animtype="fadeIn"
-                             data-animrepeat="0"
-                             data-animspeed="1s"
-                             data-animdelay="0.2s"
-                        >
-                            <h4 class="h4-body-title">
-                                <i class="icon-computer-imac"></i>
-                                Responsive Design
-                            </h4>
-                            <div class="content-box-text">
-                                Cras sem erat, aliquet in egestas cursus, ullamcorper vitae
-                                ligula. Nunc commodo lacinia eros ac condimentum
 
-                                <div>
-                                    <a href="#" class=" btn btn-sm">
-                                        <span>read more</span>
-                                    </a>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-3">
-                        <div class="content-box content-style4 medium animated"
-                             data-animtype="fadeIn"
-                             data-animrepeat="0"
-                             data-animspeed="1s"
-                             data-animdelay="0.2s"
-                        >
-                            <h4 class="h4-body-title">
-                                <i class="icon-paint-bucket-streamline"></i>
-                                Unlimited Skins
-                            </h4>
-                            <div class="content-box-text">
-                                Cras sem erat, aliquet in egestas cursus, ullamcorper vitae
-                                ligula. Nunc commodo lacinia eros ac condimentum
-
-                                <div>
-                                    <a href="#" class=" btn btn-sm">
-                                        <span>read more</span>
-                                    </a>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
 
                 </div>
             </div>
 
         </div>
-        -->
+
         <div class="body-wrapper">
-            <?php
-            /*
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 col-sm-12 animated" data-animtype="flipInY"
@@ -410,23 +356,18 @@
                 </div>
 
             </div>
-            */?>
+
             <div class="space-sep40"></div>
-            <!--
+
             <div class="section-content section-tabs section-px stones-bg white-text">
                 <div class="tab-container">
                     <div class="section-tab-arrow"></div>
                     <div class="section-etabs-container">
                         <ul class="section-etabs">
                             <li class="tab active">
-                                <a href="#tabc1"> Our News</a>
+                                <a href="#tabc1"> Noticias </a>
                             </li>
-                            <li class="tab">
-                                <a href="#tabc2"> Clients</a>
-                            </li>
-                            <li class="tab">
-                                <a href="#tabc3"> NewsLetter</a>
-                            </li>
+
                         </ul>
                     </div>
                     <div class="container">
@@ -596,62 +537,15 @@
                                         </div>
                                     </div>
                                 </div>            </div>
-                            <div id="tabc2">
-                                <div class="row">
-                                    <div class="col-md-12 col-sm-12">
-                                        <h2 class="h2-section-title animated" data-animtype="flipInX" data-animrepeat="0" data-animspeed="1s" data-animdelay="0s">Our Clients </h2>
-                                        <h3 class="h3-section-info animated" data-animtype="flipInX" data-animrepeat="0" data-animspeed="1s" data-animdelay="0.2s">Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo,
-                                            rhoncus ut, imperdiet</h3>
-                                        <ul class="section-clients">
-                                            <li class="animated" data-animtype="bounceIn" data-animrepeat="0" data-animdelay="0.2s"><img src="media/clients/white_logo1.png" alt="Logo" class="img-responsive client-image" /></li>
-                                            <li class="animated" data-animtype="bounceIn" data-animrepeat="0" data-animdelay="0.3s"><img src="media/clients/white_logo2.png" alt="Logo" class="img-responsive client-image" /></li>
-                                            <li class="animated" data-animtype="bounceIn" data-animrepeat="0" data-animdelay="0.4s"><img src="media/clients/white_logo3.png" alt="Logo" class="img-responsive client-image" /></li>
-                                            <li class="animated" data-animtype="bounceIn" data-animrepeat="0" data-animdelay="0.5s"><img src="media/clients/white_logo4.png" alt="Logo" class="img-responsive client-image" /></li>
-                                            <li class="animated" data-animtype="bounceIn" data-animrepeat="0" data-animdelay="0.6s"><img src="media/clients/white_logo5.png" alt="Logo" class="img-responsive client-image" /></li>
-                                        </ul>
-                                    </div>
-                                </div>            </div>
-                            <div id="tabc3">
-                                <h2 class="h2-section-title animated" data-animtype="flipInY"
-                                    data-animrepeat="0"
-                                    data-speed="1s"
-                                    data-delay="0.2s">
-                                    Subscribe To Our NewsLetter
-                                </h2>
-                                <div class="section-subscribe animated" data-animtype="flipInX"
-                                     data-animrepeat="0"
-                                     data-speed="1s"
-                                     data-delay="0.5s">
-                                    <form action="#" method="post">
-                                        <input type="text" name="q" class="subscribe-input text-input" placeholder="Email.."/>
-                                        <button class="subscribe-button icon-email-plane">
 
-                                        </button>
-                                    </form>
 
-                                    <div class="social-icons circle">
-
-                                        <a href="#" target="_blank" class="social-media-icon facebook-icon bounceIn" data-original-title="facebook">facebook</a>
-
-                                        <a href="#" target="_blank" class="social-media-icon twitter-icon bounceIn" data-original-title="twitter">Twitter</a>
-
-                                        <a href="#" target="_blank" class="social-media-icon skype-icon bounceIn" data-original-title="skype">skype</a>
-
-                                        <a href="#" target="_blank" class="social-media-icon evernote-icon bounceIn" data-original-title="evernote">evernote</a>
-
-                                        <a href="#" target="_blank" class="social-media-icon flickr-icon bounceIn" data-original-title="flickr">flickr</a>
-
-                                        <a href="#" target="_blank" class="social-media-icon instagram-icon bounceIn" data-original-title="instagram">instagram</a>
-                                    </div>
-
-                                </div>
 
                             </div>
                         </div>
                     </div>
                 </div>    </div>
-            -->
-            <!--
+
+
             <div class="section-content no-padding">
 
 
@@ -689,10 +583,9 @@
                     </div>
                 </div>
             </div>
-            -->
 
             <div class="space-sep40"></div>
-<!--
+
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 col-sm-12 animated" data-animtype="fadeInUp"
@@ -897,7 +790,7 @@
 
                 </div>
             </div>
--->
+
         </div>
 
 

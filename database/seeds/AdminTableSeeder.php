@@ -12,7 +12,7 @@ class AdminTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\User::class)->create([
+        factory(Caventel\User::class)->create([
             'idCedula' => '1',
             'password' => \Hash::make('1234'),
             'role' => 'superadmin'

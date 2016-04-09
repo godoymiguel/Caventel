@@ -15,6 +15,22 @@ Route::get('/', function () {
     return view('User.Index');
 });
 
+Route::get('Nosotros', function () {
+    return view('User.About');
+});
+
+Route::get('Contactos', function () {
+    return view('User.Contact');
+});
+
+Route::get('Prestamos', function () {
+    return view('User.Loan');
+});
+
+Route::get('Beneficios', function () {
+    return view('User.Benefit');
+});
+
 Route::get('recover', function () {
     return view('auth.recover');
 });

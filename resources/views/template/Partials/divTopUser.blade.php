@@ -58,7 +58,7 @@
             <!-- Logo -->
             <div class="col-xs-2 logo">
                 <a href="/">
-                    <img src="{{ asset('img/ing_logosimbolo.png') }}" width="200" alt="LogoCaventel"/>
+                    <img src="{{ asset('img/mainLogo.png') }}"  alt="LogoCaventel"/>
                 </a>
             </div>
             <!-- //Logo// -->
@@ -90,7 +90,7 @@
 
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="Prestamos">
                                                 <span class="label-nav">
                                                     PRÉSTAMOS
                                                 </span>
@@ -114,7 +114,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="Beneficios">
                                                 <span class="label-nav">
                                                     BENEFICIOS
                                                 </span>
@@ -132,7 +132,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="Nosotros">
                                                 <span class="label-nav">
                                                     NOSOTROS
                                                 </span>
@@ -142,7 +142,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="Contactos">
                                                 <span class="label-nav">
                                                     CONTÁCTENOS
                                                 </span>

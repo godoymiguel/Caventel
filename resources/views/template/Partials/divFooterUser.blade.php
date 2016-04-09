@@ -2,7 +2,7 @@
         <div class="footer">
 
             <div class="container">
-                Contrucción
+              
             </div>
             <div class="copyright">
                 <div class="container">

@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="{{ asset('css/ie-fixes.css')}}">
     <![endif]-->
 
-    <meta name="description" content="Kanzi HTML5 Template">
+    <meta name="description" content="Caventel Web">
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -64,6 +64,10 @@
 </head>
 <body>
     @yield('IndexUser')
+    @yield('LoanUser')
+    @yield('BenefitUser')
+    @yield('AboutUser')
+    @yield('ContactUser')
 
 
 

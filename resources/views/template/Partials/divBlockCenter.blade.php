@@ -6,7 +6,7 @@
         <div class="panel panel-dark panel-flat">
             <div class="panel-heading text-center">
                 <a href="/">
-                    <img src="{{ asset('img/ing_logosimbolo.png')}}" width="80%" alt="Image" class="block-center img-rounded">
+                    <img src="{{ asset('img/mainLogo.png')}}"  alt="Image" class="block-center img-rounded">
                 </a>
             </div>
             <div class="panel-body">
