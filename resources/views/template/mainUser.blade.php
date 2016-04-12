@@ -11,7 +11,8 @@
 
 <head>
     <meta charset="utf-8">
-    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+    <!--[if IE]>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
     <title>@yield('title') Caja de Ahorro Venezola de Telefericos</title>
 
     <!--[if lt IE 9]>
@@ -33,7 +34,6 @@
     <link rel="stylesheet" href="{{ asset('css/prettyPhoto.css')}}">
     <link rel="stylesheet" href="{{ asset('css/isotop_animation.css')}}">
     <link rel="stylesheet" href="{{ asset('css/animate.css')}}">
-
 
 
     <!-- remprod -->
@@ -63,12 +63,11 @@
     <link rel="stylesheet" href="{{ asset('css/color-chooser.css')}}">
 </head>
 <body>
-    @yield('IndexUser')
-    @yield('LoanUser')
-    @yield('BenefitUser')
-    @yield('AboutUser')
-    @yield('ContactUser')
-
+@yield('IndexUser')
+@yield('LoanUser')
+@yield('BenefitUser')
+@yield('AboutUser')
+@yield('ContactUser')
 
 
 <script type="text/javascript" src="{{ asset('js/_jq.js')}}"></script>
@@ -115,7 +114,7 @@
 <script src="{{ asset('js/jquery.tipsy.js')}}" type="text/javascript"></script>
 <script src="{{ asset('js/jquery.validate.js')}}" type="text/javascript"></script>
 <script src="{{ asset('js/jQuery.XDomainRequest.js')}}" type="text/javascript"></script>
-<script src="{{ asset('js/kanzi.js')}}" type="text/javascript"></script>
+<script src="{{ asset('js/web.js')}}" type="text/javascript"></script>
 <script src="{{ asset('js/retina.js')}}" type="text/javascript"></script>
 <script src="{{ asset('js/timeago.js')}}" type="text/javascript"></script>
 <script src="{{ asset('js/tweetable.jquery.js')}}" type="text/javascript"></script>

@@ -5,7 +5,7 @@
                 <div class="call-us top-bar-block">
                     <i class="icon-phone"></i>
                                     <span>
-                                        Contactanos (+58)274-
+                                        Contactanos (+58)274-1234567
                                     </span>
                 </div>
                 <div class="mail-us top-bar-block">
@@ -21,7 +21,8 @@
                 <!-- Search Box -->
                 <div class="searchbox">
                     <form action="#" method="get">
-                        <input type="text" class="searchbox-inputtext" id="searchbox-inputtext" name="s" placeholder="Buscar..."/>
+                        <input type="text" class="searchbox-inputtext" id="searchbox-inputtext" name="s"
+                               placeholder="Buscar..."/>
                         <label class="searchbox-icon" for="searchbox-inputtext"></label>
                         <input type="submit" class="searchbox-submit" value="Search"/>
                     </form>
@@ -30,16 +31,20 @@
                 <div class="social-icons">
                     <ul>
                         <li>
-                            <a href="https://www.facebook.com/" target="_blank" class="social-media-icon facebook-icon" data-original-title="facebook">facebook</a>
+                            <a href="https://www.facebook.com/" target="_blank" class="social-media-icon facebook-icon"
+                               data-original-title="facebook">facebook</a>
                         </li>
                         <li>
-                            <a href="https://twitter.com/" target="_blank" class="social-media-icon twitter-icon" data-original-title="twitter">twitter</a>
+                            <a href="https://twitter.com/" target="_blank" class="social-media-icon twitter-icon"
+                               data-original-title="twitter">twitter</a>
                         </li>
                         <li>
-                            <a href="https://plus.google.com/" target="_blank" class="social-media-icon googleplus-icon" data-original-title="googleplus">googleplus</a>
+                            <a href="https://plus.google.com/" target="_blank" class="social-media-icon googleplus-icon"
+                               data-original-title="googleplus">googleplus</a>
                         </li>
                         <li>
-                            <a href="https://www.instagram.com/" target="_blank" class="social-media-icon instagram-icon " data-original-title="instagram">instragram</a>
+                            <a href="https://www.instagram.com/" target="_blank"
+                               class="social-media-icon instagram-icon " data-original-title="instagram">instragram</a>
                         </li>
                     </ul>
 
@@ -58,7 +63,7 @@
             <!-- Logo -->
             <div class="col-xs-2 logo">
                 <a href="/">
-                    <img src="{{ asset('img/mainLogo.png') }}"  alt="LogoCaventel"/>
+                    <img src="{{ asset('img/mainLogo.png') }}" alt="LogoCaventel"/>
                 </a>
             </div>
             <!-- //Logo// -->
@@ -72,8 +77,6 @@
                     <i class="fa fa-list-ul"></i>
                 </div>
                 <!-- //Mobile Button Menu// -->
-
-
 
 
                 <nav>
@@ -170,7 +173,7 @@
                     <li class="responsive-searchbox">
                         <!-- Responsive Nave -->
                         <form action="#" method="get">
-                            <input type="text" class="searchbox-inputtext" id="searchbox-inputtext-mobile" name="s" />
+                            <input type="text" class="searchbox-inputtext" id="searchbox-inputtext-mobile" name="s"/>
                             <button class="icon-search"></button>
                         </form>
                         <!-- //Responsive Nave// -->
@@ -181,7 +184,6 @@
             <!-- Nav -->
 
         </div>
-
 
 
     </div>

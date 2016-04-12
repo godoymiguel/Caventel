@@ -31,11 +31,13 @@ class User extends Authenticatable
         return $this->hasOne('Caventel\UserProfile');
     }
 
-    public function UserAsset(){
+    public function UserAsset()
+    {
         return $this->hasOne('Caventel\UserAsset');
     }
 
-    public function UserLoan(){
+    public function UserLoan()
+    {
         return $this->hasOne('Caventel\UserLoan');
     }
 }

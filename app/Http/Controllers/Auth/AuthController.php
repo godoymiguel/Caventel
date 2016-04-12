@@ -49,9 +49,11 @@ class AuthController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
+            'idCedula' => 'required|max:255|unique:users',
             'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
+            'last_name' => 'required|max:255',
             'password' => 'required|confirmed|min:6',
+            'role' => 'required|max:255',
         ]);
     }
 
@@ -64,9 +66,11 @@ class AuthController extends Controller
     protected function create(array $data)
     {
         return User::create([
+            'idCedula' => $data['idCedula'],
             'name' => $data['name'],
-            'email' => $data['email'],
+            'last_name' => $data['last_name'],
             'password' => bcrypt($data['password']),
+            'role' => $data['role'],
         ]);
     }
 }

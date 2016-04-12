@@ -11,6 +11,10 @@
 |
 */
 
+Route::post('login', function () {
+    return view('Admin.Index');
+});
+
 Route::get('/', function () {
     return view('User.Index');
 });

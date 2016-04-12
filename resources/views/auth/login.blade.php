@@ -5,7 +5,7 @@
 @section('login')
 
                 <p class="text-center pv">INICIAR SESIÓN.</p>
-                <form role="form" data-parsley-validate="" novalidate="" class="mb-lg">
+                <form role="form" data-parsley-validate="" novalidate="" class="mb-lg" method="post" action="{{url('/login')}}">
                     <div class="form-group has-feedback">
                         <input id="exampleInputEmail1" type="number" min= '0' placeholder="Cedula" autocomplete="off" required class="form-control">
                         <span class="fa fa-user form-control-feedback text-muted"></span>
