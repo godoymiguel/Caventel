@@ -5,7 +5,7 @@
 @section('login')
 
                 <p class="text-center pv">INICIAR SESIÓN.</p>
-                <form role="form" data-parsley-validate="" novalidate="" class="mb-lg" method="post" action="{{url('/login')}}">
+                <form role="form" data-parsley-validate="" novalidate="" class="mb-lg" method="post" action="{{url('login')}}">
                     <div class="form-group has-feedback">
                         <input id="exampleInputEmail1" type="number" min= '0' placeholder="Cedula" autocomplete="off" required class="form-control">
                         <span class="fa fa-user form-control-feedback text-muted"></span>
@@ -32,5 +32,6 @@
                     </div>
                     <button type="submit" class="btn btn-block btn-primary mt-lg">Ingresar</button>
                 </form>
+                <p class="pt-lg text-center">¿No estas Registrado?</p><a href="Asociado" class="btn btn-block btn-default">Registrate</a>
 
 @endsection

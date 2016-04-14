@@ -17,7 +17,7 @@
                                 </h1>
 
                                 <h2 class="h2-page-desc">
-                                    Contactanos
+                                    Contáctanos
                                 </h2>
                             </div>
                         </div>
@@ -42,7 +42,7 @@
                              data-animrepeat="0"
                              data-speed="1s"
                              data-delay="0.4s">
-                            <h2 class="h2-section-title">Encuentranos</h2>
+                            <h2 class="h2-section-title">Encuéntranos</h2>
                             <div class="i-section-title">
                                 <i class="icon-map">
 
@@ -133,7 +133,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15780.183744658134!2d-71.1418711!3d8.5915821!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa0c35c5b6cf59891!2sSistema+Telef%C3%A9rico+Mukumbar%C3%AD!5e0!3m2!1ses-419!2sve!4v1460430618160" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3317.373950519224!2d-71.14207090733515!3d8.59170044009688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0xa0c35c5b6cf59891!2sSistema+Telef%C3%A9rico+Mukumbar%C3%AD!5e0!3m2!1ses-419!2sve!4v1460561417736" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>

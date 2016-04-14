@@ -1,8 +1,8 @@
 @extends('template.mainUser')
 
-@section('title', 'Beneficios -')
+@section('title', 'Información de Afiliación -')
 
-@section('BenefitUser')
+@section('InfoUser')
     <div id="wrapper">
 
         <div class="top_wrapper">
@@ -13,11 +13,11 @@
                         <div class="col-md-12 col-sm-12">
                             <div class="page-info">
                                 <h1 class="h1-page-title">
-                                    ¿Beneficios?
+                                    Afiliación
                                 </h1>
 
                                 <h2 class="h2-page-desc">
-                                    Obten Los Mejores Beneficios Socio-Ecónomicos
+                                    Se Parte De Nosotros
                                 </h2>
                             </div>
                         </div>

@@ -15,8 +15,23 @@ Route::post('login', function () {
     return view('Admin.Index');
 });
 
+Route::get('Admin', function () {
+    return view('Admin.Index');
+});
+
 Route::get('/', function () {
     return view('User.Index');
+});
+
+Route::get('Asociado', function () {
+    return view('User.Info');
+});
+
+Route::get('Noticias', function () {
+    return view('User.News1');
+});
+Route::get('NuevaPagina', function () {
+    return view('User.news.NewPage');
 });
 
 Route::get('Nosotros', function () {

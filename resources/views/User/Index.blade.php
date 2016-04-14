@@ -48,8 +48,8 @@
         <div class="section-content top-body">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-3 col-sm-3 left">
-                        <div class="content-box content-style4 medium animated"
+                    <div class="col-md-3 col-sm-3">
+                        <div class="content-box content-style4 medium"
                              data-animtype="fadeIn"
                              data-animrepeat="0"
                              data-animspeed="1s"
@@ -62,7 +62,7 @@
                             <div class="content-box-text">
                                 Estatutos Internos Vigentes de la Caja de Ahorro Venezolana de Telefericos
                                 <div>
-                                    <a href="#" class=" btn btn-sm">
+                                    <a href="{{ asset('pdf/ESTATUTOSCAVENTEL2014.pdf') }}" onclick="window.open(this.href); return false;"  class=" btn btn-sm">
                                         <span>Descargar</span>
                                     </a>
                                 </div>
@@ -71,8 +71,8 @@
 
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-3 left">
-                        <div class="content-box content-style4 medium animated"
+                    <div class="col-md-3 col-sm-3 ">
+                        <div class="content-box content-style4 medium"
                              data-animtype="fadeIn"
                              data-animrepeat="0"
                              data-animspeed="1s"
@@ -86,7 +86,7 @@
                                 Ley Vigente de Cajas de Ahorro, Fondos de Ahorro y Asociaciones Similares
 
                                 <div>
-                                    <a href="#" class=" btn btn-sm">
+                                    <a href="{{ asset('pdf/Sudeca.pdf') }}" target="_blank"  class=" btn btn-sm">
                                         <span>Descargar</span>
                                     </a>
                                 </div>
@@ -95,8 +95,8 @@
 
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-3 left">
-                        <div class="content-box content-style4 medium animated"
+                    <div class="col-md-3 col-sm-3">
+                        <div class="content-box content-style4 medium"
                              data-animtype="fadeIn"
                              data-animrepeat="0"
                              data-animspeed="1s"
@@ -107,10 +107,33 @@
                                 Informe de Gestión
                             </h4>
                             <div class="content-box-text">
-                                Estados Financieron del Ultimo Cierre Fiscal
+                                Estados Financieron del Ultimo Año de Cierre Fiscal
                                 <div>
-                                    <a href="#" class=" btn btn-sm">
+                                    <a href="{{ asset('pdf/IDG.pdf') }}" target="_blank"  class=" btn btn-sm">
                                         <span>Descargar</span>
+                                    </a>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3">
+                        <div class="content-box content-style4 medium"
+                             data-animtype="fadeIn"
+                             data-animrepeat="0"
+                             data-animspeed="1s"
+                             data-animdelay="0.2s"
+                        >
+                            <h4 class="h4-body-title">
+                                <i class="icon-archive"></i>
+                                Afiliación
+                            </h4>
+                            <div class="content-box-text">
+                                Requisitos Necesarios Para Formar Parte de CAVENTEL
+                                <div>
+                                    <a href="Asociado" class=" btn btn-sm">
+                                        <span>Ver Más</span>
                                     </a>
                                 </div>
 
@@ -135,8 +158,12 @@
                             <li class="tab active">
                                 <a href="#tabc1"> Noticias </a>
                             </li>
+                            <li class="tab">
+                                <a href="Noticias"> Otras Noticias </a>
+                            </li>
 
                         </ul>
+
                     </div>
                     <div class="container">
 
@@ -144,38 +171,31 @@
 
                             <div id="tabc1">
                                 <div class="row">
-                                    <div class="col-md-3 col-sm-3" style="left: 38%">
-                                        <div class="feature animated" data-animtype="fadeInUp" data-animrepeat="0" data-animspeed="1s" data-animdelay="0.4s">
-
-
+                                    <div class="col-md-3 col-sm-3 ">
+                                        <div class="feature animated"
+                                             data-animtype="fadeInUp"
+                                             data-animrepeat="0"
+                                             data-animspeed="1s"
+                                             data-animdelay="0.4s">
+                                            <div class="img-overlay">
+                                                <img src="{{ asset('img/news/webpage.jpg') }}" alt="webpage">
+                                            </div>
                                             <div class="feature-content">
                                                 <h3 class="h3-body-title blog-title">
-                                                    <a href="#">Nueva Pagina</a>
+                                                    <a href="NuevaPagina">Nueva Página</a>
                                                 </h3>
                                                 <p>
-                                                    Caventel Estrena Nueva Pagina
+                                                    Caventel Estrena Nueva Pagina[...]
                                                 </p>
-
-
-
                                             </div>
-
                                             <div class="feature-details">
                                                 <i class="icon-calendar"></i>
                                                 <span>1 Mayo 2016</span>
                                                 <span class="details-seperator"></span>
-
-                                                <a href="#"><i class="icon-comment"></i><span>4</span></a>
-
-
-                                                <div class="feature-share">
-                                                    <a href="#"><i class="icon-heart"></i></a>
-                                                    <a href="#"><i class="icon-facebook"></i></a>
-                                                </div>
+                                                <a href="NuevaPagina"><i class="icon-news"></i><span>Ver Más</span></a>
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
 
@@ -184,11 +204,89 @@
                             </div>
                         </div>
                     </div>
-                </div>    </div>
+                </div>
+        </div>
 
 
             <div class="space-sep40"></div>
 
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 animated" data-animtype="fadeInUp"
+                     data-animrepeat="0"
+                     data-speed="1s"
+                     data-delay="0.4s">
+                    <h2 class="h2-section-title">Enlaces de Interés</h2>
+
+                    <div class="i-section-title">
+                        <i class="icon-display">
+                        </i>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <ul class="icon-content-list-container">
+
+                        <li class="icon-content-single">
+
+                            <div class="content-box  style5  animated "
+                                 data-animtype="fadeIn"
+                                 data-animrepeat="0"
+                                 data-animspeed="1s"
+                                 data-animdelay="0.2s"
+                            >
+                                <h4 class="h4-body-title">
+                                    <strong>
+                                        <a href="http://www.sudeca.mefbp.gob.ve/" target="_blank">
+                                            SUDECA
+                                        </a>
+                                    </strong>
+
+                                    <i class="icon-browser"></i>
+                                </h4>
+                                <div class="content-box-text">
+                                    <p>
+                                        Superintendencia de Cajas de Ahorro
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <ul class="icon-content-list-container">
+
+                        <li class="icon-content-single">
+
+                            <div class="content-box  style5  animated "
+                                 data-animtype="fadeIn"
+                                 data-animrepeat="0"
+                                 data-animspeed="1s"
+                                 data-animdelay="0.2s"
+                            >
+                                <h4 class="h4-body-title">
+                                    <strong>
+                                        <a href="http://www.mintur.gob.ve/mintur/ventel/teleferico-de-merida-mukumbari/" target="_blank">
+                                            MUKUMBARÍ
+                                        </a>
+                                    </strong>
+
+                                    <i class="icon-browser"></i>
+                                </h4>
+                                <div class="content-box-text">
+                                    <p>
+                                        Sistema Teleférico de Mérida - Venezuela
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <div class="space-sep40"></div>
         </div>
 
 

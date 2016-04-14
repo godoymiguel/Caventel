@@ -1033,7 +1033,8 @@
 
 
     .thumb-label-item {
-        width: 280px;
+        width: 100%;
+        text-align: center;
     }
 
     .portfolio-items {
@@ -1065,6 +1066,7 @@
     .boxed .portfolio-items-cols3 .thumb-label-item {
         width: 290px;
     }
+
 }
 
 @media (min-width: 768px) and (max-width: 939px)

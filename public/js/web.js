@@ -689,3 +689,4 @@ function centeringBullets() {
         $this.css('margin-left', -(w / 2) + 'px');
     });
 }
+

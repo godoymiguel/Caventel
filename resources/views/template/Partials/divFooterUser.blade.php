@@ -8,8 +8,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 col-sm-12 center-text">
-                        <div class="copyright-text"> &copy; 2016 Caja de Ahorro Venezola de Telefericos | Universidad de
-                            Los Andes
+                        <div class="copyright-text"> &copy; 2016 Caja de Ahorro Venezola de Telefericos | Ingeniería de
+                            Sistemas - Universidad de Los Andes
                         </div>
                     </div>
 

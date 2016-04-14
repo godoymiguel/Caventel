@@ -23,6 +23,7 @@
     <meta name="description" content="Caventel Web">
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!--- This should placed first off all other scripts -->
@@ -68,7 +69,12 @@
 @yield('BenefitUser')
 @yield('AboutUser')
 @yield('ContactUser')
+@yield('InfoUser')
+@yield('NewsUser')
 
+<!-- section news -->
+@yield('NewPageUser')
+<!-- end section news -->
 
 <script type="text/javascript" src="{{ asset('js/_jq.js')}}"></script>
 
