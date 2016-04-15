@@ -11,9 +11,9 @@
                 <div class="brand-logo">
                     <img src="{{ asset('img/mainLogo.png')}}" alt="Caventel Logo" class="img-responsive">
                 </div>
-                <div class="brand-logo-collapsed">
+                <!--<div class="brand-logo-collapsed">
                     <img src="{{ asset('img/mainLogo.png')}}" alt="Caventel Logo" class="img-responsive">
-                </div>
+                </div>-->
             </a>
         </div>
         <!-- END navbar header-->
@@ -27,21 +27,15 @@
                         <em class="fa fa-navicon"></em>
                     </a>
                     <!-- Button to show/hide the sidebar on mobile. Visible on mobile only.-->
-                    <a href="#" data-toggle-state="aside-toggled" data-no-persist="true" class="visible-xs sidebar-toggle">
+                    <a href="#" data-toggle-state="aside-toggled" data-no-persist="true"
+                       class="visible-xs sidebar-toggle">
                         <em class="fa fa-navicon"></em>
                     </a>
                 </li>
-                <!-- START User avatar toggle-->
-                <li>
-                    <!-- Button used to collapse the left sidebar. Only visible on tablet and desktops-->
-                    <a id="user-block-toggle" href="#user-block" data-toggle="collapse">
-                        <em class="icon-user"></em>
-                    </a>
-                </li>
-                <!-- END User avatar toggle-->
+                
                 <!-- START lock screen-->
                 <li>
-                    <a href="lock.html" title="Lock screen">
+                    <a href="#" title="Lock screen">
                         <em class="icon-lock"></em>
                     </a>
                 </li>
@@ -127,19 +121,14 @@
                     <!-- END Dropdown menu-->
                 </li>
                 <!-- END Alert menu-->
-                <!-- START Offsidebar button-->
-                <li>
-                    <a href="#" data-toggle-state="offsidebar-open" data-no-persist="true">
-                        <em class="icon-notebook"></em>
-                    </a>
-                </li>
-                <!-- END Offsidebar menu-->
+
             </ul>
             <!-- END Right Navbar-->
         </div>
         <!-- END Nav wrapper-->
         <!-- START Search form-->
-        <form role="search" action="http://themicon.co/theme/angle/v3.3.1/backend-jquery/app/search.html" class="navbar-form">
+        <form role="search" action="http://themicon.co/theme/angle/v3.3.1/backend-jquery/app/search.html"
+              class="navbar-form">
             <div class="form-group has-feedback">
                 <input type="text" placeholder="Type and hit enter ..." class="form-control">
                 <div data-search-dismiss="" class="fa fa-times form-control-feedback"></div>
@@ -159,12 +148,13 @@
             <ul class="nav">
                 <!-- START user info-->
                 <li class="has-user-block">
-                    <div id="user-block" class="collapse">
+                    <div id="user-block"  >
                         <div class="item user-block">
                             <!-- User picture-->
                             <div class="user-block-picture">
                                 <div class="user-block-status">
-                                    <img src="{{ asset('img/user/1.png') }}" alt="Avatar" width="60" height="60" class="img-thumbnail img-circle">
+                                    <img src="{{ asset('img/user/1.png') }}" alt="Avatar" width="60" height="60"
+                                         class="img-thumbnail img-circle">
                                     <div class="circle circle-success circle-lg"></div>
                                 </div>
                             </div>
@@ -183,7 +173,7 @@
                 </li>
                 <li class=" ">
                     <a href="Admin" title="Widgets">
-<!--                        <em class="icon-grid"></em>-->
+                        <!--                        <em class="icon-grid"></em>-->
                         <span data-localize="sidebar.nav.WIDGETS">Inicio</span>
                     </a>
 
