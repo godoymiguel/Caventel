@@ -134,24 +134,34 @@
                                 <div class="title-seperator">
                                 </div>
                             </div>
-                            <p align="justify">
-                                + Estimular la formación de hábitos de economía y previsión social entre sus afiliados
-                            </p>
-                            <p align="justify">
-                                + Conceder préstamos en beneficio exclusivo de sus asociados a bajo interés, incluyendo
-                                los créditos hipotecarios
-                            </p>
-                            <p align="justify">
-                                + Procurar para sus afiliados toda clase de beneficios socio-económicos, tales como:
-                                montepío, mutuo auxilio, seguro colectivos de vida, cirugía, hospitalización y gastos
-                                médicos, entre otros
-                            </p>
-                            <p align="justify">
-                                + Velar por los intereses de sus asociados por todos los medios a su alcance
-                            </p>
-                            <p align="justify">
-                                + Todo aquello que esté expresamente permitido por la Ley que regula la materia
-                            </p>
+                            <ul class="icons-list check-1 colored-list">
+                                <li>
+                                    Estimular la formación de hábitos de economía y previsión social entre sus afiliados
+                                </li>
+                            </ul>
+                            <ul class="icons-list check-1 colored-list">
+                                <li>
+                                    Conceder préstamos en beneficio exclusivo de sus asociados a bajo interés, incluyendo
+                                    los créditos hipotecarios
+                                </li>
+                            </ul>
+                            <ul class="icons-list check-1 colored-list">
+                                <li>
+                                    Procurar para sus afiliados toda clase de beneficios socio-económicos, tales como:
+                                    montepío, mutuo auxilio, seguro colectivos de vida, cirugía, hospitalización y gastos
+                                    médicos, entre otros
+                                </li>
+                            </ul>
+                            <ul class="icons-list check-1 colored-list">
+                                <li>
+                                    Velar por los intereses de sus asociados por todos los medios a su alcance
+                                </li>
+                            </ul>
+                            <ul class="icons-list check-1 colored-list">
+                                <li>
+                                    Todo aquello que esté expresamente permitido por la Ley que regula la materia
+                                </li>
+                            </ul>
                         </div>
                     </div>
 

@@ -28,6 +28,7 @@
     <div class="wrapper">
         @yield('divBlockCenter')
         @yield('divAdmin')
+        @yield('lock')
     </div>
     <!-- =============== SCRIPTS ===============-->
     <!-- MODERNIZR-->
@@ -55,7 +56,8 @@
     <!-- RTL demo-->
     <script src="{{ asset('js/demo/demo-rtl.js') }}"></script>
     <!-- =============== PAGE SCRIPTS ===============-->
-
+    <!-- PARSLEY-->
+    <script src="{{ asset('js/parsley.min.js') }}"></script>
     <!-- =============== APP SCRIPTS ===============-->
     <script src="{{ asset('js/app.js')}}"></script>
 </body>

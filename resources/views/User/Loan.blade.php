@@ -33,98 +33,36 @@
             </div>
         </div>
 
-        <div class="content-wrapper hide-until-loading">
-            <div class="body-wrapper">
+        <div class="content-wrapper hide-until-loading"><div class="body-wrapper">
                 <div class="container">
+
                     <div class="row">
-                        <div class="col-md-12 col-sm-12">
-                            <div class="portfolio-filter-container">
-                                <ul class="portfolio-filter">
-                                    <li>
-                                        <a href="#" data-filter=".personal">Personal</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" data-filter=".mortgage">Hipotecario</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" data-filter=".car">Vehicular</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" data-filter=".retirement">Retiro de Haberes</a>
-                                    </li>
-                                </ul>
+
+                        <div class="col-md-3 col-sm-3">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item"> Personal </a>
+                                <a href="#" class="list-group-item "> Hipotecario </a>
+                                <a href="#" class="list-group-item "> Vehicular </a>
+                                <a href="#" class="list-group-item "> Retiro de Haberes </a>
+
                             </div>
                         </div>
-                    <div class="row">
-                            <div class="portfolio-items ">
 
-                                <!-- Item -->
-                                <div class="thumb-label-item personal">
+                        <div class="col-md-9 col-sm-9">
+                            <h2 class="h2-section-title">Prestamo Personal</h2>
+                            <p class="p-section-info">
 
-                                    <!-- Project Description -->
-                                    <p>
-                                        Prestamos Personal
-                                    </p>
+                            </p>
 
-                                    <p>
-                                        Prestamos De terceras Personal
-                                    </p>
-
-
-                                    <!-- //Project Description// -->
-
-
-                                </div>
-                                <div class="thumb-label-item mortgage">
-
-                                    <!-- Project Description -->
-                                    <p>
-                                        Creditos Hipotecarios
-                                    </p>
-
-
-                                    <!-- //Project Description// -->
-
-
-                                </div>
-                                <!-- //Item// -->
-                                <div class="thumb-label-item car">
-
-                                    <!-- Project Description -->
-                                    <p>
-                                        Creditos Vehicular
-                                    </p>
-
-
-                                    <!-- //Project Description// -->
-
-
-                                </div>
-                                <!-- //Item// -->
-                                <div class="thumb-label-item retirement">
-
-                                    <!-- Project Description -->
-                                    <p>
-                                        Retiro de Haberes
-                                    </p>
-
-
-                                    <!-- //Project Description// -->
-
-
-                                </div>
-                                <!-- //Item// -->
-
-
-                            </div>
-                    </div>
+                        </div>
 
                     </div>
+
+
                 </div>
+
             </div>
         </div><!--.content-wrapper end -->
-
-
         @include('template.Partials.divFooterUser')
 
     </div><!-- wrapper end -->

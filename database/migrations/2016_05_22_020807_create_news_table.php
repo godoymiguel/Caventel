@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserProfilesTable extends Migration
+class CreateNewsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,23 +12,18 @@ class CreateUserProfilesTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_profiles', function (Blueprint $table) {
-            $table->increments('idProfile');
-            $table->date('birthdate');
-            $table->enum('sex',['female','male']);
-            $table->string('phone');
-            $table->string('email');
-            $table->string('address');
-            $table->boolean('active')->default(true);
-            $table->string('avatar');
+        Schema::create('news', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('user_idCedula')->unsigned();
+            $table->string('title');
+            $table->text('body');
+            $table->string('img');
+            $table->timestamps();
 
             $table->foreign('user_idCedula')
                 ->references('idCedula')
                 ->on('users')
                 ->onDelete('cascade');
-
-            $table->timestamps();
         });
     }
 
@@ -39,6 +34,6 @@ class CreateUserProfilesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('user_profiles');
+        Schema::drop('news');
     }
 }

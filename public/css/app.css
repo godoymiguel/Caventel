@@ -1117,7 +1117,7 @@ body, html {
         border: 0;
         background-color: #23b7e5;
         background-image: -webkit-linear-gradient(left, #23b7e5, #51c6ea);
-        background-image: linear-gradient(90deg, #23b7e5 0, #51c6ea);
+        background-image: linear-gradient(90deg, #8a1f11 0, #51c6ea);
         background-repeat: repeat-x;
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff23b7e5', endColorstr='#ff51c6ea', GradientType=1)
     }

@@ -33,7 +33,33 @@
             </div>
         </div>
 
+        <div class="content-wrapper hide-until-loading"><div class="body-wrapper">
+                <div class="container">
 
+                    <div class="row">
+
+                        <div class="col-md-3 col-sm-3">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item"> Mutuo Auxilio </a>
+                                <a href="#" class="list-group-item "> MontePío </a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-9 col-sm-9">
+                            <h2 class="h2-section-title">Mutuo Auxilio</h2>
+                            <p class="p-section-info">
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div><!--.content-wrapper end -->
 
         @include('template.Partials.divFooterUser')
 

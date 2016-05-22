@@ -11,13 +11,25 @@
 |
 */
 
+Route::group(['prefix' => 'Admin'], function(){
+
+    Route::get('/', function () {
+        return view('Admin.Index');
+    });
+});
+
 Route::post('login', function () {
     return view('Admin.Index');
 });
 
-Route::get('Admin', function () {
-    return view('Admin.Index');
+Route::get('Inactivo', function () {
+    return view('auth.lock');
 });
+
+Route::get('Ingreso', function () {
+    return view('Admin.Register');
+});
+
 
 Route::get('/', function () {
     return view('User.Index');

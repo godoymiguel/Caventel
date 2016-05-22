@@ -44,7 +44,7 @@
                              data-delay="0.4s">
                             <h2 class="h2-section-title">Encuéntranos</h2>
                             <div class="i-section-title">
-                                <i class="icon-map">
+                                <i class="icon-location">
 
                                 </i>
                             </div>

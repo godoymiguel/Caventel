@@ -33,7 +33,8 @@
                 </ul>
                 <div class="tp-bannertimer tp-bottom"></div>
             </div>
-        </div></div><!--.top wrapper end -->
+        </div>
+    </div><!--.top wrapper end -->
 
     <div class="loading-container">
         <div class="spinner">
@@ -118,41 +119,38 @@
 
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-3">
-                        <div class="content-box content-style4 medium"
-                             data-animtype="fadeIn"
-                             data-animrepeat="0"
-                             data-animspeed="1s"
-                             data-animdelay="0.2s"
-                        >
-                            <h4 class="h4-body-title">
-                                <i class="icon-archive"></i>
-                                Afiliación
-                            </h4>
-                            <div class="content-box-text">
-                                Requisitos Necesarios Para Formar Parte de CAVENTEL
-                                <div>
-                                    <a href="Asociado" class=" btn btn-sm">
-                                        <span>Ver Más</span>
-                                    </a>
-                                </div>
+                </div>
+            </div>
+        </div>
 
+        <div class="section-content bottom-body">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="message-box clearfix">
+
+                            <a href="Asociado" class="btn btn-lg">Entra Aquí</a>
+
+                            <div class="message-content">
+                                <h4>¿Deseas ser Asociado de Caventel? Conoces los Requisitos Para formar Parte de Nosotros</h4>
                             </div>
 
                         </div>
                     </div>
-                </div>
-            </div>
 
+                </div>
+
+            </div>
         </div>
 
         <div class="body-wrapper">
 
-            <div class="space-sep40"></div>
-
             <div class="section-content section-tabs section-px stones-bg white-text">
                 <div class="tab-container">
-                    <div class="section-tab-arrow"></div>
+                    <div class="section-tab-arrow">
+
+                    </div>
                     <div class="section-etabs-container">
                         <ul class="section-etabs">
                             <li class="tab active">
@@ -165,6 +163,7 @@
                         </ul>
 
                     </div>
+
                     <div class="container">
 
                         <div class="tab-content">
