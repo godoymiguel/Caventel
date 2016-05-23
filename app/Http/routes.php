@@ -13,10 +13,14 @@
 
 Route::group(['prefix' => 'Admin'], function(){
 
+    Route::resource('Users', 'UsersController');
+
     Route::get('/', function () {
         return view('Admin.Index');
     });
 });
+
+//Route::resource('', 'InfoviewController');
 
 Route::post('login', function () {
     return view('Admin.Index');

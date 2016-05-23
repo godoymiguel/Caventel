@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 
 use Caventel\Http\Requests;
 
-class LoginController extends Controller
+use Caventel\User;
+
+class UsersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +17,7 @@ class LoginController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**

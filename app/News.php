@@ -11,4 +11,9 @@ class News extends Model
     protected $fillable = [
         'user_idCedula', 'title', 'body', 'img'
     ];
+
+    public function User()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

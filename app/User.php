@@ -40,4 +40,9 @@ class User extends Authenticatable
     {
         return $this->hasOne('Caventel\UserLoan');
     }
+
+    public function News()
+    {
+        return $this->hasMany(News::class);
+    }
 }
