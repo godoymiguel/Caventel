@@ -9,7 +9,7 @@ class UserAsset extends Model
     protected $table = 'user_assets';
 
     protected $fillable =[
-        'monthly_contributions', 'accumulated', 'bloked', 'user_idCedula',
+        'user_ci', 'monthly_contributions', 'accumulated', 'bloked'
     ];
 
     public function User()

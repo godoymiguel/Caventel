@@ -2,12 +2,12 @@
 
 @section('title','Ingresar Usuario -')
 
-@section('RegisAdmin')
+@section('content')
         <!-- Page content-->
 <div class="content-wrapper">
     <div class="row">
         <div class="col-md-12">
-            <form method="post" action="#" data-parsley-validate="" novalidate="">
+            <form method="post" action="Admin.users.store" data-parsley-validate="" novalidate="">
                 <!-- START panel-->
                 <div class="panel panel-default">
                     <div class="panel-heading">

@@ -13,11 +13,13 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->integer('idCedula')->unique()->unsigned();
+            $table->increments('idUser');
+            $table->integer('ci')->unique()->unsigned();
             $table->string('name');
             $table->string('last_name');
+            $table->string('email')->unique();
             $table->string('password', 60);
-            $table->enum('role',['user','admin','superadmin'])->default('user');
+            $table->enum('type',['user','admin','superadmin'])->default('user');
             $table->rememberToken();
             $table->timestamps();
         });

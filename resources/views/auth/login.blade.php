@@ -2,25 +2,19 @@
 
 @section('title','Ingreso -')
 
-@section('login')
-    <style>
-        input[type=number]::-webkit-outer-spin-button,
-        input[type=number]::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            margin: 0;
-        }
-    </style>
+@section('content')
     <p class="text-center pv">INICIAR SESIÓN.</p>
-    <form role="form" data-parsley-validate="" novalidate="" class="mb-lg" method="post" action="{{url('login')}}">
+    <form role="form" data-parsley-validate="" novalidate="" class="mb-lg" method="POST"
+          action="{{ url('/login') }}">
+        {!! csrf_field() !!}
         <div class="form-group has-feedback">
-            <input id="exampleInputEmail1" type="number" min='0' placeholder="Cedula" autocomplete="off" required
+            <input id="email" type="email" name="email" placeholder="Correo Electrónico" autocomplete="off" required
                    class="form-control">
-            <span class="fa fa-user form-control-feedback text-muted"></span>
+            <span class="fa fa-envelope form-control-feedback text-muted"></span>
 
         </div>
         <div class="form-group has-feedback">
-            <input id="exampleInputPassword1" type="password" placeholder="Contraseña" required class="form-control">
+            <input id="password" type="password" name="password" placeholder="Contraseña" required class="form-control">
             <span class="fa fa-lock form-control-feedback text-muted"></span>
         </div>
         <div class="clearfix">

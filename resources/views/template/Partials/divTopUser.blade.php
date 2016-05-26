@@ -154,16 +154,29 @@
                                                 </span>
                             </a>
                         </li>
-                        <li>
-                            <a href="login">
-                                                <span class="label-nav">
-                                                    INGRESAR
-                                                </span>
-                                                <span class="label-nav-sub" data-hover="Iniciar Sesión">
-                                                    Iniciar Sesión
-                                                </span>
-                            </a>
-                        </li>
+                        @if( Auth::guest())
+                            <li>
+                                <a href="login">
+                                                    <span class="label-nav">
+                                                        INGRESAR
+                                                    </span>
+                                                    <span class="label-nav-sub" data-hover="Iniciar Sesión">
+                                                        Iniciar Sesión
+                                                    </span>
+                                </a>
+                            </li>
+                        @else
+                            <li>
+                                <a href="Admin">
+                                                    <span class="label-nav">
+                                                        {{ Auth::user()->name }}
+                                                    </span>
+                                                    <span class="label-nav-sub" data-hover="Iniciar Sesión">
+                                                        Panel de Gestión
+                                                    </span>
+                                </a>
+                            </li>
+                        @endif
                     </ul>
 
                 </nav>

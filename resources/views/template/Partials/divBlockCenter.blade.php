@@ -10,8 +10,7 @@
                 </a>
             </div>
             <div class="panel-body">
-                @yield('recover')
-                @yield('login')
+                @yield('content')
             </div>
         </div>
         <!-- END panel-->

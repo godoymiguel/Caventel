@@ -13,18 +13,29 @@
 
 Route::group(['prefix' => 'Admin'], function(){
 
-    Route::resource('Users', 'UsersController');
+    Route::resource('users', 'UsersController');
 
-    Route::get('/', function () {
-        return view('Admin.Index');
-    });
+  /*  Route::resource('PerfilUsuario', 'ProfileController');
+
+    Route::resource();
+
+    Route::resource();
+
+    Route::resource();
+*/
+    Route::get('/', 'LoginController@index');
 });
 
+Route::group([],function(){
+
+});
+
+//Route::get('login', 'LoginController@index');
 //Route::resource('', 'InfoviewController');
 
-Route::post('login', function () {
+/*Route::post('login', function () {
     return view('Admin.Index');
-});
+});*/
 
 Route::get('Inactivo', function () {
     return view('auth.lock');
@@ -70,8 +81,11 @@ Route::get('recover', function () {
     return view('auth.recover');
 });
 
-Route::get('login', 'LoginController@SingIn');
 //Route::get('User','UserController@Index');
+
+Route::get('welcome', function () {
+    return view('welcome');
+});
 
 /*
 |--------------------------------------------------------------------------
@@ -86,4 +100,10 @@ Route::get('login', 'LoginController@SingIn');
 
 Route::group(['middleware' => ['web']], function () {
     //
+});
+
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+
+    //Route::get('Admin', 'LoginController@index');
 });

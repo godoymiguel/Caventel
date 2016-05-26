@@ -14,13 +14,13 @@ class CreateUserAssetsTable extends Migration
     {
         Schema::create('user_assets', function (Blueprint $table) {
             $table->increments('idAssets');
+            $table->integer('user_ci')->unsigned();
             $table->float('monthly_contributions');
             $table->float('accumulated');
             $table->float('bloked')->default(0.0);
-            $table->integer('user_idCedula')->unsigned();
 
-            $table->foreign('user_idCedula')
-                ->references('idCedula')
+            $table->foreign('user_ci')
+                ->references('ci')
                 ->on('users')
                 ->onDelete('cascade');
             $table->timestamps();

@@ -2,7 +2,7 @@
 
 @section('title','Recuperar Ingreso -')
 
-@section('recover')
+@section('content')
     <p class="text-center pv">Restablecimiento de Contraseña</p>
     <form role="form">
         <p class="text-center">Ingresa tu correo electrónico para recibir instrucciones sobre cómo restablecer su contraseña</p>

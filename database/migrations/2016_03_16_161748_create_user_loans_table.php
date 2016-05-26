@@ -14,6 +14,7 @@ class CreateUserLoansTable extends Migration
     {
         Schema::create('user_loans', function (Blueprint $table) {
             $table->increments('idLoans');
+            $table->integer('user_ci')->unsigned();
             $table->string('type_loan');
             $table->integer('term');
             $table->date('date_loan');
@@ -23,10 +24,9 @@ class CreateUserLoansTable extends Migration
             $table->float('amount_interest');
             $table->float('overdue_fees');
             $table->float('interest_arrears');
-            $table->integer('user_idCedula')->unsigned();
 
-            $table->foreign('user_idCedula')
-                ->references('idCedula')
+            $table->foreign('user_ci')
+                ->references('ci')
                 ->on('users')
                 ->onDelete('cascade');
             $table->timestamps();

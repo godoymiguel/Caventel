@@ -13,11 +13,12 @@
 
 $factory->define(Caventel\User::class, function (Faker\Generator $faker) {
     return [
-        'idCedula' => $faker->randomNumber(),
+        'ci' => $faker->randomNumber(),
         'name' => $faker->name,
         'last_name'=> $faker->lastName,
+        'email'=> $faker->email,
         'password' => \Hash::make('1234'),
-        'role' => $faker->randomElement(['user']),
+        'type' => $faker->randomElement(['user']),
         'remember_token' => str_random(10)
 
     ];

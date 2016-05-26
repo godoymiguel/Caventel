@@ -13,15 +13,15 @@ class CreateNewsTable extends Migration
     public function up()
     {
         Schema::create('news', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('user_idCedula')->unsigned();
+            $table->increments('idNews');
+            $table->integer('user_ci')->unsigned();
             $table->string('title');
             $table->text('body');
             $table->string('img');
             $table->timestamps();
 
-            $table->foreign('user_idCedula')
-                ->references('idCedula')
+            $table->foreign('user_ci')
+                ->references('ci')
                 ->on('users')
                 ->onDelete('cascade');
         });

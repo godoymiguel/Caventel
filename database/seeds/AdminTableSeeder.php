@@ -13,9 +13,10 @@ class AdminTableSeeder extends Seeder
     public function run()
     {
         factory(Caventel\User::class)->create([
-            'idCedula' => '1',
-            'password' => \Hash::make('1234'),
-            'role' => 'superadmin'
+            'ci' => '1',
+            'email' => 'admin@admin.com',
+            'password' => bcrypt('1234'),
+            'type' => 'superadmin'
         ]);
 
 
