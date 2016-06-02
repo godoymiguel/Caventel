@@ -5,15 +5,27 @@
 @section('content')
         <!-- Page content-->
 <div class="content-wrapper">
+    <h3>Registrar Nuevo Usuario
+    </h3>
     <div class="row">
         <div class="col-md-12">
-            <form method="post" action="Admin.users.store" data-parsley-validate="" novalidate="">
+            <form method="post" action="{{ route('Admin.users.store') }}" data-parsley-validate="" novalidate="">
                 <!-- START panel-->
                 <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <div class="panel-title">Registrar Nuevo Usuario</div>
-                    </div>
+
                     <div class="panel-body">
+                        <div class="form-group">
+                            <label class="control-label">Cedula de Identidad *</label>
+                            <input type="number" min="0" name="ci" required class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Nombre *</label>
+                            <input type="text" name="name" required class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Apellido *</label>
+                            <input type="text" name="last_name" required class="form-control">
+                        </div>
                         <div class="form-group">
                             <label class="control-label">Correo Electronico *</label>
                             <input type="text" name="email" required class="form-control">
@@ -25,6 +37,14 @@
                         <div class="form-group">
                             <label class="control-label">Confirme Contraseña *</label>
                             <input type="password" name="confirmPassword" required data-parsley-equalto="#id-password" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Tipo de Usuario* </label>
+                            <select name="type" required class="form-control">
+                                <option value=" " > </option>
+                                <option value="user" >Asociado</option>
+                                <option value="admin" >Directivo</option>
+                            </select>
                         </div>
                         <div class="required">* Campos Requeridos</div>
                     </div>

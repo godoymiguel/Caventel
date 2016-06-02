@@ -1,6 +1,6 @@
 @extends('template.mainAdmin')
 
-@section('lock')
+@section('lockScream')
     <div class="abs-center wd-xl">
         <!-- START panel-->
         <div class="p">

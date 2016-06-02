@@ -15,15 +15,21 @@ Route::group(['prefix' => 'Admin'], function(){
 
     Route::resource('users', 'UsersController');
 
-  /*  Route::resource('PerfilUsuario', 'ProfileController');
+    Route::resource('user_profiles', 'UserProfileController');
+    
+    Route::resource('news','NewsController');
+    
+    /*  
 
-    Route::resource();
+    Route::resource('user_assets','UserAssetsController');
 
-    Route::resource();
+    Route::resource('user_loans','UserLoansController');
 
-    Route::resource();
+    Route::resource('heritage_assets','HeritageAssetsController');
+
+    Route::resource('heritage_property','HeritagePropertyController');
 */
-    Route::get('/', 'LoginController@index');
+//    Route::get('/', 'LoginController@index');
 });
 
 Route::group([],function(){
@@ -105,5 +111,5 @@ Route::group(['middleware' => ['web']], function () {
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
-    //Route::get('Admin', 'LoginController@index');
+    Route::get('Admin', 'LoginController@index');
 });

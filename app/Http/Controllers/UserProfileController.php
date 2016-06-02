@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 use Caventel\Http\Requests;
 
-use Caventel\User;
+use Caventel\UserProfile;
 
-class UsersController extends Controller
+class UserProfileController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +17,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        dd(User::all());
+        //
     }
 
     /**
@@ -27,7 +27,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        return view('Admin.users.create');
+        return view('Admin.userProfiles.create');
     }
 
     /**
@@ -38,9 +38,7 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        User::create($request->all());
-
-        return redirect()->route('Admin.users.index');
+        dd($request->all());
     }
 
     /**

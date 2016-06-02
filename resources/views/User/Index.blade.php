@@ -2,7 +2,7 @@
 
 @section('title', 'CAVENTEL -')
 
-@section('IndexUser')
+@section('content')
 
 <div id="wrapper"  >
 
@@ -237,7 +237,7 @@
                             >
                                 <h4 class="h4-body-title">
                                     <strong>
-                                        <a href="http://www.sudeca.mefbp.gob.ve/" target="_blank">
+                                        <a href="{{ url('http://www.sudeca.mefbp.gob.ve/') }}" target="_blank">
                                             SUDECA
                                         </a>
                                     </strong>
@@ -266,7 +266,7 @@
                             >
                                 <h4 class="h4-body-title">
                                     <strong>
-                                        <a href="http://www.mintur.gob.ve/mintur/ventel/teleferico-de-merida-mukumbari/" target="_blank">
+                                        <a href="{{ url('http://www.mintur.gob.ve/mintur/ventel/teleferico-de-merida-mukumbari/') }}" target="_blank">
                                             MUKUMBARÍ
                                         </a>
                                     </strong>

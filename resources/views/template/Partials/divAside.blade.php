@@ -175,12 +175,12 @@
                             </a>
                         </li>
                         <li class=" ">
-                            <a href="#" title="Actualizar">
+                            <a href="{{ route('Admin.user_profiles.create') }}" title="Actualizar">
                                 <span>Actualizar Datos</span>
                             </a>
                         </li>
                         <li class=" ">
-                            <a href="#" title="Registrar">
+                            <a href="{{ route('Admin.users.create') }}" title="Registrar">
                                 <span>Registrar</span>
                             </a>
                         </li>
@@ -197,7 +197,7 @@
                     </ul>
                 </li>
                 <li class=" ">
-                    <a href="#" onclick="window.close();" title="Salir del Sistema">
+                    <a href="/logout" onclick="window.close();" title="Salir del Sistema">
                         <em class="icon-logout"></em>
                         <span data-localize="sidebar.nav.WIDGETS">Salir</span>
                     </a>

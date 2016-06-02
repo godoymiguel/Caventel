@@ -64,7 +64,7 @@
     <link rel="stylesheet" href="{{ asset('css/color-chooser.css')}}">
 </head>
 <body>
-@yield('IndexUser')
+@yield('content')
 @yield('LoanUser')
 @yield('BenefitUser')
 @yield('AboutUser')

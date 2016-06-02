@@ -2,7 +2,7 @@
 
 @section('title','Principal -')
 
-@section('IndexAdmin')
+@section('content')
         <!-- Page content-->
 <div class="content-wrapper">
     <h3>Bienvenido

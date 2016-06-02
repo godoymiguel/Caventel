@@ -23,7 +23,7 @@
                     <input type="checkbox" value="" name="remember">
                     <span class="fa fa-check"></span>Recordar</label>
             </div>
-            <div class="pull-right"><a href="recover" class="text-muted">¿Olvido su contraseña?</a>
+            <div class="pull-right"><a href="/recover" class="text-muted">¿Olvido su contraseña?</a>
             </div>
         </div>
         <button type="submit" class="btn btn-block btn-primary mt-lg">Ingresar</button>
