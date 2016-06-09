@@ -1,15 +1,18 @@
 @extends('template.mainAdmin')
 
 @section('divBlockCenter')
+
     <div class="block-center mt-xl wd-xl">
+
         <!-- START panel-->
         <div class="panel panel-dark panel-flat">
             <div class="panel-heading text-center">
-                <a href="/">
+                <a href="{{ route('user.index') }}">
                     <img src="{{ asset('img/mainLogo.png')}}"  alt="Image" class="block-center img-rounded">
                 </a>
             </div>
             <div class="panel-body">
+
                 @yield('content')
             </div>
         </div>

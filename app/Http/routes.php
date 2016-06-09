@@ -32,17 +32,6 @@ Route::group(['prefix' => 'Admin'], function(){
 //    Route::get('/', 'LoginController@index');
 });
 
-Route::group([],function(){
-
-});
-
-//Route::get('login', 'LoginController@index');
-//Route::resource('', 'InfoviewController');
-
-/*Route::post('login', function () {
-    return view('Admin.Index');
-});*/
-
 Route::get('Inactivo', function () {
     return view('auth.lock');
 });
@@ -51,43 +40,13 @@ Route::get('Ingreso', function () {
     return view('Admin.Register');
 });
 
-
-Route::get('/', function () {
-    return view('User.Index');
-});
-
-Route::get('Asociado', function () {
-    return view('User.Info');
-});
-
-Route::get('Noticias', function () {
-    return view('User.News1');
-});
 Route::get('NuevaPagina', function () {
     return view('User.news.NewPage');
-});
-
-Route::get('Nosotros', function () {
-    return view('User.About');
-});
-
-Route::get('Contactos', function () {
-    return view('User.Contact');
-});
-
-Route::get('Prestamos', function () {
-    return view('User.Loan');
-});
-
-Route::get('Beneficios', function () {
-    return view('User.Benefit');
 });
 
 Route::get('recover', function () {
     return view('auth.recover');
 });
-
-//Route::get('User','UserController@Index');
 
 Route::get('welcome', function () {
     return view('welcome');
@@ -105,11 +64,45 @@ Route::get('welcome', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
-    //
-});
-
-Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
-    Route::get('Admin', 'LoginController@index');
+    Route::get('/', [
+        'uses' => 'HomeController@Index',
+        'as' => 'user.index'
+    ]);
+
+    Route::get('Contactos', [
+        'uses' => 'HomeController@Contact',
+        'as' => 'user.contact'
+    ]);
+
+    Route::get('Nosotros', [
+        'uses' => 'HomeController@About',
+        'as' => 'user.about'
+    ]);
+
+    Route::get('Prestamos', [
+        'uses' => 'HomeController@Loan',
+        'as' => 'user.loan'
+    ]);
+
+    Route::get('Beneficios', [
+        'uses' => 'HomeController@Benefit',
+        'as' => 'user.benefit'
+    ]);
+
+    Route::get('Asociado', [
+        'uses' => 'HomeController@Info',
+        'as' => 'user.info'
+    ]);
+    
+    Route::get('Noticias', [
+        'uses' => 'HomeController@News',
+        'as' => 'user.news'
+    ]);
+
+    Route::get('Admin', [
+        'uses' => 'LoginController@index',
+        'as' => 'admin.index'
+    ]);
 });

@@ -2,7 +2,7 @@
 
 @section('title', 'Prestamos -')
 
-@section('LoanUser')
+@section('content')
     <div id="wrapper">
 
         <div class="top_wrapper">

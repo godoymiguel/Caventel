@@ -38,9 +38,11 @@
 
 <body>
     <div class="wrapper">
+
         @yield('divBlockCenter')
         @yield('divAdmin')
         @yield('lockScream')
+
     </div>
     <!-- =============== SCRIPTS ===============-->
     <!-- MODERNIZR-->

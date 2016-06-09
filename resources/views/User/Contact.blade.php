@@ -2,7 +2,7 @@
 
 @section('title', 'Contactenos -')
 
-@section('ContactUser')
+@section('content')
     <div id="wrapper">
 
         <div class="top_wrapper">

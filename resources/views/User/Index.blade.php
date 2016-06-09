@@ -130,7 +130,7 @@
                     <div class="col-md-12 col-sm-12">
                         <div class="message-box clearfix">
 
-                            <a href="Asociado" class="btn btn-lg">Entra Aquí</a>
+                            <a href="{{ route('user.info') }}" class="btn btn-lg">Entra Aquí</a>
 
                             <div class="message-content">
                                 <h4>¿Deseas ser Asociado de Caventel? Conoces los Requisitos Para formar Parte de Nosotros</h4>
@@ -157,7 +157,7 @@
                                 <a href="#tabc1"> Noticias </a>
                             </li>
                             <li class="tab">
-                                <a href="Noticias"> Otras Noticias </a>
+                                <a href="{{ route('user.news') }}"> Otras Noticias </a>
                             </li>
 
                         </ul>

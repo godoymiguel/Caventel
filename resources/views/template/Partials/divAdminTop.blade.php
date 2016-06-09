@@ -2,7 +2,7 @@
 <nav role="navigation" class="navbar topnavbar">
     <!-- START navbar header-->
     <div class="navbar-header">
-        <a href="/" class="navbar-brand">
+        <a href="{{ route('admin.index') }}" class="navbar-brand">
             <div class="brand-logo">
                 <img src="{{ asset('img/mainLogo.png')}}" alt="Caventel Logo" class="img-responsive">
             </div>

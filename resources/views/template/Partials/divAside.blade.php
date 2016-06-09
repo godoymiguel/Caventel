@@ -18,9 +18,9 @@
                             </div>
                             <!-- Name and Job-->
                             <div class="user-block-info">
-                                <span class="user-block-name">Hola, Miguel</span>
-                                <span class="user-block-role">Administrador</span>
-                            </div>
+                               {{-- <span class="user-block-name">Hola, {{ Auth::user()->name }}</span>
+                                <span class="user-block-role">{{ Auth::user()->type }}</span>
+                            --}}</div>
                         </div>
                     </div>
                 </li>
@@ -30,7 +30,7 @@
                     <span data-localize="sidebar.heading.HEADER">Menu de Navegación</span>
                 </li>
                 <li class=" ">
-                    <a href="Admin" title="Incio Administrador">
+                    <a href="{{ route('admin.index') }}" title="Incio Administrador">
                         <em class="icon-home"></em>
                         <span data-localize="sidebar.nav.WIDGETS">Inicio</span>
                     </a>
@@ -38,7 +38,7 @@
                 </li>
 
                 <li class=" ">
-                    <a href="/" title="Web Principal">
+                    <a href="{{ route('user.index') }}" title="Web Principal">
                         <em class="icon-doc"></em>
                         <span data-localize="sidebar.nav.WIDGETS">Web</span>
                     </a>
@@ -170,7 +170,7 @@
                     <ul id="user" class="nav sidebar-subnav collapse">
                         <li class="sidebar-subnav-header">Usuarios</li>
                         <li class=" ">
-                            <a href="#" title="Consultar">
+                            <a href="{{ route('Admin.users.index') }}" title="Consultar">
                                 <span>Consultar</span>
                             </a>
                         </li>
@@ -192,6 +192,25 @@
                         <li class=" ">
                             <a href="#" title="Reintegrar">
                                 <span>Reintegrar</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" ">
+                    <a href="#news" title="Noticias" data-toggle="collapse">
+                        <em class="icon-book-open"></em>
+                        <span data-localize="">Noticias</span>
+                    </a>
+                    <ul id="news" class="nav sidebar-subnav collapse">
+                        <li class="sidebar-subnav-header">Noticias</li>
+                        <li class=" ">
+                            <a href="{{ route('Admin.news.index') }}" title="Lista">
+                                <span>Lista de Noticias</span>
+                            </a>
+                        </li>
+                        <li class=" ">
+                            <a href="{{ route('Admin.news.create') }}" title="Ingresar">
+                                <span>Ingresar Noticia</span>
                             </a>
                         </li>
                     </ul>

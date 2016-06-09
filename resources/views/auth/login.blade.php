@@ -8,8 +8,8 @@
           action="{{ url('/login') }}">
         {!! csrf_field() !!}
         <div class="form-group has-feedback">
-            <input id="email" type="email" name="email" placeholder="Correo Electrónico" autocomplete="off" required
-                   class="form-control">
+            <input id="email" type="email" name="email" placeholder="Correo Electrónico" autocomplete="on" required
+                   class="form-control" value="{{ old('email') }}">
             <span class="fa fa-envelope form-control-feedback text-muted"></span>
 
         </div>

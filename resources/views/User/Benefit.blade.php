@@ -2,7 +2,7 @@
 
 @section('title', 'Beneficios -')
 
-@section('BenefitUser')
+@section('content')
     <div id="wrapper">
 
         <div class="top_wrapper">

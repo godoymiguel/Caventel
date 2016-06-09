@@ -20,7 +20,7 @@
                                 <small>Olvido Su Contraseña?</small>
                             </a>
                         </div>
-                        <div class="pull-right"><a href="Admin" class="btn btn-sm btn-primary">Entrar</a>
+                        <div class="pull-right"><a href="{{ route('admin.index') }}" class="btn btn-sm btn-primary">Entrar</a>
                         </div>
                     </div>
                 </form>

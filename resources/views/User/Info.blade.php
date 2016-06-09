@@ -2,7 +2,7 @@
 
 @section('title', 'Información de Afiliación -')
 
-@section('InfoUser')
+@section('content')
     <div id="wrapper">
 
         <div class="top_wrapper">

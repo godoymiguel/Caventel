@@ -65,12 +65,6 @@
 </head>
 <body>
 @yield('content')
-@yield('LoanUser')
-@yield('BenefitUser')
-@yield('AboutUser')
-@yield('ContactUser')
-@yield('InfoUser')
-@yield('NewsUser')
 
 <!-- section news -->
 @yield('NewPageUser')

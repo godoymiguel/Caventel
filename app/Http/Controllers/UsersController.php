@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Caventel\Http\Requests;
 
 use Caventel\User;
+use Laracasts\Flash\Flash;
+
 
 class UsersController extends Controller
 {
@@ -17,7 +19,9 @@ class UsersController extends Controller
      */
     public function index()
     {
-        dd(User::all());
+        $users = User::orderBy('ci','ASC')->paginate(10);
+
+        return view('Admin.users.index')->with('users', $users);
     }
 
     /**
@@ -38,8 +42,12 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        User::create($request->all());
+        $users= new User($request->all());
+        $users->password = bcrypt($request->password);
+        $users->save();
 
+        Flash::success('¡El Usuario:' . $users->name . ' Fue Registrado Correctamente!');
+        //User::create($request->all());
         return redirect()->route('Admin.users.index');
     }
 
