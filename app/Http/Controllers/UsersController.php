@@ -59,7 +59,7 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        //
+        dd($id);
     }
 
     /**
@@ -70,7 +70,7 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**

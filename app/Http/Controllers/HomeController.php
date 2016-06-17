@@ -6,12 +6,15 @@ use Illuminate\Http\Request;
 
 use Caventel\Http\Requests;
 use PhpParser\Node\Stmt\Return_;
+use Caventel\News;
+use Caventel\User;
 
 class HomeController extends Controller
 {
     public function Index()
     {
-        return view('User.Index');
+        $news = News::orderBy('created_at','DESC')->paginate(4);
+        return view('User.Index')->with('news', $news);
     }
     public function Contact() 
     {
@@ -38,4 +41,20 @@ class HomeController extends Controller
         return view('User.Info');
     }
     
+    public function News()
+    {
+        $news = News::orderBy('created_at','DESC')->paginate(10);
+        $news_last = News::orderBy('created_at','DESC')->paginate(10);
+
+        return view('User.News')->with('news', $news)->with('news_last',$news_last);
+    }
+
+    public function ShowNews($id)
+    {
+        $news = News::find($id);
+        $news->User;
+        
+        return view('User.ShowNews')->with('news', $news);
+
+    }
 }

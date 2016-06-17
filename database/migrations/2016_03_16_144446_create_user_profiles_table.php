@@ -13,8 +13,8 @@ class CreateUserProfilesTable extends Migration
     public function up()
     {
         Schema::create('user_profiles', function (Blueprint $table) {
-            $table->increments('idProfile');
-            $table->integer('user_ci')->unsigned();
+            $table->increments('id')->unsigned();
+            $table->integer('user_id')->unsigned();
             $table->date('birthdate');
             $table->enum('sex',['female','male']);
             $table->string('phone');
@@ -22,8 +22,8 @@ class CreateUserProfilesTable extends Migration
             $table->boolean('active')->default(true);
             $table->string('avatar');
 
-            $table->foreign('user_ci')
-                ->references('ci')
+            $table->foreign('user_id')
+                ->references('id')
                 ->on('users')
                 ->onDelete('cascade');
 

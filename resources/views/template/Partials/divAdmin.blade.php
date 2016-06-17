@@ -9,6 +9,7 @@
 @include('template.Partials.divAside');
 <!-- Main section-->
 <section>
+    @include('flash::message')
     @yield('content')
 </section>
 <!-- Page footer-->

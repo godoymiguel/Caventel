@@ -4,9 +4,8 @@
 
 @section('content')
     <p class="text-center pv">INICIAR SESIÓN.</p>
-    <form role="form" data-parsley-validate="" novalidate="" class="mb-lg" method="POST"
-          action="{{ url('/login') }}">
-        {!! csrf_field() !!}
+    {!! Form::open( array('url' => '/login') ) !!}
+
         <div class="form-group has-feedback">
             <input id="email" type="email" name="email" placeholder="Correo Electrónico" autocomplete="on" required
                    class="form-control" value="{{ old('email') }}">
@@ -27,7 +26,7 @@
             </div>
         </div>
         <button type="submit" class="btn btn-block btn-primary mt-lg">Ingresar</button>
-    </form>
+    {!! Form::close() !!}
     <p class="pt-lg text-center">¿No estas Registrado?</p><a href="Asociado" class="btn btn-block btn-default">Registrate</a>
 
 @endsection

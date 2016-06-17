@@ -11,13 +11,17 @@
 |
 */
 
-Route::group(['prefix' => 'Admin'], function(){
+Route::group(['middleware' => ['web'], 'prefix' => 'Admin'], function(){
 
     Route::resource('users', 'UsersController');
 
     Route::resource('user_profiles', 'UserProfileController');
     
     Route::resource('news','NewsController');
+    Route::get('news/{id}/destroy', [
+        'uses' => 'NewsController@destroy',
+        'as' => 'Admin.news.destroy'
+    ]);
     
     /*  
 
@@ -38,10 +42,6 @@ Route::get('Inactivo', function () {
 
 Route::get('Ingreso', function () {
     return view('Admin.Register');
-});
-
-Route::get('NuevaPagina', function () {
-    return view('User.news.NewPage');
 });
 
 Route::get('recover', function () {
@@ -99,6 +99,11 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('Noticias', [
         'uses' => 'HomeController@News',
         'as' => 'user.news'
+    ]);
+
+    Route::get('Noticia/{id}', [
+        'uses' => 'HomeController@ShowNews',
+        'as' => 'user.shownews'
     ]);
 
     Route::get('Admin', [

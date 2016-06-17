@@ -13,8 +13,8 @@ class CreateUserLoansTable extends Migration
     public function up()
     {
         Schema::create('user_loans', function (Blueprint $table) {
-            $table->increments('idLoans');
-            $table->integer('user_ci')->unsigned();
+            $table->increments('id')->unsigned();
+            $table->integer('user_id')->unsigned();
             $table->string('type_loan');
             $table->integer('term');
             $table->date('date_loan');
@@ -25,8 +25,8 @@ class CreateUserLoansTable extends Migration
             $table->float('overdue_fees');
             $table->float('interest_arrears');
 
-            $table->foreign('user_ci')
-                ->references('ci')
+            $table->foreign('user_id')
+                ->references('id')
                 ->on('users')
                 ->onDelete('cascade');
             $table->timestamps();

@@ -9,7 +9,7 @@
     <h3>Lista de Usuarios
         <small>Consulta de Asociados Registrados en CAVENTEL</small>
     </h3>
-    @include('flash::message')
+
     <!-- START panel-->
     <div class="panel panel-default">
         <!-- START table-responsive-->

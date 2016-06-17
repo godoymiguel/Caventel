@@ -2,7 +2,7 @@
 
 @section('title', 'Noticias -')
 
-@section('NewPageUser')
+@section('content')
     <div id="wrapper">
 
         <div class="top_wrapper">
@@ -49,18 +49,16 @@
 
                                 <div class="blog-span">
                                     <div class="blog-post-featured-img">
-                                        <img src="{{ asset('img/news/webpage.jpg') }}" alt="webPage"/>
+                                        <img src="{{ asset('img/news/' . $news->img) }}" alt="webPage"/>
 
 
                                     </div>
                                     <h2>
-                                        CAVENTEL Tiene Nueva Página Web
+                                        {{ $news->title }}
                                     </h2>
 
                                     <div class="blog-post-body">
-                                        <p>
-                                            La Caja de Ahorro Venezolana de Teleféricos tiene nueva página web donde sus asociados podran gestionar sus productos y beneficios desde cualquier computador con acceso a internet.
-                                        </p>
+                                        {!! $news->body !!}
 
 
                                     </div>
@@ -73,7 +71,7 @@
                                         </div>
                                         <!-- Read More -->
                                         <div class="blog-post-details-item blog-post-details-item-right">
-                                            <a href="Noticias">
+                                            <a href="{{ route('user.news') }}">
                                                 Volver a Noticias <i class="fa fa-chevron-right"></i>
                                             </a>
                                         </div>

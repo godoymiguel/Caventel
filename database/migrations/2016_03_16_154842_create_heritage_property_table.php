@@ -13,7 +13,7 @@ class CreateHeritagePropertyTable extends Migration
     public function up()
     {
         Schema::create('heritage_property', function (Blueprint $table) {
-            $table->increments('idHproperty');
+            $table->increments('id');
             $table->string('document_code');
             $table->string('name');
             $table->float('price');

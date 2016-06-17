@@ -13,7 +13,7 @@ class CreateHeritageAssetsTable extends Migration
     public function up()
     {
         Schema::create('heritage_assets', function (Blueprint $table) {
-            $table->increments('idHassets');
+            $table->increments('id');
             $table->string('reason');
             $table->float('amount');
             $table->timestamps();

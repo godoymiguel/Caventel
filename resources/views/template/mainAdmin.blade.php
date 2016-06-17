@@ -27,6 +27,8 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap-datetimepicker.min.css') }}">
     <!-- COLORPICKER-->
     <link rel="stylesheet" href="{{ asset('css/bootstrap-colorpicker.css') }}">
+    <!-- TRUMBOWYG-->
+    <link rel="stylesheet" href="{{ asset('plugins/trumbowyg/ui/trumbowyg.css') }}">
     <!-- SELECT2-->
     <link rel="stylesheet" href="{{ asset('css/select2.css') }}">
     <link rel="stylesheet" href="{{ asset('css/select2-bootstrap.css') }}">
@@ -80,9 +82,9 @@
     <script src="{{ asset('js/bootstrap-slider.min.js') }}"></script>
     <!-- INPUT MASK-->
     <script src="{{ asset('js/jquery.inputmask.bundle.js') }}"></script>
-    <!-- WYSIWYG-->
-    <script src="{{ asset('js/bootstrap-wysiwyg.js') }}"></script>
-    <script src="{{ asset('js/jquery.hotkeys.js') }}"></script>
+    <!-- TRUMBOWYG-->
+    <script src="{{ asset('plugins/trumbowyg/trumbowyg.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('plugins/trumbowyg//langs/es.min.js') }}"></script>
     <!-- MOMENT JS-->
     <script src="{{ asset('js/moment-with-locales.min.js') }}"></script>
     <!-- DATETIMEPICKER-->
@@ -97,6 +99,8 @@
     <script src="{{ asset('js/parsley.min.js') }}"></script>
     <!-- =============== APP SCRIPTS ===============-->
     <script src="{{ asset('js/app.js')}}"></script>
+
+    @yield('js')
 </body>
 
 </html>
