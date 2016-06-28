@@ -23,7 +23,7 @@
                               <span class="pull-left">
                                  <small class="mr-sm">Por: <a href="{{ route('Admin.users.show', $news->User->id) }}">{{ $news->User->name }}</a>
                                  </small>
-                                 <small class="mr-sm">May 03, 2015</small>
+                                 <small class="mr-sm">{{ $news->created_at->toFormattedDateString() }}</small>
                               </span>
                             </p>
                         </div>

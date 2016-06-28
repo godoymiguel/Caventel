@@ -185,15 +185,15 @@
                                                     </div>
                                                     <div class="feature-content">
                                                         <h3 class="h3-body-title blog-title">
-                                                            <a href="{{ route('user.shownews', $item->id) }}">{{ $item->title }}</a>
+                                                            <a href="{{ route('user.shownews', $item->id) }}">{!! str_limit($item->title, 20) !!}</a>
                                                         </h3>
                                                         <p>
-                                                            Caventel Estrena Nueva Pagina[...]
+                                                            {!! str_limit($item->body,100) !!}
                                                         </p>
                                                     </div>
                                                     <div class="feature-details">
                                                         <i class="icon-calendar"></i>
-                                                        <span>1 Mayo 2016</span>
+                                                        <span>{{ $item->created_at->toFormattedDateString() }}</span>
                                                         <span class="details-seperator"></span>
                                                         <a href="{{ route('user.shownews', $item->id) }}"><i
                                                                     class="icon-news"></i><span>Ver Más</span></a>

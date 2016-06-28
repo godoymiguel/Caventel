@@ -45,4 +45,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(News::class);
     }
+
+    public function scopeSearch($query, $name)
+    {
+        return $query->where('name', 'LIKE', "%$name%");
+    }
 }

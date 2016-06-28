@@ -21,6 +21,9 @@ class CreateUserProfilesTable extends Migration
             $table->string('address');
             $table->boolean('active')->default(true);
             $table->string('avatar');
+            $table->string('emergency_name');
+            $table->string('emergency_phone');
+            $table->string('emergency_address');
 
             $table->foreign('user_id')
                 ->references('id')

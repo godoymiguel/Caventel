@@ -26,7 +26,7 @@
                                     <strong>Cuerpo</strong>
                                 </th>
                                 <th style="width:130px" class="text-right">
-                                    <strong>Actions</strong>
+                                    <strong>Acción</strong>
                                 </th>
                             </tr>
                             </thead>
@@ -34,21 +34,22 @@
                             @foreach($news as $item )
                                 <tr>
                                     <td>{{ $item->title }}</td>
-                                    <td>{{ $item->created_at }}</td>
+                                    <td>{{ $item->created_at->diffForHumans() }}</td>
                                     <td><a href="{{ route('Admin.users.show', $item->User->id) }}">{{ $item->User->name }}</a>
                                     </td>
-                                    <td>{!! $item->body !!}</td>
+
+                                    <td>{{ str_limit( $item->body, 100) }}</td>
                                     <td class="text-right">
                                         <a type="button" href="{{ route('Admin.news.edit', $item->id) }}"
-                                           class="btn btn-sm btn-default">
+                                           class="btn btn-sm btn-default" title="Editar Noticia">
                                             <em class="fa fa-pencil"></em>
                                         </a>
                                         <a type="button" href="{{ route('Admin.news.destroy', $item->id) }}"
-                                           class="btn btn-sm btn-danger" onclick="return confirm('¿Seguro Desea Eliminar la Noticia?')">
+                                           class="btn btn-sm btn-danger" title="Eliminar Noticia" onclick="return confirm('¿Seguro Desea Eliminar la Noticia?')">
                                             <em class="fa fa-trash"></em>
                                         </a>
-                                        <a type="button" class="btn btn-sm btn-success" href="{{ route('Admin.news.show', $item->id) }}">
-                                            <em class="fa fa-check"></em>
+                                        <a type="button" class="btn btn-sm btn-success" href="{{ route('Admin.news.show', $item->id) }}" title="Ver Noticia">
+                                            <em class="fa fa-arrow-right"></em>
                                         </a>
                                     </td>
                                 </tr>

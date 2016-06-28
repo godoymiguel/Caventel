@@ -5985,7 +5985,11 @@ ul.ColVis_collection > li > label input[type=checkbox]:checked + span, ul.ColVis
     width: 3%
 }
 
-#table-ext-1 th:nth-child(2), #table-ext-1 th:nth-child(8), #table-ext-1 th:nth-child(9), #table-ext-2 th:nth-child(1) {
+#table-ext-1 th:nth-child(8) {
+    width: 8%
+}
+
+#table-ext-1 th:nth-child(2), #table-ext-1 th:nth-child(9), #table-ext-2 th:nth-child(1) {
     width: 5%
 }
 

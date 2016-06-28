@@ -157,6 +157,7 @@ return [
         Caventel\Providers\RouteServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        Caventel\Providers\ComposerServiceProvider::class,
 
     ],
 

@@ -34,12 +34,11 @@
                                           class="form-control body-content" placeholder="Escribe Algo...">{{ $news->body }}</textarea>
                             </div>
                             <div class="clearfix">
-                                {{--}}<div class="pull-left">
+                                <div class="pull-left">
                                     <label class="control-label">Imagen de la Noticia</label>
                                     <input type="file" name="img" data-classbutton="btn btn-default"
-                                           data-classinput="form-control inline" class="form-control filestyle">
+                                           data-classinput="form-control inline" class="form-control filestyle" value="{{ $news->img }}">
                                 </div>
-                                --}}
                                 <div class="pull-right"><br>
                                     <button type="submit" class="btn btn-primary m-t-10">
                                         <em class="fa fa-check fa-fw"></em>Guardar

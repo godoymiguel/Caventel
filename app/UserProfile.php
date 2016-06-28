@@ -9,7 +9,7 @@ class UserProfile extends Model
     protected $table = 'user_profiles';
 
     protected $fillable = [
-        'user_ci', 'birthdate', 'sex', 'phone', 'address', 'active', 'avatar'
+        'user_id', 'birthdate', 'sex', 'phone', 'address', 'active', 'avatar','emergency_name','emergency_phone','emergency_address'
     ];
 
     public function User()

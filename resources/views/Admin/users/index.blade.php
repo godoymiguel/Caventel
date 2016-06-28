@@ -24,7 +24,7 @@
                     <th>Correo</th>
                     <th>Tipo</th>
                     <th>Ultimo Ingreso</th>
-                    <th>Consultar</th>
+                    <th>Acción</th>
 
                 </tr>
                 </thead>
@@ -45,12 +45,27 @@
                                 <div class="label label-purple">{{ $user->type }}</div>
                             @elseif($user->type == 'admin')
                                 <div class="label label-danger">{{ $user->type }}</div>
+                            @elseif($user->type == 'secretary')
+                                <div class="label bg-primary">{{ $user->type }}</div>
                             @else
                                 <div class="label label-green">{{ $user->type }}</div>
                             @endif
                         </td>
                         <td>Hoy</td>
-                        <td><a href="" class="btn btn-info fa fa-arrow-right"></a></td>
+                        <td>
+                            <a type="button" href="{{ route('Admin.user_profiles.edit', $user->id) }}"
+                               class="btn btn-sm btn-default" title="Editar Cuenta">
+                                <em class="fa fa-pencil"></em>
+                            </a>
+                            <a type="button" href="{{ route('Admin.user_profiles.create', $user->id) }}"
+                               class="btn btn-sm btn-info" title="Crear Perfil Asociado">
+                                <em class="fa fa-user"></em>
+                            </a>
+                            <a type="button" class="btn btn-sm btn-success"
+                               href="{{ route('Admin.users.show', $user->id) }}" title="Ver Usuario">
+                                <em class="fa fa-arrow-right"></em>
+                            </a>
+                        </td>
                     </tr>
                 @endforeach
                 </tbody>
@@ -61,12 +76,14 @@
         <div class="panel-footer">
             <div class="row">
                 <div class="col-lg-2">
+                    {!! Form::open( array('route'=> 'Admin.users.index', 'method' => 'GET') ) !!}
                     <div class="input-group">
-                        <input type="text" placeholder="Buscar Usuario" class="input-sm form-control">
-                           <span class="input-group-btn">
-                              <button type="button" class="btn btn-sm btn-default">Buscar</button>
+                        <input type="text" name="name" placeholder="Buscar Usuario" class="input-sm form-control">
+                           <span class="input-group-btn" id="search">
+                              <button type="submit" class="btn btn-sm btn-default">Buscar</button>
                            </span>
                     </div>
+                    {!! Form::close() !!}
                 </div>
                 <div class="col-lg-8"></div>
                 <div class="col-lg-2">

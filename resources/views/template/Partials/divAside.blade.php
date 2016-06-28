@@ -18,9 +18,9 @@
                             </div>
                             <!-- Name and Job-->
                             <div class="user-block-info">
-                               {{-- <span class="user-block-name">Hola, {{ Auth::user()->name }}</span>
+                               <span class="user-block-name">Hola, {{ Auth::user()->name }}</span>
                                 <span class="user-block-role">{{ Auth::user()->type }}</span>
-                            --}}</div>
+                            </div>
                         </div>
                     </div>
                 </li>
@@ -30,7 +30,7 @@
                     <span data-localize="sidebar.heading.HEADER">Menu de Navegación</span>
                 </li>
                 <li class=" ">
-                    <a href="{{ route('admin.index') }}" title="Incio Administrador">
+                    <a href="{{ route('admin.index') }}" title="Inicio Administrador">
                         <em class="icon-home"></em>
                         <span data-localize="sidebar.nav.WIDGETS">Inicio</span>
                     </a>
@@ -175,7 +175,7 @@
                             </a>
                         </li>
                         <li class=" ">
-                            <a href="{{ route('Admin.user_profiles.create') }}" title="Actualizar">
+                            <a href="" title="Actualizar">
                                 <span>Actualizar Datos</span>
                             </a>
                         </li>
@@ -185,12 +185,12 @@
                             </a>
                         </li>
                         <li class=" ">
-                            <a href="#" title="Retirar">
+                            <a href="" title="Retirar">
                                 <span>Retirar</span>
                             </a>
                         </li>
                         <li class=" ">
-                            <a href="#" title="Reintegrar">
+                            <a href="" title="Reintegrar">
                                 <span>Reintegrar</span>
                             </a>
                         </li>

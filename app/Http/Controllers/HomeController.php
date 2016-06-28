@@ -44,9 +44,8 @@ class HomeController extends Controller
     public function News()
     {
         $news = News::orderBy('created_at','DESC')->paginate(10);
-        $news_last = News::orderBy('created_at','DESC')->paginate(10);
-
-        return view('User.News')->with('news', $news)->with('news_last',$news_last);
+        
+        return view('User.News')->with('news', $news);
     }
 
     public function ShowNews($id)

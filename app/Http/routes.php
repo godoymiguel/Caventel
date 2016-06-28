@@ -11,12 +11,20 @@
 |
 */
 
-Route::group(['middleware' => ['web'], 'prefix' => 'Admin'], function(){
+Route::group(['middleware' => ['web','auth'], 'prefix' => 'Admin'], function(){
 
     Route::resource('users', 'UsersController');
 
     Route::resource('user_profiles', 'UserProfileController');
-    
+    Route::get('user_profiles/{id}/create', [
+        'uses' => 'UserProfileController@create',
+        'as' => 'Admin.user_profiles.create'
+    ]);
+    Route::post('user_profiles/{id}', [
+        'uses' => 'UserProfileController@store',
+        'as' => 'Admin.user_profiles.store'
+    ]);
+
     Route::resource('news','NewsController');
     Route::get('news/{id}/destroy', [
         'uses' => 'NewsController@destroy',
@@ -40,16 +48,8 @@ Route::get('Inactivo', function () {
     return view('auth.lock');
 });
 
-Route::get('Ingreso', function () {
-    return view('Admin.Register');
-});
-
 Route::get('recover', function () {
     return view('auth.recover');
-});
-
-Route::get('welcome', function () {
-    return view('welcome');
 });
 
 /*

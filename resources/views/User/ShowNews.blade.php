@@ -37,7 +37,7 @@
             <div class="body-wrapper">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-12 col-sm-12">
+                        <div class="col-md-9 col-sm-9">
 
 
                             <!-- Blog Post -->
@@ -67,7 +67,7 @@
 
                                         <!-- Date -->
                                         <div class="blog-post-details-item blog-post-details-item-left icon-calendar">
-                                            1 Mayo 2016
+                                            {{ $news->created_at->toFormattedDateString() }}
                                         </div>
                                         <!-- Read More -->
                                         <div class="blog-post-details-item blog-post-details-item-right">
@@ -88,6 +88,10 @@
 
 
                     </div>
+
+                        <div class="col-md-3 col-sm-3">
+                            @include('template.Partials.NewsAside')
+                        </div>
                 </div>
             </div>
         </div>

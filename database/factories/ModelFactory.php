@@ -17,9 +17,19 @@ $factory->define(Caventel\User::class, function (Faker\Generator $faker) {
         'name' => $faker->name,
         'last_name'=> $faker->lastName,
         'email'=> $faker->email,
-        'password' => \Hash::make('1234'),
+        'password' => bcrypt('1234'),
         'type' => $faker->randomElement(['user']),
         'remember_token' => str_random(10)
+
+    ];
+});
+
+$factory->define(Caventel\News::class, function (Faker\Generator $faker) {
+    return [
+        'user_id' => '1',
+        'title' => $faker->company,
+        'body'=> $faker->realText(5000,5),
+        'img'=> 'ingsistemas.jpg'
 
     ];
 });

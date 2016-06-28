@@ -16,8 +16,16 @@ use Caventel\Http\Requests\UpdateNewsRequest;
 
 use Laracasts\Flash\Flash;
 
+use Carbon\Carbon;
+
 class NewsController extends Controller
 {
+
+    public function __construct()
+    {
+        Carbon::setLocale('es');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -55,14 +63,14 @@ class NewsController extends Controller
 
         if ($request->file('img')){
             $file = $request->file('img');
-            $name = 'News_' . time() . '.' . $file->getClientOriginalExtension();
+            $name = 'News_' . $request->title . '_' . time() . '.' . $file->getClientOriginalExtension();
             $path = public_path() . '/img/news/';
             $file->move($path, $name);
         }
 
         $news = new News($request->all());
         $news->body = $request->body;
-        $news->user_id = '1'; //\Auth::User->ci;
+        $news->user_id = \Auth::User()->id;
         $news->img = $name;
         $news->save();
        // dd($news);
@@ -109,6 +117,14 @@ class NewsController extends Controller
      */
     public function update(UpdateNewsRequest $request, $id)
     {
+        if ($request->file('img')){
+            $file = $request->file('img');
+            $request->img = $name = 'News_' . $request->title . '_' . time() . '.' . $file->getClientOriginalExtension();
+            $path = public_path() . '/img/news/';
+            $file->move($path, $name);
+        }
+
+
         $news = News::find($id);
         $news->fill($request->all());
         $news->save();

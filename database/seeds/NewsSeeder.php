@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class NewsSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +11,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-       $this->call(AdminTableSeeder::class);
-       $this->call(NewsSeeder::class);
+        factory(Caventel\News::class, 20)->create();
     }
 }
