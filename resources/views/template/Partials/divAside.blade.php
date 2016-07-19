@@ -19,7 +19,15 @@
                             <!-- Name and Job-->
                             <div class="user-block-info">
                                <span class="user-block-name">Hola, {{ Auth::user()->name }}</span>
-                                <span class="user-block-role">{{ Auth::user()->type }}</span>
+                                @if(Auth::user()->type == 'superadmin')
+                                    <span class="user-block-role">Super Administrador</span>
+                                    @elseif(Auth::user()->type == 'admin')
+                                        <span class="user-block-role">Directivo</span>
+                                        @elseif(Auth::user()->type == 'secretary')
+                                            <span class="user-block-role">Secretaria</span>
+                                            @else
+                                                <span class="user-block-role">Asociado</span>
+                                @endif
                             </div>
                         </div>
                     </div>

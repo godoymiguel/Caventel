@@ -188,7 +188,7 @@
                                                             <a href="{{ route('user.shownews', $item->id) }}">{!! str_limit($item->title, 20) !!}</a>
                                                         </h3>
                                                         <p>
-                                                            {!! str_limit($item->body,100) !!}
+                                                            {!! str_limit(strip_tags($item->body),100) !!}
                                                         </p>
                                                     </div>
                                                     <div class="feature-details">

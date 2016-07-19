@@ -38,7 +38,7 @@
                                     <td><a href="{{ route('Admin.users.show', $item->User->id) }}">{{ $item->User->name }}</a>
                                     </td>
 
-                                    <td>{{ str_limit( $item->body, 100) }}</td>
+                                    <td>{{ str_limit( strip_tags($item->body), 100) }}</td>
                                     <td class="text-right">
                                         <a type="button" href="{{ route('Admin.news.edit', $item->id) }}"
                                            class="btn btn-sm btn-default" title="Editar Noticia">

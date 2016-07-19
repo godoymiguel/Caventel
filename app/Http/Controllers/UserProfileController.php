@@ -85,7 +85,11 @@ class UserProfileController extends Controller
      */
     public function show($id)
     {
+        $users = User::find($id);
+        $users->UserProfile;
+        //$user_profiles = UserProfile::find();
 
+        dd($users);
     }
 
     /**
@@ -97,6 +101,7 @@ class UserProfileController extends Controller
     public function edit($id)
     {
         $users = User::find($id);
+        $users->UserProfile;
         //$user_profiles = UserProfile::find();
 
         dd($users);

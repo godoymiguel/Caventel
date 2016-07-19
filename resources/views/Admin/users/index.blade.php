@@ -62,7 +62,7 @@
                                 <em class="fa fa-user"></em>
                             </a>
                             <a type="button" class="btn btn-sm btn-success"
-                               href="{{ route('Admin.users.show', $user->id) }}" title="Ver Usuario">
+                               href="{{ route('Admin.user_profiles.show', $user->id) }}" title="Ver Usuario">
                                 <em class="fa fa-arrow-right"></em>
                             </a>
                         </td>

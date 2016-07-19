@@ -58,7 +58,7 @@
                                 </h2>
 
                                 <div class="blog-post-body">
-                                    {!! str_limit($item->body,500) !!}
+                                    {!! str_limit( strip_tags($item->body),500) !!}
                                 </div>
 
                                 <div class="blog-post-details">
