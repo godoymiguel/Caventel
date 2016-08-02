@@ -1,6 +1,6 @@
 @extends('template.Partials.divAdmin')
 
-@section('title','Actualizar Perfil de Usuario -')
+@section('title','Crear Perfil de Usuario -')
 
 @section('content')
 
@@ -16,7 +16,7 @@
                 @endforeach
             </ul>
         </div>
-        @endif
+    @endif
                 <!-- Page content-->
         <div class="content-wrapper">
             <h3>Crear Perfil del Usuario {{ $users->name }} {{ $users->last_name}}
@@ -27,7 +27,7 @@
                             <!-- START panel-->
                     <div class="panel panel-default">
                         <div class="panel-body">
-
+                            <legend>Datos Personales</legend>
                             <div class="form-group mb">
                                 <label class="control-label">Fecha de Nacimiento</label>
                                 <input type="date" name="birthdate'" class="form-control">
@@ -57,8 +57,7 @@
                                 <input type="file" name="avatar" data-classbutton="btn btn-default"
                                        data-classinput="form-control inline" class="form-control filestyle">
                             </div>
-                            <hr>
-                            <label class="control-label">Contacto de Emergencia</label>
+                            <legend>Contacto de Emergencia</legend>
                             <div class="form-group">
                                 <label class="control-label">Nombre</label>
                                 <input type="text" name="emergency_name" class="form-control" placeholder="Persona Cercana">
@@ -81,10 +80,17 @@
 
                                 <div class="pull-right">
                                     <button type="submit" class="btn btn-primary fa-check"> Crear Perfil</button>
-                                    <a type="button" href="{{ route('Admin.users.index') }}"
-                                       class="btn btn-danger m-t-10">
-                                        <em class="fa fa-close fa-fw"></em>Cancelar
-                                    </a>
+                                    @if($users->type == 'user')
+                                        <a type="button" href="{{ route('aaa:dmin.index') }}"
+                                           class="btn btn-danger m-t-10">
+                                            <em class="fa fa-close fa-fw"></em>Cancelar
+                                        </a>
+                                    @else
+                                        <a type="button" href="{{ route('Admin.users.index') }}"
+                                           class="btn btn-danger m-t-10">
+                                            <em class="fa fa-close fa-fw"></em>Cancelar
+                                        </a>
+                                    @endif
                                 </div>
                             </div>
                         </div>

@@ -42,13 +42,13 @@
                         <td>{{ $user->email }}</td>
                         <td>
                             @if($user->type == 'superadmin')
-                                <div class="label label-purple">{{ $user->type }}</div>
+                                <div class="label label-purple">Super Administrador</div>
                             @elseif($user->type == 'admin')
-                                <div class="label label-danger">{{ $user->type }}</div>
+                                <div class="label label-danger">Directivo</div>
                             @elseif($user->type == 'secretary')
-                                <div class="label bg-primary">{{ $user->type }}</div>
+                                <div class="label bg-primary">Secretaria</div>
                             @else
-                                <div class="label label-green">{{ $user->type }}</div>
+                                <div class="label label-green">Asociado</div>
                             @endif
                         </td>
                         <td>Hoy</td>

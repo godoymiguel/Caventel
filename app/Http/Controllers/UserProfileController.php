@@ -9,6 +9,7 @@ use Caventel\Http\Requests;
 use Caventel\UserProfile;
 
 use Caventel\User;
+use Illuminate\Support\Facades\Auth;
 use Laracasts\Flash\Flash;
 
 class UserProfileController extends Controller
@@ -31,8 +32,18 @@ class UserProfileController extends Controller
     public function create($id)
     {
         $users = User::find($id);
-        //dd($users);
-        return view('Admin.userProfiles.create')->with('users',$users);
+        if (!$users->UserProfile)
+        {
+
+            return view('Admin.userProfiles.create')->with('users',$users);
+        }
+
+        else
+        {
+            Flash::warning(Auth::user()->name . ' ¡No Puedes Crear Un Perfil Que Ya Existe!');
+            return view('Admin.userProfiles.show')->with('user_profiles', $users);
+        }
+
     }
 
     /**
@@ -85,11 +96,19 @@ class UserProfileController extends Controller
      */
     public function show($id)
     {
-        $users = User::find($id);
-        $users->UserProfile;
-        //$user_profiles = UserProfile::find();
+        $user_profiles = User::find($id);
+        if (!$user_profiles->UserProfile)
+        {
+            Flash::error('¡El Perfil de ' . $user_profiles->name . ' No Esta Completo!, Debe Crearlo Para ver su Información');
+            return view('Admin.userProfiles.create')->with('users', $user_profiles);
+        }
 
-        dd($users);
+        else
+        {
+            return view('Admin.userProfiles.show')->with('user_profiles', $user_profiles);
+        }
+
+
     }
 
     /**
@@ -100,14 +119,19 @@ class UserProfileController extends Controller
      */
     public function edit($id)
     {
-        $users = User::find($id);
-        $users->UserProfile;
-        //$user_profiles = UserProfile::find();
+        $user_profiles = User::find($id);
+        if (!$user_profiles->UserProfile)
+        {
+            Flash::error('¡El Perfil de ' . $user_profiles->name . ' No Esta Completo!, Debe Crearlo Para Editar su Información');
+            return view('Admin.userProfiles.create')->with('users', $user_profiles);
+        }
 
-        dd($users);
-        /*$news = News::find($id);
+        else
+        {
+            return view('Admin.userProfiles.edit')->with('user_profiles', $user_profiles);
+        }
 
-        return view('Admin.news.edit')->with('news', $news);*/
+
     }
 
     /**
@@ -119,7 +143,7 @@ class UserProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        dd($request);
     }
 
     /**

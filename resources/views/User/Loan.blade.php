@@ -33,34 +33,76 @@
             </div>
         </div>
 
-        <div class="content-wrapper hide-until-loading"><div class="body-wrapper">
-                <div class="container">
+        <div class="content-wrapper hide-until-loading">
+            <div class="body-wrapper">
+                <div class="section-content section-tabs full-tabs">
+                    <div class="tab-container">
+                        <div class="section-tab-arrow"></div>
+                        <div class="section-etabs-container">
+                            <ul class="section-etabs">
+                                <li class="tab active">
+                                    <a href="#tabc1">Personal</a>
+                                </li>
+                                <li class="tab">
+                                    <a href="#tabc2">Hipotecario</a>
+                                </li>
+                                <li class="tab">
+                                    <a href="#tabc3">Vehicular</a>
+                                </li>
+                                <li class="tab">
+                                    <a href="#tabc4">Retiro de Haberes</a>
+                                </li>
+                            </ul>
+                        </div>
 
-                    <div class="row">
+                        <div class="tab-content">
 
-                        <div class="col-md-3 col-sm-3">
-                            <div class="list-group">
-                                <a href="#" class="list-group-item"> Personal </a>
-                                <a href="#" class="list-group-item "> Hipotecario </a>
-                                <a href="#" class="list-group-item "> Vehicular </a>
-                                <a href="#" class="list-group-item "> Retiro de Haberes </a>
+                            <div id="tabc1">
+                                <div class="section-content">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-6 col-sm-6">
+                                                <h2 class="h2-section-title">Prestamos Personales</h2>
+                                                <h3 class="h3-section-info">Lorem ipsum dolor sit amet, in pri offendit
+                                                    ocurreret. Vix sumo ferri an. pfs adodio fugit delenit ut qui.
+                                                    Omittam suscipiantur ex vel,ex audiam intellegat gfIn labitur
+                                                    discere eos, nam an feugiat voluptua.</h3>
+
+                                                <h2 class="h2-section-title">Prestamos con Garantias</h2>
+                                                <h3 class="h3-section-info">Lorem ipsum dolor sit amet, in pri offendit
+                                                    ocurreret. Vix sumo ferri</h3>
+                                            </div>
+
+
+                                            <div class="col-md-6 col-sm-6">
+                                                <h2 class="h2-section-title">Los Prestamos a:</h2>
+                                                <h3 class="h3-section-info"><strong>Corto plazo</strong>, serán aquellos cuyo plazo no
+                                                    sea mayor de
+                                                    12 meses.</h3>
+                                                <h3 class="h3-section-info"><strong>Mediano plazo</strong>, serán aquellos cuyo plazo se
+                                                    encuentre entre 13 meses a 36 meses. </h3>
+                                                <h3 class="h3-section-info"><strong>Largo plazo</strong>, serán
+                                                    aquellos cuyo plazo se encuentren entre 37 meses a 60 meses. </h3>
+                                            </div>
+                                        </div>
+                                        <a type="button" href="{{ asset('pdf/ESTATUTOSCAVENTEL2014.pdf') }}"
+                                                onclick="window.open(this.href); return false;" class="btn btn-lg">Recaudo y Planilla de Requisitos</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="tabc2">
 
                             </div>
+                            <div id="tabc3">
+
+                            </div>
+                            <div id="tabc4">
+
+                            </div>
+
                         </div>
-
-                        <div class="col-md-9 col-sm-9">
-                            <h2 class="h2-section-title">Prestamo Personal</h2>
-                            <p class="p-section-info">
-
-                            </p>
-
-                        </div>
-
                     </div>
-
-
                 </div>
-
             </div>
         </div><!--.content-wrapper end -->
         @include('template.Partials.divFooterUser')

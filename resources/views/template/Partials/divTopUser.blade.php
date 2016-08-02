@@ -101,7 +101,7 @@
                                                     Créditos
                                                 </span>
                             </a>
-                            <ul>
+                            {{--<ul>
                                 <li>
                                     <a href="">Personal </a>
                                 </li>
@@ -115,6 +115,7 @@
                                     <a href="#">Retiro</a>
                                 </li>
                             </ul>
+                            --}}
                         </li>
                         <li>
                             <a href="{{ route('user.benefit') }}">
@@ -125,7 +126,7 @@
                                                     Sociales
                                                 </span>
                             </a>
-                            <ul>
+                            {{--<ul>
                                 <li>
                                     <a href="#">Mutuo Auxilio</a>
                                 </li>
@@ -133,6 +134,7 @@
                                     <a href="#">MontePío</a>
                                 </li>
                             </ul>
+                            --}}
                         </li>
                         <li>
                             <a href="{{ route('user.about') }}">

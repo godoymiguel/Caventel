@@ -16,6 +16,9 @@ class CreateUserAssetsTable extends Migration
             $table->increments('id')->unsigned();
             $table->integer('user_id')->unsigned();
             $table->float('monthly_contributions');
+            $table->string('reason');
+            $table->string('payment');
+            $table->string('payment_number');
             $table->float('accumulated');
             $table->float('bloked')->default(0.0);
 

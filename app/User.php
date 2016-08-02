@@ -26,14 +26,14 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function UserProfuile()
+    public function UserProfile()
     {
         return $this->hasOne('Caventel\UserProfile');
     }
 
     public function UserAsset()
     {
-        return $this->hasOne('Caventel\UserAsset');
+        return $this->hasMany('Caventel\UserAsset');
     }
 
     public function UserLoan()

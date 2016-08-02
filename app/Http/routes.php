@@ -30,6 +30,8 @@ Route::group(['middleware' => ['web','auth'], 'prefix' => 'Admin'], function(){
         'uses' => 'NewsController@destroy',
         'as' => 'Admin.news.destroy'
     ]);
+
+    Route::resource('UserAsset', 'UserAssetController');
     
     /*  
 

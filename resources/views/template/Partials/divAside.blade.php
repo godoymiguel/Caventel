@@ -6,7 +6,7 @@
             <ul class="nav">
                 <!-- START user info-->
                 <li class="has-user-block">
-                    <div id="user-block"  >
+                    <div id="user-block">
                         <div class="item user-block">
                             <!-- User picture-->
                             <div class="user-block-picture">
@@ -18,15 +18,15 @@
                             </div>
                             <!-- Name and Job-->
                             <div class="user-block-info">
-                               <span class="user-block-name">Hola, {{ Auth::user()->name }}</span>
+                                <span class="user-block-name">Hola, {{ Auth::user()->name }}</span>
                                 @if(Auth::user()->type == 'superadmin')
                                     <span class="user-block-role">Super Administrador</span>
-                                    @elseif(Auth::user()->type == 'admin')
-                                        <span class="user-block-role">Directivo</span>
-                                        @elseif(Auth::user()->type == 'secretary')
-                                            <span class="user-block-role">Secretaria</span>
-                                            @else
-                                                <span class="user-block-role">Asociado</span>
+                                @elseif(Auth::user()->type == 'admin')
+                                    <span class="user-block-role">Directivo</span>
+                                @elseif(Auth::user()->type == 'secretary')
+                                    <span class="user-block-role">Secretaria</span>
+                                @else
+                                    <span class="user-block-role">Asociado</span>
                                 @endif
                             </div>
                         </div>
@@ -88,18 +88,23 @@
                     <ul id="assets" class="nav sidebar-subnav collapse">
                         <li class="sidebar-subnav-header">Haberes</li>
                         <li class=" ">
-                            <a href="#" title="Consultar Deuda">
-                                <span>Consultar</span>
+                            <a href="" title="Consultar Deuda">
+                                <span>Propios</span>
                             </a>
                         </li>
                         <li class=" ">
-                            <a href="#" title="Solicitar Préstamo">
-                                <span>Solicitar Préstamo</span>
+                            <a href="{{ route('Admin.UserAsset.create') }}" title="Solicitar Préstamo">
+                                <span>Ingresar Aporte</span>
                             </a>
                         </li>
                         <li class=" ">
                             <a href="" title="Pagar Préstamo">
-                                <span>Pagar Préstamo</span>
+                                <span>Intereses Generados</span>
+                            </a>
+                        </li>
+                        <li class=" ">
+                            <a href="" title="Generales">
+                                <span>Generales</span>
                             </a>
                         </li>
                     </ul>
@@ -178,30 +183,37 @@
                     <ul id="user" class="nav sidebar-subnav collapse">
                         <li class="sidebar-subnav-header">Usuarios</li>
                         <li class=" ">
-                            <a href="{{ route('Admin.users.index') }}" title="Consultar">
-                                <span>Consultar</span>
+                            <a href="{{ route('Admin.user_profiles.show', Auth::user()->id) }}" title="Consultar">
+                                <span>Perfil</span>
                             </a>
                         </li>
                         <li class=" ">
-                            <a href="" title="Actualizar">
+                            <a href="{{ route('Admin.user_profiles.edit', Auth::user()->id) }}" title="Actualizar">
                                 <span>Actualizar Datos</span>
                             </a>
                         </li>
-                        <li class=" ">
-                            <a href="{{ route('Admin.users.create') }}" title="Registrar">
-                                <span>Registrar</span>
-                            </a>
-                        </li>
-                        <li class=" ">
-                            <a href="" title="Retirar">
-                                <span>Retirar</span>
-                            </a>
-                        </li>
-                        <li class=" ">
-                            <a href="" title="Reintegrar">
-                                <span>Reintegrar</span>
-                            </a>
-                        </li>
+                        @if(Auth::user()->type == 'superadmin')
+                            <li class=" ">
+                                <a href="{{ route('Admin.users.index') }}" title="Consultar">
+                                    <span>Todos</span>
+                                </a>
+                            </li>
+                            <li class=" ">
+                                <a href="{{ route('Admin.users.create') }}" title="Registrar">
+                                    <span>Registrar</span>
+                                </a>
+                            </li>
+                            <li class=" ">
+                                <a href="" title="Retirar">
+                                    <span>Retirar</span>
+                                </a>
+                            </li>
+                            <li class=" ">
+                                <a href="" title="Reintegrar">
+                                    <span>Reintegrar</span>
+                                </a>
+                            </li>
+                        @endif
                     </ul>
                 </li>
                 <li class=" ">
