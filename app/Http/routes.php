@@ -32,6 +32,8 @@ Route::group(['middleware' => ['web','auth'], 'prefix' => 'Admin'], function(){
     ]);
 
     Route::resource('UserAsset', 'UserAssetController');
+
+    Route::resource('HeritageAsset', 'HeritageAssetController');
     
     /*  
 

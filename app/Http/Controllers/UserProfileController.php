@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use Caventel\Http\Requests;
 
+use Caventel\Http\Requests\StoreUserProfileRequest;
+
 use Caventel\UserProfile;
 
 use Caventel\User;
@@ -52,7 +54,7 @@ class UserProfileController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $id)
+    public function store(StoreUserProfileRequest $request, $id)
     {
         $users = User::find($id);
 

@@ -6,7 +6,9 @@
         <!-- Page content-->
     <div class="content-wrapper">
 
-        <h3>{{$user_profiles->name}}
+        <h3><a type="button" class="btn btn-primary pull-right">
+                <em class="fa fa-print fa-fw mr-sm"></em>Imprimir</a>
+            {{$user_profiles->name}}
             <small>Perfil de Usuario</small>
         </h3>
         <div class="row">
@@ -138,7 +140,11 @@
                     <div class="panel-footer">
                         <div class="clearfix">
                             <div class="pull-right">
-                                <a href="{{ route('Admin.users.index') }}"  type="button" class="btn btn-green btn-sm">Volver a Usuarios</a>
+                                @if(Auth::User()->type == 'user')
+                                    <a href="{{ route('admin.index') }}"  type="button" class="btn btn-green btn-sm">Volver</a>
+                                @else
+                                    <a href="{{ route('Admin.users.index') }}"  type="button" class="btn btn-green btn-sm">Volver a Usuarios</a>
+                                @endif
                             </div>
                         </div>
                     </div>

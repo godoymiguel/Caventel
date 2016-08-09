@@ -6,9 +6,20 @@ use Illuminate\Http\Request;
 
 use Caventel\Http\Requests;
 
+use Caventel\Http\Requests\StoreUserAssetRequest;
+
+use Caventel\Http\Controllers\Auth\AuthController;
+
 use Caventel\UserAsset;
 
+use Caventel\User;
+
+use Caventel\UserProfile;
+
+use Illuminate\Support\Facades\Auth;
 use Laracasts\Flash\Flash;
+
+use Carbon\Carbon;
 
 class UserAssetController extends Controller
 {
@@ -19,7 +30,28 @@ class UserAssetController extends Controller
      */
     public function index()
     {
+      /*  SELECT t1.* FROM user_assets t1
+  JOIN (SELECT user_id, MAX(created_at) timestamp FROM user_assets GROUP BY user_id) t2 ON
+  t1.user_id = t2.user_id
+  AND
+  t1.created_at = t2.timestamp
+  ORDER BY t1.created_at DESC;
+        */
+/*
+        $userAsset = \DB::table('user_assets as t1')
+            ->join('(SELECT user_id, MAX(created_at) timestamp FROM user_assets GROUP BY user_id) as t2', function($join){
+                $join->on('t1.user_id', '=', 't2.user_id')
+                    ->orOn('t1.created_at', '=', 't2.timestamp');
+            })->orderBy('t1.created_at', 'DESC')
+            ->get();*/
+        //dd($userAsset);
+       $userAsset= UserAsset::orderBy('id', 'DESC')->groupBy('user_id')->paginate(10);
+       $userAsset->each(function($userAsset){
+            $userAsset->User;
+        });
 
+        //dd($userAsset);
+        return view('Admin.UserAsset.index')->with('userAssets', $userAsset);
     }
 
     /**
@@ -38,26 +70,41 @@ class UserAssetController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreUserAssetRequest $request)
     {
         $userAsset = new UserAsset($request->all());
         $userAsset->monthly_contributions = $request->monthly_contributions * 1.00;
         $userAsset->reason = 'Aporte Mensual';
-        $userAsset->user_id = \Auth::User()->id;
-        if ($userAssetC = UserAsset::find($userAsset->user_id)){
-            $userAsset->accumulated = $userAssetC->accumulated + $userAsset->monthly_contributions;
-            $userAsset->bloked = '0.00';
+        $userAsset->user_id = Auth::User()->id;
+        if ((UserAsset::where('user_id', $userAsset->user_id)->count()) > 0){
+            //dd('Entre en el If');
+            $userAssetAc = UserAsset::where('user_id', $userAsset->user_id)->orderby('id', 'desc')->take(1)->get();
+            foreach($userAssetAc as $userAssetA ){
+                $accumulated = $userAssetA->accumulated + $userAsset->monthly_contributions;
+                $bloked = '0.00';
+
+            }
+
+
         }
         else{
-            $userAsset->accumulated = $userAsset->monthly_contributions;
-            $userAsset->bloked = '0.00';
-           // dd($userAsset);
+            //dd('Entre en el Else');
+            $accumulated = $userAsset->monthly_contributions;
+            $bloked = '0.00';
+
         }
+        $userAsset->accumulated = $accumulated;
+        $userAsset->bloked = $bloked;
         $userAsset->save();
 
         Flash::success('¡Guardado con Exito!, Gracias Por Su Aporte');
 
-        return redirect()->route('Admin.UserAsset.index');
+        if (Auth::User()->type == 'user'){
+            return redirect()->route('Admin.UserAsset.show', $userAsset->User->id);
+        }else{
+            return redirect()->route('Admin.UserAsset.index');
+        }
+
     }
 
     /**
@@ -68,7 +115,14 @@ class UserAssetController extends Controller
      */
     public function show($id)
     {
-        //
+        $userAsset = UserAsset::where('user_id',$id)->orderby('created_at', 'desc')->paginate(20);
+
+        $user = User::findOrFail($id);
+        //$user = User::find($id);
+        $user->UserProfile;
+
+        return view('Admin.UserAsset.show')->with('userAsset', $userAsset)->with('user', $user);
+
     }
 
     /**

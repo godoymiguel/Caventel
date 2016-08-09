@@ -87,24 +87,26 @@
                     </a>
                     <ul id="assets" class="nav sidebar-subnav collapse">
                         <li class="sidebar-subnav-header">Haberes</li>
+                        @if(Auth::user()->type == 'superadmin' || Auth::user()->type == 'admin' || Auth::user()->type == 'secretary')
+                            <li class=" ">
+                                <a href="{{ route('Admin.UserAsset.index') }}" title="Generales">
+                                    <span>Generales</span>
+                                </a>
+                            </li>
+                        @endif
                         <li class=" ">
-                            <a href="" title="Consultar Deuda">
+                            <a href="{{ route('Admin.UserAsset.show', Auth::User()->id) }}" title="Propios">
                                 <span>Propios</span>
                             </a>
                         </li>
                         <li class=" ">
-                            <a href="{{ route('Admin.UserAsset.create') }}" title="Solicitar Préstamo">
+                            <a href="{{ route('Admin.UserAsset.create') }}" title="Ingresar Aporte">
                                 <span>Ingresar Aporte</span>
                             </a>
                         </li>
                         <li class=" ">
                             <a href="" title="Pagar Préstamo">
                                 <span>Intereses Generados</span>
-                            </a>
-                        </li>
-                        <li class=" ">
-                            <a href="" title="Generales">
-                                <span>Generales</span>
                             </a>
                         </li>
                     </ul>
@@ -123,7 +125,7 @@
                         </li>
                         <li class=" ">
                             <a href="#" title="Ingresar Donación">
-                                <span>Ingresar Donación</span>
+                                <span>Ingresar Haber</span>
                             </a>
                         </li>
                         <li class=" ">
@@ -182,17 +184,7 @@
                     </a>
                     <ul id="user" class="nav sidebar-subnav collapse">
                         <li class="sidebar-subnav-header">Usuarios</li>
-                        <li class=" ">
-                            <a href="{{ route('Admin.user_profiles.show', Auth::user()->id) }}" title="Consultar">
-                                <span>Perfil</span>
-                            </a>
-                        </li>
-                        <li class=" ">
-                            <a href="{{ route('Admin.user_profiles.edit', Auth::user()->id) }}" title="Actualizar">
-                                <span>Actualizar Datos</span>
-                            </a>
-                        </li>
-                        @if(Auth::user()->type == 'superadmin')
+                        @if(Auth::user()->type == 'superadmin' || Auth::user()->type == 'admin' || Auth::user()->type == 'secretary')
                             <li class=" ">
                                 <a href="{{ route('Admin.users.index') }}" title="Consultar">
                                     <span>Todos</span>
@@ -214,6 +206,16 @@
                                 </a>
                             </li>
                         @endif
+                        <li class=" ">
+                            <a href="{{ route('Admin.user_profiles.show', Auth::user()->id) }}" title="Consultar">
+                                <span>Perfil</span>
+                            </a>
+                        </li>
+                        <li class=" ">
+                            <a href="{{ route('Admin.user_profiles.edit', Auth::user()->id) }}" title="Actualizar">
+                                <span>Actualizar Datos</span>
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <li class=" ">

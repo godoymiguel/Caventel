@@ -80,8 +80,8 @@
 
                                 <div class="pull-right">
                                     <button type="submit" class="btn btn-primary fa-check"> Crear Perfil</button>
-                                    @if($users->type == 'user')
-                                        <a type="button" href="{{ route('aaa:dmin.index') }}"
+                                    @if(Auth::User()->type == 'user')
+                                        <a type="button" href="{{ route('admin.index') }}"
                                            class="btn btn-danger m-t-10">
                                             <em class="fa fa-close fa-fw"></em>Cancelar
                                         </a>

@@ -6,7 +6,10 @@
         <!-- Page content-->
 <div class="content-wrapper">
 
-    <h3>Lista de Usuarios
+    <h3>
+        <a type="button" class="btn btn-primary pull-right">
+            <em class="fa fa-print fa-fw mr-sm"></em>Imprimir</a>
+        Lista de Usuarios
         <small>Consulta de Asociados Registrados en CAVENTEL</small>
     </h3>
 

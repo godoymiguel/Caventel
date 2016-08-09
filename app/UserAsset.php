@@ -16,4 +16,9 @@ class UserAsset extends Model
     {
         return $this->belongsTo('Caventel\User');
     }
+
+    public function scopeSearch($query, $name)
+    {
+        return $query->where('name', 'LIKE', "%$name%");
+    }
 }

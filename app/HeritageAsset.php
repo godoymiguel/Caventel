@@ -9,6 +9,6 @@ class HeritageAsset extends Model
     protected $table = 'heritage_assets';
 
     protected $fillable = [
-        'reason', 'amount',
+        'reason', 'amount', 'payment', 'payment_number', 'accumulated', 'bloked'
     ];
 }
