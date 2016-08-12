@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 
 use Caventel\Http\Requests;
 
+use Caventel\Http\Requests\StoreHeritaAssetRequest;
+
+use Laracasts\Flash\Flash;
+
+use Caventel\HeritageAsset;
+
 class HeritageAssetController extends Controller
 {
     /**
@@ -15,7 +21,17 @@ class HeritageAssetController extends Controller
      */
     public function index()
     {
+        $totalAsset = HeritageAsset::max('accumulated');
+        $available = $totalAsset-0;
+        $totalCapital = $totalAsset + 0;
+
+        $heritageAsset = HeritageAsset::orderBy('id', 'DESC')->paginate(20);
         
+        return view('Admin.HeritageAsset.index')
+            ->with('heritageAssets',$heritageAsset)
+            ->with('totalAsset', $totalAsset)
+            ->with('totalCapital', $totalCapital)
+            ->with('available', $available);
     }
 
     /**
@@ -25,7 +41,7 @@ class HeritageAssetController extends Controller
      */
     public function create()
     {
-        //
+        return view('Admin.HeritageAsset.create');
     }
 
     /**
@@ -34,9 +50,32 @@ class HeritageAssetController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreHeritaAssetRequest $request)
     {
-        //
+        $heritageAsset = new HeritageAsset($request->all());
+        $heritageAsset->amount = $request->amount*1.00;
+        if ((HeritageAsset::orderBy('id')->count()) > 0){
+            //dd('Entre en el If');
+            $assets = HeritageAsset::orderby('id', 'desc')->take(1)->get();
+            foreach($assets as $asset ){
+                $accumulated = $asset->accumulated + $heritageAsset->amount;
+
+
+            }
+
+
+        }
+        else{
+            //dd('Entre en el Else');
+            $accumulated = $heritageAsset->amount;
+
+        }
+        $heritageAsset->accumulated = $accumulated;
+        //dd($heritageAsset);
+        $heritageAsset->save();
+
+        Flash::success('¡Guardado con Exito!, Gracias Por Su Aporte');
+        return redirect()->route('Admin.HeritageAsset.index');
     }
 
     /**
@@ -47,7 +86,9 @@ class HeritageAssetController extends Controller
      */
     public function show($id)
     {
-        //
+        $heritageAsset = HeritageAsset::findOrFail($id);
+
+        return view('Admin.HeritageAsset.show')->with('heritageAsset', $heritageAsset);
     }
 
     /**

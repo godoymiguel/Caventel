@@ -17,6 +17,27 @@
     <div class="panel panel-default">
         <!-- START table-responsive-->
         <div class="table-responsive">
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Total Acumulado</th>
+                            <th>Total Bloqueado</th>
+                            <th>Total Disponible</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="success">
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
             <table class="table table-striped table-bordered table-hover">
                 <thead>
                 <tr>
@@ -58,28 +79,6 @@
                 @endforeach
                 </tbody>
             </table>
-                <div class="panel-body">
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th>Total Acumulado</th>
-                                <th>Total Bloqueado</th>
-                                <th>Total Disponible</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="success">
-                                    <td>Acomodar</td>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
 
         </div>
         <!-- END table-responsive-->

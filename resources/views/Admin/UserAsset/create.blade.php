@@ -37,9 +37,9 @@
                                 <label class="control-label">Forma de Pago</label>
                                 <select name="payment" class="form-control">
                                     <option value=" " >Seleccione Forma de Pago </option>
-                                    <option value="Cheque" >Cheque</option>
-                                    <option value="Deposito" >Deposito</option>
-                                    <option value="Transferencia" >Transferencia</option>
+                                    <option value="check" >Cheque</option>
+                                    <option value="deposi" >Deposito</option>
+                                    <option value="transfer" >Transferencia</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -52,7 +52,7 @@
 
                                 <div class="pull-right">
                                     <button type="submit" class="btn btn-primary fa-check"> Ingresar</button>
-                                    <a type="button" href="{{ route('Admin.users.index') }}" class="btn btn-danger m-t-10">
+                                    <a type="button" href="{{ route('admin.index') }}" class="btn btn-danger m-t-10">
                                         <em class="fa fa-close fa-fw"></em>Cancelar
                                     </a>
                                 </div>

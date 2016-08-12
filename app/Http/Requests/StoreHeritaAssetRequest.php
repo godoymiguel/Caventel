@@ -13,7 +13,7 @@ class StoreHeritaAssetRequest extends Request
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,10 @@ class StoreHeritaAssetRequest extends Request
     public function rules()
     {
         return [
-            //
+            'reason'            => 'required', 
+            'amount'            => 'required|min:1|max:250',
+            'payment'           => 'required|min:1|max:250',
+            'payment_number'    => 'required|min:4|max:250|string'
         ];
     }
 }

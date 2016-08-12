@@ -119,20 +119,22 @@
                     <ul id="heritage" class="nav sidebar-subnav collapse">
                         <li class="sidebar-subnav-header">Patrimonio</li>
                         <li class=" ">
-                            <a href="#" title="Consultar">
+                            <a href="{{ route('Admin.HeritageAsset.index') }}" title="Consultar">
                                 <span>Consultar</span>
                             </a>
                         </li>
-                        <li class=" ">
-                            <a href="#" title="Ingresar Donación">
-                                <span>Ingresar Haber</span>
-                            </a>
-                        </li>
-                        <li class=" ">
-                            <a href="#" title="Ingresar Inmueble">
-                                <span>Ingresar Inmueble</span>
-                            </a>
-                        </li>
+                        @if(Auth::user()->type == 'superadmin' || Auth::user()->type == 'admin' || Auth::user()->type == 'secretary')
+                            <li class=" ">
+                                <a href="{{ route('Admin.HeritageAsset.create') }}" title="Ingresar Donación">
+                                    <span>Ingresar Haber</span>
+                                </a>
+                            </li>
+                            <li class=" ">
+                                <a href="#" title="Ingresar Inmueble">
+                                    <span>Ingresar Inmueble</span>
+                                </a>
+                            </li>
+                        @endif
                     </ul>
                 </li>
                 <li class=" ">

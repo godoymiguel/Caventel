@@ -83,6 +83,8 @@
                                 <th>Fecha</th>
                                 <th>Motivo</th>
                                 <th>Monto (Bs)</th>
+                                <th>Metodo de Pago</th>
+                                <th>Referencia de Pago</th>
                                 <th>Acumulado (Bs)</th>
                                 <th>Bloqueado (Bs)</th>
                                 <th>Disponible (Bs)</th>
@@ -94,9 +96,19 @@
                                     <td>{{ $asset->created_at->toFormattedDateString() }}</td>
                                     <td>{{ $asset->reason }}</td>
                                     <td>{{ $asset->monthly_contributions }}</td>
+                                    <td>
+                                        @if($asset->payment == 'check' )
+                                            <p class="form-control-static">Cheque</p>
+                                        @elseif($asset->payment == 'deposi')
+                                            <p class="form-control-static">Deposito</p>
+                                        @elseif($asset->payment == 'transfer')
+                                            <p class="form-control-static">Transferencia</p>
+                                        @endif
+                                    </td>
+                                    <td>{{ $asset->payment_number }}</td>
                                     <td>{{ $asset->accumulated }}</td>
                                     <td>{{ $asset->bloked }}</td>
-                                    <td>{{ $disp = $asset->accumulated - $asset->bloked }}</td>
+                                    <td>{{ $asset->accumulated - $asset->bloked }}</td>
                                 </tr>
                             @endforeach
                             </tbody>
