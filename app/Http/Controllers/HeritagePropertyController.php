@@ -6,13 +6,13 @@ use Illuminate\Http\Request;
 
 use Caventel\Http\Requests;
 
-use Caventel\Http\Requests\StoreHeritaAssetRequest;
+use Caventel\Http\Requests\StoreHeritaPropertyRequest;
 
 use Laracasts\Flash\Flash;
 
-use Caventel\HeritageAsset;
+use Caventel\HeritageProperty;
 
-class HeritageAssetController extends Controller
+class HeritagePropertyController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,10 +21,9 @@ class HeritageAssetController extends Controller
      */
     public function index()
     {
-        $heritageAsset = HeritageAsset::orderBy('id', 'DESC')->paginate(20);
+        $heritageProperty = HeritageProperty::OrderBy('created_at', 'DESC')->paginate(20);
         
-        return view('Admin.HeritageAsset.index')
-            ->with('heritageAssets',$heritageAsset);
+        return view('Admin.HeritageProperty.index')->with('heritageProperty', $heritageProperty);
     }
 
     /**
@@ -34,7 +33,8 @@ class HeritageAssetController extends Controller
      */
     public function create()
     {
-        return view('Admin.HeritageAsset.create');
+        //
+        return view('Admin.HeritageProperty.create');
     }
 
     /**
@@ -43,32 +43,13 @@ class HeritageAssetController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreHeritaAssetRequest $request)
+    public function store(StoreHeritaPropertyRequest $request)
     {
-        $heritageAsset = new HeritageAsset($request->all());
-        $heritageAsset->amount = $request->amount*1.00;
-        if ((HeritageAsset::orderBy('id')->count()) > 0){
-            //dd('Entre en el If');
-            $assets = HeritageAsset::orderby('id', 'desc')->take(1)->get();
-            foreach($assets as $asset ){
-                $accumulated = $asset->accumulated + $heritageAsset->amount;
+        $heritageProperty = new HeritageProperty($request->all());
+        $heritageProperty->save();
 
-
-            }
-
-
-        }
-        else{
-            //dd('Entre en el Else');
-            $accumulated = $heritageAsset->amount;
-
-        }
-        $heritageAsset->accumulated = $accumulated;
-        //dd($heritageAsset);
-        $heritageAsset->save();
-
-        Flash::success('¡Guardado con Exito!, Gracias Por Su Aporte');
-        return redirect()->route('Admin.HeritageAsset.index');
+        Flash::success('¡Guardado con Exito!, Gracias Por Registrar el Inmueble '. $heritageProperty->name);
+        return redirect()->route('Admin.HeritageTotal.index');
     }
 
     /**
@@ -79,9 +60,9 @@ class HeritageAssetController extends Controller
      */
     public function show($id)
     {
-        $heritageAsset = HeritageAsset::findOrFail($id);
+        $heritageProperty = HeritageProperty::findOrFail($id);
 
-        return view('Admin.HeritageAsset.show')->with('heritageAsset', $heritageAsset);
+        return view('Admin.HeritageProperty.show')->with('heritageProperty', $heritageProperty);
     }
 
     /**

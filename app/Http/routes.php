@@ -33,7 +33,14 @@ Route::group(['middleware' => ['web','auth'], 'prefix' => 'Admin'], function(){
 
     Route::resource('UserAsset', 'UserAssetController');
 
+    Route::get('HeritageTotal', [
+        'uses' => 'HeritageTotalController@index',
+        'as' => 'Admin.HeritageTotal.index'
+    ]);
+
     Route::resource('HeritageAsset', 'HeritageAssetController');
+
+    Route::resource('HeritageProperty', 'HeritagePropertyController');
     
     /*  
 

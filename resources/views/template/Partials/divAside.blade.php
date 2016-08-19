@@ -119,9 +119,31 @@
                     <ul id="heritage" class="nav sidebar-subnav collapse">
                         <li class="sidebar-subnav-header">Patrimonio</li>
                         <li class=" ">
-                            <a href="{{ route('Admin.HeritageAsset.index') }}" title="Consultar">
+                            <a href="#consultH" title="Consultar" data-toggle="collapse">
                                 <span>Consultar</span>
                             </a>
+                            <ul id="consultH" class="nav sidebar-subnav collapse">
+                                <li class=" ">
+                                    <a href="{{ route('Admin.HeritageTotal.index') }}" title="Total">
+                                        <span>Total</span>
+                                    </a>
+                                </li>
+                                <li class=" ">
+                                    <a href="{{ route('Admin.HeritageAsset.index') }}" title="Haberes">
+                                        <span>Haberes</span>
+                                    </a>
+                                </li>
+                                <li class=" ">
+                                    <a href="{{ route('Admin.HeritageProperty.index') }}" title="Inmueble">
+                                        <span>Inmueble</span>
+                                    </a>
+                                </li>
+                                <li class=" ">
+                                    <a href="{{ route('Admin.HeritageAsset.index') }}" title="Retiro">
+                                        <span>Retiro</span>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                         @if(Auth::user()->type == 'superadmin' || Auth::user()->type == 'admin' || Auth::user()->type == 'secretary')
                             <li class=" ">
@@ -130,7 +152,7 @@
                                 </a>
                             </li>
                             <li class=" ">
-                                <a href="#" title="Ingresar Inmueble">
+                                <a href="{{ route('Admin.HeritageProperty.create') }}" title="Ingresar Inmueble">
                                     <span>Ingresar Inmueble</span>
                                 </a>
                             </li>

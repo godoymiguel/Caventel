@@ -10,7 +10,7 @@
         <a type="button" class="btn btn-primary pull-right">
             <em class="fa fa-print fa-fw mr-sm"></em>Imprimir</a>
         Capital en Patrimonio
-        <small>Consulta de Capital en Haberes Registrados en CAVENTEL</small>
+        <small>Consulta de Capital Inmueble Registrados en CAVENTEL</small>
     </h3>
 
     <!-- START panel-->
@@ -21,30 +21,21 @@
                 <thead>
                 <tr>
                     <th>#</th>
-                    <th>Motivo</th>
-                    <th>Cantidad (Bs)</th>
+                    <th>Fecha</th>
+                    <th>Codigo del Documento</th>
+                    <th>Nombre</th>
                     <th>Acciones</th>
 
                 </tr>
                 </thead>
 
                 <tbody>
-                @foreach($heritageAssets as $heritageAsset)
+                @foreach($heritageProperty as $heritagePropert)
                     <tr>
-                        <td>{{ $heritageAsset->id}}</td>
-                        <td>
-                            @if($heritageAsset->reason == 'patron' )
-                                Aporte Patrono
-                            @elseif($heritageAsset->reason == 'special')
-                                Aporte Especial
-                            @elseif($heritageAsset->reason == 'rental')
-                                Alquiler
-                            @else
-                                Venta
-                            @endif
-
-                        </td>
-                        <td>{{ $heritageAsset->amount }}</td>
+                        <td>{{ $heritagePropert->id}}</td>
+                        <td>{{ $heritagePropert->created_at->toFormattedDateString()}}</td>
+                        <td>{{ $heritagePropert->document_code }}</td>
+                        <td>{{ $heritagePropert->name }}</td>
                         <td>
                             {{--<a type="button" href="{{ route('Admin.user_profiles.edit', $heritageAsset->id) }}"
                                class="btn btn-sm btn-default" title="Editar Cuenta">
@@ -55,7 +46,7 @@
                                 <em class="fa fa-user"></em>
                             </a>--}}
                             <a type="button" class="btn btn-sm btn-success"
-                               href="{{ route('Admin.HeritageAsset.show', $heritageAsset->id) }}" title="Ver Detalle">
+                               href="{{ route('Admin.HeritageProperty.show', $heritagePropert->id) }}" title="Ver Detalle">
                                 <em class="fa fa-arrow-right"></em>
                             </a>
                         </td>
@@ -83,7 +74,7 @@
                 <div class="col-lg-8"></div>
                 <div class="col-lg-2">
                     <div class="input-group pull-right">
-                        {!! $heritageAssets->render() !!}
+                        {!! $heritageProperty->render() !!}
                         <a href="{{ route('Admin.HeritageTotal.index') }}" type="button" class="btn btn-green btn-sm">Volver
                             a Listado</a>
                     </div>
