@@ -4,7 +4,7 @@ namespace Caventel\Http\Requests;
 
 use Caventel\Http\Requests\Request;
 
-class StoreHeritaAssetRequest extends Request
+class StoreUserLoanRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,10 +24,12 @@ class StoreHeritaAssetRequest extends Request
     public function rules()
     {
         return [
-            'reason'            => 'required', 
-            'amount'            => 'required|min:1',
-            'payment'           => 'required|min:1|max:250',
-            'payment_number'    => 'required|min:4|max:250|string'
+            'user_ci'           => 'required|min:1|integer',
+            'type_loan'         => 'required|min:1|max:250|string',
+            'term'              => 'required|min:12|max:300|integer',
+            'date_loan'         => 'required|min:1|max:250',
+            'amount_awarded'    => 'required|min:1|numeric',
+
         ];
     }
 }

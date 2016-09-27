@@ -19,7 +19,7 @@ class AdminTableSeeder extends Seeder
             'type' => 'superadmin'
         ]);
 
-        factory(Caventel\User::class, 20)->create();
+        factory(Caventel\User::class, 5)->create();
 
     }
 }

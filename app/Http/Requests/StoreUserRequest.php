@@ -24,7 +24,7 @@ class StoreUserRequest extends Request
     public function rules()
     {
         return [
-            'ci' => 'required|min:7|unique:users|max:255',
+            'ci' => 'required|min:7|unique:users',
             'name' => 'required|max:255',
             'last_name' => 'required|max:255',
             'email' => 'requiered|unique:users|max:255',

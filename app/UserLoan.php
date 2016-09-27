@@ -9,7 +9,7 @@ class UserLoan extends Model
     protected $table = 'user_loans';
 
     protected $fillable = [
-        'user_ci', 'type_loan', 'term', 'date_loan', 'amount_awarded', 'amount_canceled', 'amount_fee', 'amount_interest', 'overdue_fees', 'interest_arrears'
+        'user_id', 'type_loan', 'term', 'date_loan', 'amount_awarded', 'amount_canceled', 'amount_fee', 'amount_interest', 'overdue_fees', 'interest_arrears'
     ];
 
     public function User()

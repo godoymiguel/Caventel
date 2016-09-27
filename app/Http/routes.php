@@ -41,18 +41,8 @@ Route::group(['middleware' => ['web','auth'], 'prefix' => 'Admin'], function(){
     Route::resource('HeritageAsset', 'HeritageAssetController');
 
     Route::resource('HeritageProperty', 'HeritagePropertyController');
-    
-    /*  
 
-    Route::resource('user_assets','UserAssetsController');
-
-    Route::resource('user_loans','UserLoansController');
-
-    Route::resource('heritage_assets','HeritageAssetsController');
-
-    Route::resource('heritage_property','HeritagePropertyController');
-*/
-//    Route::get('/', 'LoginController@index');
+    Route::resource('UserLoan', 'UserLoanController');
 });
 
 Route::get('Inactivo', function () {
@@ -106,7 +96,7 @@ Route::group(['middleware' => ['web']], function () {
         'uses' => 'HomeController@Info',
         'as' => 'user.info'
     ]);
-    
+
     Route::get('Noticias', [
         'uses' => 'HomeController@News',
         'as' => 'user.news'

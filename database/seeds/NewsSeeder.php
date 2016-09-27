@@ -11,6 +11,6 @@ class NewsSeeder extends Seeder
      */
     public function run()
     {
-        factory(Caventel\News::class, 20)->create();
+        factory(Caventel\News::class, 5)->create();
     }
 }

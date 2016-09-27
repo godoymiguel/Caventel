@@ -59,13 +59,18 @@
                     <ul id="loan" class="nav sidebar-subnav collapse">
                         <li class="sidebar-subnav-header">Pŕestamos</li>
                         <li class=" ">
-                            <a href="#" title="Consultar Deuda">
-                                <span>Consultar Deuda</span>
+                            <a href="{{ route('Admin.UserLoan.index') }}" title="Consultar Deuda">
+                                <span>Listado Total</span>
                             </a>
                         </li>
                         <li class=" ">
                             <a href="#" title="Solicitar Préstamo">
                                 <span>Consultar Préstamo</span>
+                            </a>
+                        </li>
+                        <li class=" ">
+                            <a href="{{ route('Admin.UserLoan.create') }}" title="Ingresar Préstamo">
+                                <span>Ingresar Préstamo</span>
                             </a>
                         </li>
                         <li class=" ">
@@ -254,11 +259,13 @@
                                 <span>Lista de Noticias</span>
                             </a>
                         </li>
-                        <li class=" ">
-                            <a href="{{ route('Admin.news.create') }}" title="Ingresar">
-                                <span>Ingresar Noticia</span>
-                            </a>
-                        </li>
+                        @if(Auth::user()->type == 'superadmin' || Auth::user()->type == 'admin' || Auth::user()->type == 'secretary')
+                            <li class=" ">
+                                <a href="{{ route('Admin.news.create') }}" title="Ingresar">
+                                    <span>Ingresar Noticia</span>
+                                </a>
+                            </li>
+                        @endif
                     </ul>
                 </li>
                 <li class=" ">

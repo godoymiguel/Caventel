@@ -24,7 +24,7 @@ class StoreUserAssetRequest extends Request
     public function rules()
     {
         return [
-            'monthly_contributions' => 'required|min:1|max:250|numeric',
+            'monthly_contributions' => 'required|min:1|numeric',
             'payment'               => 'required',
             'payment_number'        => 'required|min:4|max:250|string',
         ];

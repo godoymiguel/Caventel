@@ -37,20 +37,22 @@ class UserAssetController extends Controller
   t1.created_at = t2.timestamp
   ORDER BY t1.created_at DESC;
         */
-/*
-        $userAsset = \DB::table('user_assets as t1')
-            ->join('(SELECT user_id, MAX(created_at) timestamp FROM user_assets GROUP BY user_id) as t2', function($join){
-                $join->on('t1.user_id', '=', 't2.user_id')
-                    ->orOn('t1.created_at', '=', 't2.timestamp');
-            })->orderBy('t1.created_at', 'DESC')
-            ->get();*/
-        //dd($userAsset);
+
+        /*$userAsset = \DB::select('SELECT t1.*, t3.* FROM user_assets t1
+  JOIN (SELECT user_id, MAX(created_at) timestamp FROM user_assets GROUP BY user_id) t2 ON
+  t1.user_id = t2.user_id
+  AND
+  t1.created_at = t2.timestamp
+  JOIN (SELECT * FROM users) t3 ON t1.user_id = t3.id 
+  ORDER BY t1.created_at DESC');
+        */
+
        $userAsset= UserAsset::orderBy('id', 'DESC')->groupBy('user_id')->paginate(10);
        $userAsset->each(function($userAsset){
             $userAsset->User;
         });
 
-        //dd($userAsset);
+
         return view('Admin.UserAsset.index')->with('userAssets', $userAsset);
     }
 
