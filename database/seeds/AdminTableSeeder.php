@@ -16,7 +16,8 @@ class AdminTableSeeder extends Seeder
             'ci' => '1',
             'email' => 'admin@admin.com',
             'password' => bcrypt('1234'),
-            'type' => 'superadmin'
+            'type' => 'superadmin',
+            'created_at' => '2014-02-27'
         ]);
 
         factory(Caventel\User::class, 5)->create();

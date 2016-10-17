@@ -24,7 +24,7 @@ class StoreUserProfileRequest extends Request
     public function rules()
     {
         return [
-            //'birthdate'         => 'required|date',
+            'birthdate'         => 'required|date',
             'sex'               => 'required',
             'phone'             => 'required|min:11|max:250',
             'address'           => 'required|min:20|max:250',

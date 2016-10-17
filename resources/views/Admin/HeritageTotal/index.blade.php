@@ -33,13 +33,13 @@
                         </thead>
                         <tbody>
                         <tr class="success">
-                            <td>{{ $totalCapital }}</td>
-                            <td>{{ $totalAsset }}</td>
+                            <td>{{ number_format($totalCapital,2,".",",") }}</td>
+                            <td>{{ number_format($totalAsset,2,".",",") }}</td>
                             <td>0</td>
-                            <td>{{ $totalProperty }}</td>
+                            <td>{{ number_format($totalProperty,2,".",",") }}</td>
                             <td>0</td>
                             <td>0</td>
-                            <td>{{ $available }}</td>
+                            <td>{{ number_format($available,2,".",",") }}</td>
 
                         </tr>
                         </tbody>

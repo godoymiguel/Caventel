@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserLoansTable extends Migration
+class CreateLoanPaymentTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,29 +12,25 @@ class CreateUserLoansTable extends Migration
      */
     public function up()
     {
-        Schema::create('userLoans', function (Blueprint $table) {
+        Schema::create('loanPayments', function (Blueprint $table) {
             $table->increments('id')->unsigned();
-            $table->integer('user_id')->unsigned();
-            $table->string('typeLoan');
-            $table->integer('term');
-            $table->date('dateLoan');
-            $table->date('nextPayment');
-            $table->decimal('salary',30,15);
-            $table->decimal('amountAwarded',30,15);
+            $table->integer('userLoans_id')->unsigned();
+            $table->date('datePayment');
             $table->decimal('canceled',30,15);
-            $table->decimal('amountFee',30,15);
             $table->decimal('interest',30,15);
             $table->decimal('amortization',30,15);
-            $table->decimal('overdueFees',30,15);
-            $table->decimal('interestArrears',30,15);
+            $table->integer('canceledFee');
+            $table->integer('remainingFee');
+            $table->string('payment');
+            $table->string('payment_number');
             $table->integer('createdBy')->unsigned();
             $table->integer('updatedBy')->unsigned();
-
-            $table->foreign('user_id')
-                ->references('id')
-                ->on('users')
-                ->onDelete('cascade');
             $table->timestamps();
+
+            $table->foreign('userLoans_id')
+                ->references('id')
+                ->on('userLoans')
+                ->onDelete('cascade');
         });
     }
 
@@ -45,6 +41,6 @@ class CreateUserLoansTable extends Migration
      */
     public function down()
     {
-        Schema::drop('userLoans');
+        Schema::drop('loanPayments');
     }
 }

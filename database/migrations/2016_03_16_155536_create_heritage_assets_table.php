@@ -15,11 +15,11 @@ class CreateHeritageAssetsTable extends Migration
         Schema::create('heritage_assets', function (Blueprint $table) {
             $table->increments('id')->unsigned();
             $table->string('reason');
-            $table->float('amount');
+            $table->decimal('amount',30,15);
             $table->string('payment');
             $table->string('payment_number');
-            $table->float('accumulated');
-            $table->float('bloked')->default(0.0);
+            $table->decimal('accumulated',30,15);
+            $table->decimal('bloked',30,15)->default(0.0);
             $table->timestamps();
         });
     }

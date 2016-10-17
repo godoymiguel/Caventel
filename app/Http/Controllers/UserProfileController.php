@@ -75,19 +75,6 @@ class UserProfileController extends Controller
         Flash::success('¡El Perfil de ' . $users->name . ' Fue Creado de Forma Exitosa!');
 
         return redirect()->route('Admin.users.index');
-
-        /*$news = new News($request->all());
-        $news->body = $request->body;
-        $news->user_id = \Auth::User()->id;
-        $news->img = $name;
-        //$news->save();
-
-        Flash::success('¡La Noticia ' . $news->title . ' Fue Creada de Forma Exitosa!');
-
-        return redirect()->route('Admin.news.index');
-        */
-
-        //dd($user_profiles);
     }
 
     /**

@@ -74,13 +74,8 @@
                             </a>
                         </li>
                         <li class=" ">
-                            <a href="#" title="Solicitar Préstamo">
-                                <span>Solicitar Préstamo</span>
-                            </a>
-                        </li>
-                        <li class=" ">
-                            <a href="" title="Pagar Préstamo">
-                                <span>Pagar Préstamo</span>
+                            <a href="" title="Pagar Cuota">
+                                <span>Pagar Cuota</span>
                             </a>
                         </li>
                     </ul>

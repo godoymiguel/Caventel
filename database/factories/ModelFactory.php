@@ -18,7 +18,7 @@ $factory->define(Caventel\User::class, function (Faker\Generator $faker) {
         'last_name'=> $faker->lastName,
         'email'=> $faker->email,
         'password' => bcrypt('1234'),
-        'type' => $faker->randomElement(['user']),
+        'type' => $faker->randomElement(['user','secretary','admin']),
         'remember_token' => str_random(10)
 
     ];

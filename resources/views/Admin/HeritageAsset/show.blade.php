@@ -40,7 +40,7 @@
                         <div class="form-group">
                             <label class="col-lg-2 control-label">Cantidad (Bs)</label>
                             <div class="col-lg-10">
-                                <p class="form-control-static">{{ $heritageAsset->amount }}</p>
+                                <p class="form-control-static">{{ number_format($heritageAsset->amount,2,".",",") }}</p>
                             </div>
                         </div>
                         <div class="form-group">
@@ -66,7 +66,7 @@
                         <div class="form-group">
                             <label class="col-lg-2 control-label">Acumulado En Capital Con Este Movimiento (Bs)</label>
                             <div class="col-lg-10">
-                                <p class="form-control-static">{{ $heritageAsset->accumulated }}</p>
+                                <p class="form-control-static">{{ number_format($heritageAsset->accumulated,2,".",",") }}</p>
                             </div>
                         </div>
                     </div>

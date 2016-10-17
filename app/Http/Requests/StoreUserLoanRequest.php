@@ -24,11 +24,11 @@ class StoreUserLoanRequest extends Request
     public function rules()
     {
         return [
-            'user_ci'           => 'required|min:1|integer',
-            'type_loan'         => 'required|min:1|max:250|string',
-            'term'              => 'required|min:12|max:300|integer',
-            'date_loan'         => 'required|min:1|max:250',
-            'amount_awarded'    => 'required|min:1|numeric',
+            'user_ci'          => 'required|min:1|integer',
+            'typeLoan'         => 'required|min:1|max:250|string',
+            'term'             => 'required|min:12|max:300|integer',
+            'amountAwarded'    => 'required|min:1|numeric',
+            'salary'           => 'required|min:1|numeric',
 
         ];
     }

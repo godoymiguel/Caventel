@@ -23,7 +23,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-lg-2 control-label">Numero de Documento</label>
+                        <label class="col-lg-2 control-label">Numero de Documento de Propiedad</label>
                         <div class="col-lg-10">
                             <p class="form-control-static">{{ $heritageProperty->document_code }}</p>
                         </div>
@@ -37,7 +37,7 @@
                     <div class="form-group mb">
                         <label class="col-lg-2 control-label">Valor del Inmueble (Bs)</label>
                         <div class="col-lg-10">
-                            <p class="form-control-static">{{ $heritageProperty->price }}</p>
+                            <p class="form-control-static">{{ number_format($heritageProperty->price,2,".",",") }}</p>
                         </div>
                     </div>
 

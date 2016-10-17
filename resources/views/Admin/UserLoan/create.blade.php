@@ -3,20 +3,7 @@
 @section('title','Prestamos de Asociados -')
 
 @section('content')
-    @if(count($errors) > 0)
-        <div role="alert" class="alert alert-danger alert-dismissible fade in">
-            <button type="button" data-dismiss="alert" aria-label="Close" class="close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-            <strong>¡ERROR!</strong>
-            <ul>
-                @foreach($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-        @endif
-
+    @include('template.Partials.ValidateError')
                 <!-- Page content-->
         <div class="content-wrapper">
             <h3>Ingresar Prestamo
@@ -30,30 +17,28 @@
                         <div class="panel-body">
                             <div class="form-group">
                                 <label class="control-label">Cedula del Asociado</label>
-                                <input type="number" min="0" name="user_ci" class="form-control" placeholder="cedula 18123456">
+                                <input type="number" min="0" name="user_ci" class="form-control" placeholder="cedula 18123456", value="{{ old('user_ci') }}">
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Tipo de Prestamo</label>
-                                <select name="type_loan" class="form-control">
+                                <select name="typeLoan" class="form-control">
                                     <option value=" " >Seleccione </option>
-                                    <option value="personal" >Personal</option>
-                                    <option value="guarantor" >Con Fiador</option>
-                                    <option value="mortgage" >Hipotecario</option>
-                                    <option value="vehicle" >Vehicular</option>
+                                    <option value="personal" {{ old('typeLoan') === "personal" ? 'selected': '' }}>Personal</option>
+                                    <option value="guarantor" {{ old('typeLoan') === "guarantor" ? 'selected': '' }}>Con Fiador</option>
+                                    <option value="mortgage" {{ old('typeLoan') === "mortagage" ? 'selected': '' }} >Hipotecario</option>
+                                    <option value="vehicle" {{ old('typeLoan') === "vehicle" ? 'selected': '' }}>Vehicular</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Tipo de Plazo</label>
-                                <input type="number" min="12" max="300" step="12" name="term" class="form-control" placeholder="12 meses, 36 meses, 60 meses">
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label">Fecha de Inicio de Prestamo</label>
-                                <input type="date" name="date_loan" class="form-control" placeholder="Seleccione">
+                                <input type="number" min="12" max="300" step="12" name="term" value="{{old('term')}}" class="form-control" placeholder="12 meses, 36 meses, 60 meses">
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Monto Otorgado</label>
-                                <input type="number" min="0" step="any" pattern="[0-9]{1,10}[.][0-9]{2,}" name="amount_awarded" class="form-control" placeholder="00.00 Recuerde Separar Decimales con punto(.)">
+                                <input type="number" min="0" step="any" pattern="[0-9]{1,10}[.][0-9]{2,}" name="amountAwarded" value="{{ old('amountAwarded') }}" class="form-control" placeholder="00.00 Recuerde Separar Decimales con punto(.)">
                             </div>
+                            <label class="control-label">Salario del Asociado</label>
+                            <input type="number" min="0" name="salary" class="form-control" placeholder="00.00 Recuerde Separar Decimales con punto(.)", value="{{ old('salary') }}">
                         </div>
                         <div class="panel-footer">
                             <div class="clearfix">

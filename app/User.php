@@ -38,7 +38,7 @@ class User extends Authenticatable
 
     public function UserLoan()
     {
-        return $this->hasOne('Caventel\UserLoan');
+        return $this->hasMany('Caventel\UserLoan');
     }
 
     public function News()

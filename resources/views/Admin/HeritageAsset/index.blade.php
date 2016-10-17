@@ -44,7 +44,7 @@
                             @endif
 
                         </td>
-                        <td>{{ $heritageAsset->amount }}</td>
+                        <td>{{ number_format($heritageAsset->amount,2,".",",") }}</td>
                         <td>
                             {{--<a type="button" href="{{ route('Admin.user_profiles.edit', $heritageAsset->id) }}"
                                class="btn btn-sm btn-default" title="Editar Cuenta">

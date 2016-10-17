@@ -45,7 +45,6 @@
                     <th>Nombre</th>
                     <th>Apellido</th>
                     <th>Total</th>
-                    <th>Bloqueado</th>
                     <th>Disponible</th>
                     <th>Acciones</th>
 
@@ -58,9 +57,8 @@
                         <td>{{ $userAsset->User->ci }}</td>
                         <td>{{ $userAsset->User->name }}</td>
                         <td>{{ $userAsset->User->last_name }}</td>
-                        <td>{{ $userAsset->accumulated  }}</td>
-                        <td>{{ $userAsset->bloked }}</td>
-                        <td>{{ $userAsset->accumulated-$userAsset->bloked }}</td>
+                        <td>{{ number_format($userAsset->accumulated,2,".",",")   }}</td>
+                        <td>{{ number_format($userAsset->accumulated-$userAsset->bloked,2,".",",") }}</td>
                         <td>
                             {{--<a type="button" href="{{ route('Admin.user_profiles.edit', $userAsset->id) }}"
                                class="btn btn-sm btn-default" title="Editar Cuenta">

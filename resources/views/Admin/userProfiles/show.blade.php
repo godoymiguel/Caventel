@@ -84,6 +84,12 @@
                             </div>
                         </div>
                         <div class="form-group mb">
+                            <label class="col-lg-2 control-label">Fecha de Ingreso</label>
+                            <div class="col-lg-10">
+                                <p class="form-control-static">{{$user_profiles->created_at}}</p>
+                            </div>
+                        </div>
+                        <div class="form-group mb">
                             <label class="col-lg-2 control-label">Fecha de Nacimiento</label>
                             <div class="col-lg-10">
                                 <p class="form-control-static">{{$user_profiles->UserProfile->birthdate}}</p>

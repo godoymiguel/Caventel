@@ -3,19 +3,7 @@
 @section('title','Ingresar Haberes -')
 
 @section('content')
-    @if(count($errors) > 0)
-        <div role="alert" class="alert alert-danger alert-dismissible fade in">
-            <button type="button" data-dismiss="alert" aria-label="Close" class="close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-            <strong>¡ERROR!</strong>
-            <ul>
-                @foreach($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-        @endif
+    @include('template.Partials.ValidateError')
 
                 <!-- Page content-->
         <div class="content-wrapper">
@@ -31,20 +19,20 @@
                         <div class="panel-body">
                             <div class="form-group">
                                 <label class="control-label">Monto</label>
-                                <input type="number" min="0" step="any" pattern="[0-9]{1,10}[.][0-9]{2,}" name="monthly_contributions" class="form-control" placeholder="00.00 Recuerde Separar Decimales con punto(.)">
+                                <input type="number" min="0" step="any" pattern="[0-9]{1,10}[.][0-9]{2,}" name="monthly_contributions" value="{{ old('monthly_contributions') }}" class="form-control" placeholder="00.00 Recuerde Separar Decimales con punto(.)">
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Forma de Pago</label>
                                 <select name="payment" class="form-control">
                                     <option value=" " >Seleccione Forma de Pago </option>
-                                    <option value="check" >Cheque</option>
-                                    <option value="deposi" >Deposito</option>
-                                    <option value="transfer" >Transferencia</option>
+                                    <option value="check" {{ old('payment') === "check" ? 'selected': '' }} >Cheque</option>
+                                    <option value="deposi" {{ old('payment') === "deposit" ? 'selected': '' }}>Deposito</option>
+                                    <option value="transfer" {{ old('payment') === "transfer" ? 'selected': '' }}>Transferencia</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Identificación de Forma de Pago</label>
-                                <input type="text" name="payment_number" class="form-control" placeholder="Ingrese La referencia de la Forma de Pago">
+                                <input type="text" name="payment_number"  value="{{ old('payment_number') }}" class="form-control" placeholder="Ingrese La referencia de la Forma de Pago">
                             </div>
                         </div>
                         <div class="panel-footer">

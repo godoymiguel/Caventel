@@ -16,7 +16,7 @@ class CreateHeritagePropertyTable extends Migration
             $table->increments('id');
             $table->string('document_code');
             $table->string('name');
-            $table->float('price');
+            $table->decimal('price',30,15);
             $table->string('address');
             $table->timestamps();
         });

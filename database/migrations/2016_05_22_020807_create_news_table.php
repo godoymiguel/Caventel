@@ -13,7 +13,7 @@ class CreateNewsTable extends Migration
     public function up()
     {
         Schema::create('news', function (Blueprint $table) {
-            $table->increments('id')->unsigned();;
+            $table->increments('id')->unsigned();
             $table->integer('user_id')->unsigned();
             $table->string('title');
             $table->text('body');

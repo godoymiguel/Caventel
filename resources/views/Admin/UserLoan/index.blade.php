@@ -34,10 +34,10 @@
                 @foreach($userLoans as $loan)
                     <tr>
                         <td>{{ $loan->id}}</td>
-                        <td>{{ $loan->date_loan}}</td>
-                        <td>{{ $loan->type_loan }}</td>
-                        <td>{{ $loan->amount_awarded }}</td>
-                        <td>{{ $loan->amount_canceled }}</td>
+                        <td>{{ $loan->dateLoan}}</td>
+                        <td>{{ $loan->typeLoan }}</td>
+                        <td>{{ number_format($loan->amountAwarded,2,".",",") }}</td>
+                        <td>{{ number_format($loan->canceled,2,".",",") }}</td>
                         <td>
                             {{--<a type="button" href="{{ route('Admin.user_profiles.edit', $heritageAsset->id) }}"
                                class="btn btn-sm btn-default" title="Editar Cuenta">
@@ -48,7 +48,7 @@
                                 <em class="fa fa-user"></em>
                             </a>--}}
                             <a type="button" class="btn btn-sm btn-success"
-                               href="{{ route('Admin.HeritageProperty.show', $loan->id) }}" title="Ver Detalle">
+                               href="{{ route('Admin.UserLoan.show', $loan->User->id) }}" title="Ver Detalle">
                                 <em class="fa fa-arrow-right"></em>
                             </a>
                         </td>
