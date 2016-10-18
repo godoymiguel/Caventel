@@ -2,42 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c03bbc7e-f1ab-46ab-a545-cfc7fe1d9ddb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/Admin/UserLoan/show.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/template/Partials/ValidateError.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/UserLoanController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserLoanController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/UserProfileController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserProfileController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Requests/StoreUserLoanRequest.php" afterPath="$PROJECT_DIR$/app/Http/Requests/StoreUserLoanRequest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Requests/StoreUserProfileRequest.php" afterPath="$PROJECT_DIR$/app/Http/Requests/StoreUserProfileRequest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/User.php" afterPath="$PROJECT_DIR$/app/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/UserLoan.php" afterPath="$PROJECT_DIR$/app/UserLoan.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/app.php" afterPath="$PROJECT_DIR$/config/app.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/factories/ModelFactory.php" afterPath="$PROJECT_DIR$/database/factories/ModelFactory.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_03_16_154842_create_heritage_property_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_03_16_154842_create_heritage_property_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_03_16_155536_create_heritage_assets_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_03_16_155536_create_heritage_assets_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_03_16_160602_create_user_assets_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_03_16_160602_create_user_assets_table.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_03_16_161748_create_user_loans_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_03_16_161748_create_user_loans_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_05_22_020807_create_news_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_05_22_020807_create_news_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/AdminTableSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/AdminTableSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/Admin/HeritageAsset/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/Admin/HeritageAsset/create.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/Admin/HeritageAsset/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/Admin/HeritageAsset/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/Admin/HeritageAsset/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/Admin/HeritageAsset/show.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/Admin/HeritageProperty/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/Admin/HeritageProperty/create.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/Admin/HeritageProperty/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/Admin/HeritageProperty/show.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/Admin/HeritageTotal/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/Admin/HeritageTotal/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/Admin/UserAsset/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/Admin/UserAsset/create.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/Admin/UserAsset/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/Admin/UserAsset/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/Admin/UserAsset/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/Admin/UserAsset/show.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/Admin/UserLoan/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/Admin/UserLoan/create.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/Admin/UserLoan/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/Admin/UserLoan/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/Admin/news/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/Admin/news/create.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/Admin/news/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/Admin/news/edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/Admin/userProfiles/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/Admin/userProfiles/create.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/Admin/userProfiles/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/Admin/userProfiles/edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/Admin/userProfiles/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/Admin/userProfiles/show.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/Admin/users/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/Admin/users/create.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/template/Partials/divAside.blade.php" afterPath="$PROJECT_DIR$/resources/views/template/Partials/divAside.blade.php" />
     </list>
     <ignored path="Caventel.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -61,8 +27,8 @@
       <file leaf-file-name="UserLoanController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserLoanController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="867">
-              <caret line="96" column="127" selection-start-line="96" selection-start-column="127" selection-end-line="96" selection-end-column="127" />
+            <state relative-caret-position="4114">
+              <caret line="242" column="25" selection-start-line="242" selection-start-column="25" selection-end-line="242" selection-end-column="25" />
               <folding>
                 <element signature="e#45#73#0#PHP" expanded="true" />
               </folding>
@@ -73,8 +39,8 @@
       <file leaf-file-name="2016_03_16_161748_create_user_loans_table.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/migrations/2016_03_16_161748_create_user_loans_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="24" column="38" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
+            <state relative-caret-position="263">
+              <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -123,7 +89,7 @@
       <file leaf-file-name="create.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/Admin/UserLoan/create.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="453">
+            <state relative-caret-position="578">
               <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
               <folding />
             </state>
@@ -133,7 +99,7 @@
       <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/Admin/UserLoan/show.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
+            <state relative-caret-position="1836">
               <caret line="108" column="68" selection-start-line="108" selection-start-column="68" selection-end-line="108" selection-end-column="68" />
               <folding />
             </state>
@@ -187,7 +153,6 @@
         <option value="$PROJECT_DIR$/resources/views/Admin/news/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/Admin/userProfiles/edit.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_05_22_020807_create_news_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2016_03_16_161748_create_user_loans_table.php" />
         <option value="$PROJECT_DIR$/resources/views/template/Partials/divAside.blade.php" />
         <option value="$PROJECT_DIR$/resources/lang/es/validation.php" />
         <option value="$PROJECT_DIR$/resources/views/Admin/UserLoan/show.blade.php" />
@@ -198,6 +163,7 @@
         <option value="$PROJECT_DIR$/resources/views/Admin/UserLoan/create.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/StoreUserLoanRequest.php" />
         <option value="$PROJECT_DIR$/app/UserLoan.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_03_16_161748_create_user_loans_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/UserLoanController.php" />
       </list>
     </option>
@@ -244,6 +210,9 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches">
+        <subPane />
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -518,9 +487,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches">
-        <subPane />
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -724,6 +690,7 @@
       <workItem from="1476570474036" duration="668000" />
       <workItem from="1476648162677" duration="3763000" />
       <workItem from="1476655075498" duration="5084000" />
+      <workItem from="1476746295618" duration="9612000" />
     </task>
     <task id="LOCAL-00001" summary="Haberes del Usuario, queda Corregir algunas cosas en el index">
       <created>1470781820933</created>
@@ -750,11 +717,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="704360000" />
+    <option name="totallyTimeSpent" value="713972000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1828125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -796,7 +763,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="6" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1099,7 +1066,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/Admin/UserLoan/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
+        <state relative-caret-position="1836">
           <caret line="108" column="68" selection-start-line="108" selection-start-column="68" selection-end-line="108" selection-end-column="68" />
           <folding />
         </state>
@@ -1107,7 +1074,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/Admin/UserLoan/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
+        <state relative-caret-position="578">
           <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
           <folding />
         </state>
@@ -1129,10 +1096,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_03_16_161748_create_user_loans_table.php">
+    <entry file="file://$PROJECT_DIR$/app/LoanPayment.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="24" column="38" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
+        <state relative-caret-position="187">
+          <caret line="11" column="108" selection-start-line="11" selection-start-column="96" selection-end-line="11" selection-end-column="108" />
           <folding />
         </state>
       </provider>
@@ -1145,18 +1112,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/LoanPayment.php">
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_03_16_161748_create_user_loans_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="108" selection-start-line="11" selection-start-column="96" selection-end-line="11" selection-end-column="108" />
+        <state relative-caret-position="263">
+          <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserLoanController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
-          <caret line="96" column="127" selection-start-line="96" selection-start-column="127" selection-end-line="96" selection-end-column="127" />
+        <state relative-caret-position="4114">
+          <caret line="242" column="25" selection-start-line="242" selection-start-column="25" selection-end-line="242" selection-end-column="25" />
           <folding>
             <element signature="e#45#73#0#PHP" expanded="true" />
           </folding>
