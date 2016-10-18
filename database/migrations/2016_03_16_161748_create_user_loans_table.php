@@ -17,6 +17,7 @@ class CreateUserLoansTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->string('typeLoan');
             $table->integer('term');
+            $table->integer('canceledFee');
             $table->date('dateLoan');
             $table->date('nextPayment');
             $table->decimal('salary',30,15);
