@@ -9,8 +9,8 @@ class LoanPayment extends Model
     protected $table = 'loanPayments';
 
     protected $fillable = [
-        'userLoans_id', 'datePayment', 'canceled', 'interest', 'amortization', 'canceledFee' , 'remainingFee',
-        'payment', 'payment_number', 'createdBy', 'updatedBy'
+        'user_loan_id', 'datePayment', 'canceled', 'interest', 'amortization', 'canceledFee' , 'remainingFee',
+        'payment', 'payment_number', 'bank', 'createdBy', 'updatedBy'
     ];
 
     public function UserLoan()

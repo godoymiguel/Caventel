@@ -161,7 +161,8 @@ return [
         'birthdate'             => 'Fecha Nacimiento',
         'ci'                    => 'Cedula',
         'type'                  => 'Tipo de Usuario',
-        'confirmPassword'       => 'Confirmación de la contraseña'
+        'confirmPassword'       => 'Confirmación de la contraseña',
+        'bank'                  => 'Banco'
 
     ],
 

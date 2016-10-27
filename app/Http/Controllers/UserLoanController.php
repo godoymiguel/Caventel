@@ -61,6 +61,7 @@ class UserLoanController extends Controller
         $user = User::SELECT('id', 'created_at')->WHERE('ci', $request->user_ci)->get();
         $today = Carbon::now();
         $nextMonth = Carbon::now()->addMonth();
+        $userLoan->nextamount = $request->amountAwarded;
         if ($user->count()) {
             foreach ($user as $user) {
                 $userLoan->user_id = $user->id;

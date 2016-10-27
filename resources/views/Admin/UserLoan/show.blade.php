@@ -81,17 +81,21 @@
                                 <thead>
                                 <tr>
                                     <th>Fecha de Inicio</th>
+                                    <th>Pagar Antes de </th>
                                     <th>Monto Otrogado (Bs)</th>
                                     <th>Tipo de Prestamo</th>
                                     <th>Cuotas (Meses)</th>
+                                    <th>Cuotas Canceladas</th>
                                     <th>Monto Mensual(Bs)</th>
                                     <th>Monto Cancelado (Bs)</th>
+                                    <th>Acciones</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 @foreach( $userLoan as $loan)
                                     <tr>
                                         <td>{{ $loan->dateLoan }}</td>
+                                        <td>{{ $loan->nextPayment }}</td>
                                         <td>{{ number_format($loan->amountAwarded,2,".",",") }}</td>
                                         <td>
                                             @if($loan->typeLoan == 'personal' )
@@ -105,8 +109,19 @@
                                             @endif
                                         </td>
                                         <td>{{ $loan->term }}</td>
-                                        <td>{{ number_format($loan->amountFee + $loan->interest,2,".",",") }}</td>
+                                        <td>{{ $loan->canceledFee }}</td>
+                                        <td>{{ number_format($loan->amountFee,2,".",",") }}</td>
                                         <td>{{ number_format($loan->canceled,2,".",",") }}</td>
+                                        <td>
+                                            <a type="button" class="btn btn-sm btn-default"
+                                               href="{{ route('Admin.loanPayment.create', $loan->id) }}" title="Pagar Cuota">
+                                                <em class="fa fa-money"></em>
+                                            </a>
+                                            <a type="button" class="btn btn-sm btn-info"
+                                               href="{{ route('Admin.loanPayment.show', $loan->id) }}" title="Ver Pagos">
+                                                <em class="fa fa-exchange"></em>
+                                            </a>
+                                        </td>
                                     </tr>
                                 @endforeach
                                 </tbody>

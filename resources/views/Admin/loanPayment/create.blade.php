@@ -1,43 +1,38 @@
 @extends('template.Partials.divAdmin')
 
-@section('title','Ingresar Haberes al Patrimonio -')
+@section('title','Prestamos de Asociados -')
 
 @section('content')
     @include('template.Partials.ValidateError')
-
     <!-- Page content-->
     <div class="content-wrapper">
-        <h3>Ingresar Aporte del Patrono
-            <small>Haberes del Patrimonio</small>
+        <h3>Cancelar Cuota Prestamo
+            <small>de Asociados</small>
         </h3>
         <div class="row">
             <div class="col-md-12">
-            {!! Form::open( array( 'route' => 'Admin.HeritageAsset.store') ) !!}
+            {!! Form::open( array( 'route' => Array('Admin.loanPayment.store', $loanPayment->id)) ) !!}
             <!-- START panel-->
                 <div class="panel panel-default">
-
                     <div class="panel-body">
                         <div class="form-group">
-                            <label class="control-label">Motivo de Pago</label>
-                            <select name="reason" class="form-control">
-                                <option value=" ">Seleccione Motivo</option>
-                                <option value="patron" {{ old('reason') === "patron" ? 'selected': '' }}>Aporte
-                                    Patrono
-                                </option>
-                                <option value="special" {{ old('reason') === "special" ? 'selected': '' }}>Aporte
-                                    Especial
-                                </option>
-                                <option value="rental" {{ old('reason') === "rental" ? 'selected': '' }}>Alquiler
-                                </option>
-                                <option value="sale" {{ old('reason') === "sale" ? 'selected': '' }}>Venta</option>
-                            </select>
+                            <label class="control-label">Prestamo Numero</label>
+                            <input type="number" disabled min="0" name="user_loan_id" class="form-control" placeholder="" value="{{ old('user_loan_id', $loanPayment->id) }}">
                         </div>
                         <div class="form-group">
-                            <label class="control-label">Monto</label>
-                            <input type="number" min="0" step="any" pattern="[0-9]{1,100}[.][0-9]{2,}" name="amount"
-                                   value="{{ old('amount') }}" class="form-control"
-                                   placeholder="00.00 Recuerde Separar Decimales con punto(.)">
+                            <label class="control-label">Pagar Antes</label>
+                            <input type="date" disabled name="datePayment" class="form-control" value="{{ $loanPayment->nextPayment }}">
                         </div>
+                        <div class="form-group">
+                            <label class="control-label">Monto De la Cuota</label>
+                            <input type="number" disabled min="0" max="300" step="12" name="canceled" value="{{old('term',$loanPayment->amountFee)}}" class="form-control" placeholder="12 meses, 36 meses, 60 meses">
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Amortizacion</label>
+                            <input type="number" disabled min="0" step="any" pattern="[0-9]{1,10}[.][0-9]{2,}" name="amortization" value="{{ old('amountAwarded',$loanPayment->amortization) }}" class="form-control" placeholder="00.00 Recuerde Separar Decimales con punto(.)">
+                        </div>
+                        <label class="control-label">Intereses</label>
+                        <input type="number" min="0" disabled name="interest" class="form-control" placeholder="00.00 Recuerde Separar Decimales con punto(.)", value="{{ old('salary',$loanPayment->interest) }}">
                         <div class="form-group">
                             <label class="control-label">Forma de Pago</label>
                             <select name="payment" class="form-control">
@@ -71,7 +66,7 @@
                         <div class="clearfix">
 
                             <div class="pull-right">
-                                <button type="submit" class="btn btn-primary fa-check"> Ingresar</button>
+                                <button type="submit" class="btn btn-primary fa-check"> Pagar Cuota</button>
                                 <a type="button" href="{{ route('admin.index') }}" class="btn btn-danger m-t-10">
                                     <em class="fa fa-close fa-fw"></em>Cancelar
                                 </a>

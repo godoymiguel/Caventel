@@ -19,6 +19,7 @@ class CreateUserAssetsTable extends Migration
             $table->string('reason');
             $table->string('payment');
             $table->string('payment_number');
+            $table->string('bank');
             $table->decimal('accumulated',30,15);
             $table->decimal('bloked',30,15)->default(0.0);
 

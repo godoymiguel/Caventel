@@ -58,26 +58,24 @@
                     </a>
                     <ul id="loan" class="nav sidebar-subnav collapse">
                         <li class="sidebar-subnav-header">Pŕestamos</li>
+                        @if(Auth::user()->type == 'superadmin' || Auth::user()->type == 'admin' || Auth::user()->type == 'secretary')
+                            <li class=" ">
+                                <a href="{{ route('Admin.UserLoan.index') }}" title="Total Prestamos">
+                                    <span>Listado Total</span>
+                                </a>
+                            </li>
+                            <li class=" ">
+                                <a href="{{ route('Admin.UserLoan.create') }}" title="Ingresar Préstamo">
+                                    <span>Ingresar Préstamo</span>
+                                </a>
+                            </li>
+                        @endif
                         <li class=" ">
-                            <a href="{{ route('Admin.UserLoan.index') }}" title="Consultar Deuda">
-                                <span>Listado Total</span>
-                            </a>
-                        </li>
-                        <li class=" ">
-                            <a href="#" title="Solicitar Préstamo">
+                            <a href="{{ route('Admin.UserLoan.show', Auth::user()->id) }}" title="Consultar Préstamo">
                                 <span>Consultar Préstamo</span>
                             </a>
                         </li>
-                        <li class=" ">
-                            <a href="{{ route('Admin.UserLoan.create') }}" title="Ingresar Préstamo">
-                                <span>Ingresar Préstamo</span>
-                            </a>
-                        </li>
-                        <li class=" ">
-                            <a href="" title="Pagar Cuota">
-                                <span>Pagar Cuota</span>
-                            </a>
-                        </li>
+
                     </ul>
                 </li>
                 <li class=" ">
@@ -102,11 +100,6 @@
                         <li class=" ">
                             <a href="{{ route('Admin.UserAsset.create') }}" title="Ingresar Aporte">
                                 <span>Ingresar Aporte</span>
-                            </a>
-                        </li>
-                        <li class=" ">
-                            <a href="" title="Pagar Préstamo">
-                                <span>Intereses Generados</span>
                             </a>
                         </li>
                     </ul>

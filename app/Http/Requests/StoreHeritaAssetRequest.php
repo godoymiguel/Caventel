@@ -27,7 +27,8 @@ class StoreHeritaAssetRequest extends Request
             'reason'            => 'required', 
             'amount'            => 'required|min:1',
             'payment'           => 'required|min:1|max:250',
-            'payment_number'    => 'required|min:4|max:250|string'
+            'payment_number'    => 'required|min:4|max:250|string',
+            'bank'              => 'required|string'
         ];
     }
 }
