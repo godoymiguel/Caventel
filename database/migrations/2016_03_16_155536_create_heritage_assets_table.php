@@ -18,6 +18,7 @@ class CreateHeritageAssetsTable extends Migration
             $table->decimal('amount',30,15);
             $table->string('payment');
             $table->string('payment_number');
+            $table->string('bank');
             $table->decimal('accumulated',30,15);
             $table->decimal('bloked',30,15)->default(0.0);
             $table->timestamps();

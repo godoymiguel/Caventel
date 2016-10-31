@@ -34,6 +34,17 @@
                                 <label class="control-label">Identificación de Forma de Pago</label>
                                 <input type="text" name="payment_number"  value="{{ old('payment_number') }}" class="form-control" placeholder="Ingrese La referencia de la Forma de Pago">
                             </div>
+                            <div class="form-group">
+                                <label class="control-label">Banco De Pago</label>
+                                <select name="bank" class="form-control">
+                                    <option value=" ">Seleccione Banco de Pago</option>
+                                    <option value="caventel" {{ old('bank') === "caventel" ? 'selected': '' }}>Caventel(cheque)</option>
+                                    <option value="venezuela" {{ old('bank') === "venezuela" ? 'selected': '' }} >Venezuela
+                                    </option>
+                                    <option value="tesoro" {{ old('bank') === "tesoro" ? 'selected': '' }} >Tesoro
+                                    </option>
+                                </select>
+                            </div>
                         </div>
                         <div class="panel-footer">
                             <div class="clearfix">

@@ -43,6 +43,16 @@ Route::group(['middleware' => ['web','auth'], 'prefix' => 'Admin'], function(){
     Route::resource('HeritageProperty', 'HeritagePropertyController');
 
     Route::resource('UserLoan', 'UserLoanController');
+
+    Route::resource('loanPayment', 'LoanPaymentController');
+    Route::get('loanPayment/{id}/create', [
+        'uses' => 'LoanPaymentController@create',
+        'as' => 'Admin.loanPayment.create'
+    ]);
+    Route::post('loanPayment/{id}', [
+        'uses' => 'LoanPaymentController@store',
+        'as' => 'Admin.loanPayment.store'
+    ]);
 });
 
 Route::get('Inactivo', function () {

@@ -12,7 +12,7 @@ class CreateUserLoansTable extends Migration
      */
     public function up()
     {
-        Schema::create('userLoans', function (Blueprint $table) {
+        Schema::create('user_loan', function (Blueprint $table) {
             $table->increments('id')->unsigned();
             $table->integer('user_id')->unsigned();
             $table->string('typeLoan');
@@ -26,6 +26,7 @@ class CreateUserLoansTable extends Migration
             $table->decimal('amountFee',30,15);
             $table->decimal('interest',30,15);
             $table->decimal('amortization',30,15);
+            $table->decimal('nextamount',30,15);
             $table->decimal('overdueFees',30,15);
             $table->decimal('interestArrears',30,15);
             $table->integer('createdBy')->unsigned();
@@ -46,6 +47,6 @@ class CreateUserLoansTable extends Migration
      */
     public function down()
     {
-        Schema::drop('userLoans');
+        Schema::drop('user_loan');
     }
 }

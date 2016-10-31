@@ -14,7 +14,7 @@ class CreateLoanPaymentTable extends Migration
     {
         Schema::create('loanPayments', function (Blueprint $table) {
             $table->increments('id')->unsigned();
-            $table->integer('userLoans_id')->unsigned();
+            $table->integer('user_loan_id')->unsigned();
             $table->date('datePayment');
             $table->decimal('canceled',30,15);
             $table->decimal('interest',30,15);
@@ -23,13 +23,14 @@ class CreateLoanPaymentTable extends Migration
             $table->integer('remainingFee');
             $table->string('payment');
             $table->string('payment_number');
+            $table->string('bank');
             $table->integer('createdBy')->unsigned();
             $table->integer('updatedBy')->unsigned();
             $table->timestamps();
 
-            $table->foreign('userLoans_id')
+            $table->foreign('user_loan_id')
                 ->references('id')
-                ->on('userLoans')
+                ->on('user_loan')
                 ->onDelete('cascade');
         });
     }

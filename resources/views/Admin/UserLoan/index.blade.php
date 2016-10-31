@@ -21,7 +21,8 @@
                 <thead>
                 <tr>
                     <th>#</th>
-                    <th>Fecha de Cobro</th>
+                    <th>Fecha de Prestamo</th>
+                    <th>Cedula Asociado</th>
                     <th>Tipo de Prestamo</th>
                     <th>Monto Otorgado (Bs)</th>
                     <th>Monto Cancelado (Bs)</th>
@@ -35,18 +36,19 @@
                     <tr>
                         <td>{{ $loan->id}}</td>
                         <td>{{ $loan->dateLoan}}</td>
+                        <td>{{ $loan->User->ci}}</td>
                         <td>{{ $loan->typeLoan }}</td>
                         <td>{{ number_format($loan->amountAwarded,2,".",",") }}</td>
                         <td>{{ number_format($loan->canceled,2,".",",") }}</td>
                         <td>
-                            {{--<a type="button" href="{{ route('Admin.user_profiles.edit', $heritageAsset->id) }}"
-                               class="btn btn-sm btn-default" title="Editar Cuenta">
-                                <em class="fa fa-pencil"></em>
+                            <a type="button" class="btn btn-sm btn-default"
+                               href="{{ route('Admin.loanPayment.create', $loan->id) }}" title="Pagar Cuota">
+                                <em class="fa fa-money"></em>
                             </a>
-                            <a type="button" href="{{ route('Admin.user_profiles.create', $heritageAsset->id) }}"
-                               class="btn btn-sm btn-info" title="Crear Perfil Asociado">
-                                <em class="fa fa-user"></em>
-                            </a>--}}
+                            <a type="button" class="btn btn-sm btn-info"
+                               href="{{ route('Admin.loanPayment.show', $loan->id) }}" title="Ver Pagos">
+                                <em class="fa fa-exchange"></em>
+                            </a>
                             <a type="button" class="btn btn-sm btn-success"
                                href="{{ route('Admin.UserLoan.show', $loan->User->id) }}" title="Ver Detalle">
                                 <em class="fa fa-arrow-right"></em>
