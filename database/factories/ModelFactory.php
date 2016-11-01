@@ -33,3 +33,11 @@ $factory->define(Caventel\News::class, function (Faker\Generator $faker) {
 
     ];
 });
+
+$factory->define(Caventel\PayRoll::class, function (Faker\Generator $faker) {
+    return [
+        'user_ci' => $faker->randomNumber(),
+        'salary' => 23000.00
+
+    ];
+});

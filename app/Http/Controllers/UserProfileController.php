@@ -2,6 +2,7 @@
 
 namespace Caventel\Http\Controllers;
 
+use Caventel\PayRoll;
 use Illuminate\Http\Request;
 
 use Caventel\Http\Requests;
@@ -21,9 +22,11 @@ class UserProfileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        //PayRoll
+        $payRoll = PayRoll::SEARCH($request->user_ci)->ORDERBY('user_ci')->GROUPBY('user_ci')->paginate(20);
+        return view('Admin.userProfiles.index')->with('payRoll',$payRoll);
     }
 
     /**

@@ -208,6 +208,11 @@
                                 </a>
                             </li>
                             <li class=" ">
+                                <a href="{{ route('Admin.user_profiles.index') }}" title="Consultar Nómina">
+                                    <span>Consultar Nómina</span>
+                                </a>
+                            </li>
+                            <li class=" ">
                                 <a href="{{ route('Admin.users.create') }}" title="Registrar">
                                     <span>Registrar</span>
                                 </a>
