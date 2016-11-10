@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" id="bscss">
     <!-- =============== APP STYLES ===============-->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" id="maincss">
+    <!-- SUMMERNOTE -->
 </head>
 
 <body>
@@ -97,6 +98,7 @@
     <script src="{{ asset('js/select2.js') }}"></script>
     <!-- PARSLEY-->
     <script src="{{ asset('js/parsley.min.js') }}"></script>
+
     <!-- =============== APP SCRIPTS ===============-->
     <script src="{{ asset('js/app.js')}}"></script>
 

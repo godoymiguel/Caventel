@@ -7,7 +7,7 @@
 
                 <!-- Page content-->
         <div class="content-wrapper">
-            <h3>Ingresar Aporte Mensual
+            <h3>Ingresar Aporte Adcional
                 <small>del Asociado a sus Haberes</small>
             </h3>
             <div class="row">
@@ -15,8 +15,8 @@
                     {!! Form::open( array( 'route' => 'Admin.UserAsset.store') ) !!}
                             <!-- START panel-->
                     <div class="panel panel-default">
-
                         <div class="panel-body">
+                            <input type="hidden" name="reason" value="A">
                             <div class="form-group">
                                 <label class="control-label">Monto</label>
                                 <input type="number" min="0" step="any" pattern="[0-9]{1,10}[.][0-9]{2,}" name="monthly_contributions" value="{{ old('monthly_contributions') }}" class="form-control" placeholder="00.00 Recuerde Separar Decimales con punto(.)">

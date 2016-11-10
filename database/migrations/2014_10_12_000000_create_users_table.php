@@ -19,7 +19,10 @@ class CreateUsersTable extends Migration
             $table->string('last_name');
             $table->string('email')->unique();
             $table->string('password', 60);
-            $table->enum('type',['user','secretary','admin','superadmin'])->default('user');
+            $table->enum('type',['user','secretary','admin','superadmin'])->default('user');            
+            $table->boolean('active')->default(true);
+            $table->integer('createdBy')->unsigned();
+            $table->integer('updatedBy')->unsigned();
             $table->rememberToken();
             $table->timestamps();
         });

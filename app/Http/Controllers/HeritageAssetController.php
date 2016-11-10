@@ -21,7 +21,7 @@ class HeritageAssetController extends Controller
      */
     public function index()
     {
-        $heritageAsset = HeritageAsset::orderBy('id', 'DESC')->paginate(20);
+        $heritageAsset = HeritageAsset::WHERE('bloked','==',0.0)->orderBy('id', 'DESC')->paginate(20);
         
         return view('Admin.HeritageAsset.index')
             ->with('heritageAssets',$heritageAsset);

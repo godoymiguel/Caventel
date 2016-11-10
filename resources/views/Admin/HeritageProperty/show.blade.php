@@ -6,7 +6,7 @@
         <!-- Page content-->
 <div class="content-wrapper">
 
-    <h3><a type="button" class="btn btn-primary pull-right">
+    <h3><a type="button" class="btn btn-primary pull-right" onclick="window.print();">
             <em class="fa fa-print fa-fw mr-sm"></em>Imprimir</a>
         Detalle del Registro
         <small>Inmueble {{ $heritageProperty->name }}</small>
@@ -26,6 +26,18 @@
                         <label class="col-lg-2 control-label">Numero de Documento de Propiedad</label>
                         <div class="col-lg-10">
                             <p class="form-control-static">{{ $heritageProperty->document_code }}</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label">Notaria y Numero de Registro</label>
+                        <div class="col-lg-10">
+                            <p class="form-control-static">{{ $heritageProperty->notary }}</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label">Ficha Catastral</label>
+                        <div class="col-lg-10">
+                            <p class="form-control-static">{{ $heritageProperty->recordCard }}</p>
                         </div>
                     </div>
                     <div class="form-group">

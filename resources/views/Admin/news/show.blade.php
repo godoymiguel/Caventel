@@ -4,6 +4,10 @@
 
 @section('content')
     <div class="content-wrapper">
+        <h3><a type="button" class="btn btn-primary pull-right" onclick="window.print();">
+                <em class="fa fa-print fa-fw mr-sm"></em>Imprimir</a>
+                Noticias Caventel
+        </h3>
         <div class="row">
 
             <!-- Blog Content-->

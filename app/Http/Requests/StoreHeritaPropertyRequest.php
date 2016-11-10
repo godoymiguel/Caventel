@@ -26,6 +26,8 @@ class StoreHeritaPropertyRequest extends Request
         return [
             'document_code' => 'required|min:4|max:250|string',
             'name'          => 'required|min:4|max:250|string',
+            'notary'          => 'required|min:4|max:250|string',
+            'recordCard'          => 'required|min:4|max:250|string',
             'price'         => 'required|min:4',
             'address'       => 'required|min:4|max:250|string',
         ];

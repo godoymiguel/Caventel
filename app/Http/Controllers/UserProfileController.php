@@ -73,6 +73,7 @@ class UserProfileController extends Controller
         $user_profiles = new UserProfile($request->all());
         $user_profiles->avatar = $name;
         $user_profiles->user_id = $id;
+        $user_profiles->createdBy = $userLoan->updatedBy = \Auth::User()->ci;
         $user_profiles->save();
         
         Flash::success('¡El Perfil de ' . $users->name . ' Fue Creado de Forma Exitosa!');

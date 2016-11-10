@@ -7,7 +7,7 @@
 <div class="content-wrapper">
 
     <h3>
-        <a type="button" class="btn btn-primary pull-right">
+        <a type="button" class="btn btn-primary pull-right" onclick="window.print();">
             <em class="fa fa-print fa-fw mr-sm"></em>Imprimir</a>
         Capital en Patrimonio
         <small>Consulta de Capital Total Registrados en CAVENTEL</small>
@@ -23,7 +23,7 @@
                         <thead>
                         <tr>
                             <th>Total Capital (Bs)</th>
-                            <th>Haberes en Patrimonio (Bs)</th>
+                            <th>Total Haberes (Bs)</th>
                             <th>Intereses Generados (Bs)</th>
                             <th>Haberes en Inmuebles (Bs)</th>
                             <th>Retirado para Gastos (Bs)</th>
@@ -35,10 +35,10 @@
                         <tr class="success">
                             <td>{{ number_format($totalCapital,2,".",",") }}</td>
                             <td>{{ number_format($totalAsset,2,".",",") }}</td>
-                            <td>0</td>
+                            <td>{{ number_format($interest,2,".",",") }}</td>
                             <td>{{ number_format($totalProperty,2,".",",") }}</td>
-                            <td>0</td>
-                            <td>0</td>
+                            <td>{{ number_format($retirement,2,".",",") }}</td>
+                            <td>{{ number_format($userLoan,2,".",",") }}</td>
                             <td>{{ number_format($available,2,".",",") }}</td>
 
                         </tr>
@@ -87,7 +87,7 @@
         </div>
         <div class="col-lg-4 col-md-12">
             <!-- START widget-->
-            <a href=" " class="btn btn-labeled">
+            <a href="{{ route('Admin.HeritageAssetRetirement.index') }}" class="btn btn-labeled">
                 <div class="panel widget bg-danger">
                     <div class="row row-table">
                         <div class="col-xs-4 text-center bg-danger-dark pv-lg">

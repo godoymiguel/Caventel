@@ -7,7 +7,7 @@
 <div class="content-wrapper">
 
     <h3>
-        <a type="button" class="btn btn-primary pull-right">
+        <a type="button" class="btn btn-primary pull-right" onclick="window.print();">
             <em class="fa fa-print fa-fw mr-sm"></em>Imprimir</a>
         Lista de Haberes Generales
         <small>Consulta de Haberes Registrados en CAVENTEL</small>

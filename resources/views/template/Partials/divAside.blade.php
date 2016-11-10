@@ -64,18 +64,24 @@
                                     <span>Listado Total</span>
                                 </a>
                             </li>
+                            @if(Auth::user()->type == 'superadmin' || Auth::user()->type == 'admin')
                             <li class=" ">
                                 <a href="{{ route('Admin.UserLoan.create') }}" title="Ingresar Préstamo">
                                     <span>Ingresar Préstamo</span>
                                 </a>
                             </li>
+                            @endif
                         @endif
                         <li class=" ">
-                            <a href="{{ route('Admin.UserLoan.show', Auth::user()->id) }}" title="Consultar Préstamo">
-                                <span>Consultar Préstamo</span>
+                            <a href="{{ route('Admin.UserLoan.show', Auth::user()->id) }}" title="Préstamo Realizados">
+                                <span>Préstamos Realizados</span>
                             </a>
                         </li>
-
+                        <li class=" ">
+                            <a href="{{ route('Admin.UserLoan.show', Auth::user()->id) }}" title="Préstamo Disponibles">
+                                <span>Préstamos Disponibles</span>
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <li class=" ">
@@ -91,6 +97,13 @@
                                     <span>Generales</span>
                                 </a>
                             </li>
+                            @if(Auth::user()->type == 'superadmin' || Auth::user()->type == 'admin')
+                            <li class=" ">
+                                <a href="{{ route('Admin.UserAsset.createRetirement') }}" title="Retirar">
+                                    <span>Retirar</span>
+                                </a>
+                            </li>
+                            @endif
                         @endif
                         <li class=" ">
                             <a href="{{ route('Admin.UserAsset.show', Auth::User()->id) }}" title="Propios">
@@ -98,8 +111,13 @@
                             </a>
                         </li>
                         <li class=" ">
-                            <a href="{{ route('Admin.UserAsset.create') }}" title="Ingresar Aporte">
-                                <span>Ingresar Aporte</span>
+                            <a href="{{ route('Admin.UserAsset.createM') }}" title="Aporte Mensual">
+                                <span>Aporte Mensual</span>
+                            </a>
+                        </li>
+                        <li class=" ">
+                            <a href="{{ route('Admin.UserAsset.create') }}" title="Aporte Extraordinario">
+                                <span>Aporte Extraordinario</span>
                             </a>
                         </li>
                     </ul>
@@ -132,13 +150,13 @@
                                     </a>
                                 </li>
                                 <li class=" ">
-                                    <a href="{{ route('Admin.HeritageAsset.index') }}" title="Retiro">
+                                    <a href="{{ route('Admin.HeritageAssetRetirement.index') }}" title="Retiro">
                                         <span>Retiro</span>
                                     </a>
                                 </li>
                             </ul>
                         </li>
-                        @if(Auth::user()->type == 'superadmin' || Auth::user()->type == 'admin' || Auth::user()->type == 'secretary')
+                        @if(Auth::user()->type == 'superadmin' || Auth::user()->type == 'admin')
                             <li class=" ">
                                 <a href="{{ route('Admin.HeritageAsset.create') }}" title="Ingresar Donación">
                                     <span>Ingresar Haber</span>
@@ -149,21 +167,12 @@
                                     <span>Ingresar Inmueble</span>
                                 </a>
                             </li>
+                            <li class=" ">
+                                <a href="{{ route('Admin.HeritageAssetRetirement.create') }}" title="Ingresar Retiro">
+                                    <span>Ingresar Retiro</span>
+                                </a>
+                            </li>
                         @endif
-                    </ul>
-                </li>
-                <li class=" ">
-                    <a href="#banking" title="Relaciones Bancarias" data-toggle="collapse">
-                        <em class="icon-grid"></em>
-                        <span data-localize="">Relaciones Bancarias</span>
-                    </a>
-                    <ul id="banking" class="nav sidebar-subnav collapse">
-                        <li class="sidebar-subnav-header">Relaciones Bancarias</li>
-                        <li class=" ">
-                            <a href="#" title="Consultar">
-                                <span>Consultar</span>
-                            </a>
-                        </li>
                     </ul>
                 </li>
                 <li class=" ">
@@ -173,6 +182,29 @@
                     </a>
                     <ul id="reports" class="nav sidebar-subnav collapse">
                         <li class="sidebar-subnav-header">Reportes</li>
+                        <li class=" ">
+                            <a href="#" title="Consultar">
+                                <span>Consultar</span>
+                            </a>
+                        </li>
+                         @if(Auth::user()->type == 'superadmin' || Auth::user()->type == 'admin' || Auth::user()->type == 'secretary')
+                            <li class=" ">
+                                <a href="{{ route('Admin.reports.create') }}" title="Reporte Anual">
+                                    <span>Reporte Anual</span>
+                                </a>
+                            </li>
+                        @endif
+                    </ul>
+
+                </li>
+                @if(Auth::user()->type == 'superadmin' || Auth::user()->type == 'admin' || Auth::user()->type == 'secretary')
+                <li class=" ">
+                    <a href="#banking" title="Relaciones Bancarias" data-toggle="collapse">
+                        <em class="icon-grid"></em>
+                        <span data-localize="">Relaciones Bancarias</span>
+                    </a>
+                    <ul id="banking" class="nav sidebar-subnav collapse">
+                        <li class="sidebar-subnav-header">Relaciones Bancarias</li>
                         <li class=" ">
                             <a href="#" title="Consultar">
                                 <span>Consultar</span>
@@ -194,6 +226,7 @@
                         </li>
                     </ul>
                 </li>
+                @endif
                 <li class=" ">
                     <a href="#user" title="Usuarios" data-toggle="collapse">
                         <em class="icon-user"></em>
@@ -215,16 +248,6 @@
                             <li class=" ">
                                 <a href="{{ route('Admin.users.create') }}" title="Registrar">
                                     <span>Registrar</span>
-                                </a>
-                            </li>
-                            <li class=" ">
-                                <a href="" title="Retirar">
-                                    <span>Retirar</span>
-                                </a>
-                            </li>
-                            <li class=" ">
-                                <a href="" title="Reintegrar">
-                                    <span>Reintegrar</span>
                                 </a>
                             </li>
                         @endif

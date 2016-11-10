@@ -162,7 +162,9 @@ return [
         'ci'                    => 'Cedula',
         'type'                  => 'Tipo de Usuario',
         'confirmPassword'       => 'Confirmación de la contraseña',
-        'bank'                  => 'Banco'
+        'bank'                  => 'Banco',
+        'notary'                => 'Nombre Notaria',
+        'recordCard'            => 'Ficha Catastral',
 
     ],
 

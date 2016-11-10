@@ -25,9 +25,7 @@ class StoreUserAssetRequest extends Request
     {
         return [
             'monthly_contributions' => 'required|min:1|numeric',
-            'payment'               => 'required',
-            'payment_number'        => 'required|min:4|max:250|string',
-            'bank'              => 'required|string'
+            
         ];
     }
 }

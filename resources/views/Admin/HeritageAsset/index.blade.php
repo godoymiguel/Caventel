@@ -7,7 +7,7 @@
 <div class="content-wrapper">
 
     <h3>
-        <a type="button" class="btn btn-primary pull-right">
+        <a type="button" class="btn btn-primary pull-right" onclick="window.print();">
             <em class="fa fa-print fa-fw mr-sm"></em>Imprimir</a>
         Capital en Patrimonio
         <small>Consulta de Capital en Haberes Registrados en CAVENTEL</small>

@@ -15,6 +15,8 @@ class CreateHeritagePropertyTable extends Migration
         Schema::create('heritage_property', function (Blueprint $table) {
             $table->increments('id');
             $table->string('document_code');
+            $table->string('notary');
+            $table->string('recordCard');
             $table->string('name');
             $table->decimal('price',30,15);
             $table->string('address');

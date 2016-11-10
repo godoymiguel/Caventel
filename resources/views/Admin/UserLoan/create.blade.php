@@ -37,8 +37,6 @@
                                 <label class="control-label">Monto Otorgado</label>
                                 <input type="number" min="0" step="any" pattern="[0-9]{1,10}[.][0-9]{2,}" name="amountAwarded" value="{{ old('amountAwarded') }}" class="form-control" placeholder="00.00 Recuerde Separar Decimales con punto(.)">
                             </div>
-                            <label class="control-label">Salario del Asociado</label>
-                            <input type="number" min="0" name="salary" class="form-control" placeholder="00.00 Recuerde Separar Decimales con punto(.)", value="{{ old('salary') }}">
                         </div>
                         <div class="panel-footer">
                             <div class="clearfix">

@@ -31,6 +31,28 @@ Route::group(['middleware' => ['web','auth'], 'prefix' => 'Admin'], function(){
         'as' => 'Admin.news.destroy'
     ]);
 
+    Route::get('pdf', 'PdfController@invoice');
+
+    Route::get('Img', [
+        'uses' => 'ImagenController@heritageTotal',
+        'as' => 'Admin.imgTotal.heritageTotal'
+    ]);
+
+    Route::resource('reports','ReportsController');
+    Route::get('pdfReport/{id}', 'ReportsController@invoice');
+    
+    Route::get('UserAsset/createM', [
+        'uses' => 'UserAssetController@createM',
+        'as' => 'Admin.UserAsset.createM'
+    ]);
+    Route::get('UserAsset/Retirement', [
+        'uses' => 'UserAssetController@createRetirement',
+        'as' => 'Admin.UserAsset.createRetirement'
+    ]);
+    Route::post('UserAsset/Retirement', [
+        'uses' => 'UserAssetController@storeRetirement',
+        'as' => 'Admin.UserAsset.storeRetirement'
+    ]);
     Route::resource('UserAsset', 'UserAssetController');
 
     Route::get('HeritageTotal', [
@@ -39,6 +61,8 @@ Route::group(['middleware' => ['web','auth'], 'prefix' => 'Admin'], function(){
     ]);
 
     Route::resource('HeritageAsset', 'HeritageAssetController');
+
+    Route::resource('HeritageAssetRetirement', 'HeritageAssetRetirementController');
 
     Route::resource('HeritageProperty', 'HeritagePropertyController');
 

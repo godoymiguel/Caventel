@@ -361,7 +361,7 @@ jQuery.trumbowyg = {
                 'btnGrp-semantic',
                 ['superscript', 'subscript'],
                 ['link'],
-                //['insertImage'],
+                ['insertImage'],
                 'btnGrp-justify',
                 'btnGrp-lists',
                 ['horizontalRule'],

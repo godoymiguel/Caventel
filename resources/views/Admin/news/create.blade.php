@@ -36,6 +36,7 @@
                                     <em class="fa fa-close fa-fw"></em>Cancelar
                                 </a>
                             </div>
+                             <div id="summernote"><p>Hello Summernote</p></div>
                         </div>
                         {!! Form::close() !!}
                     </div>

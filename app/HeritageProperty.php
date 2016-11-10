@@ -9,6 +9,6 @@ class HeritageProperty extends Model
     protected $table = 'heritage_property';
 
     protected $fillable = [
-        'document_code', 'name', 'price', 'address',
+        'document_code', 'notary', 'recordCard', 'name', 'price', 'address',
     ];
 }

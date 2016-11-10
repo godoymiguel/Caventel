@@ -23,6 +23,16 @@
                                    class="form-control" placeholder="Ingrese Numero de Documento">
                         </div>
                         <div class="form-group">
+                            <label class="control-label">Nombre de Notaria y Numero de Registro</label>
+                            <input type="text" name="notary" value="{{ old('notary') }}" class="form-control"
+                                   placeholder="Ingrese Nombre de la Notaria y Numero de Registro de Documento">
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Ficha Catastral</label>
+                            <input type="text" name="recordCard" value="{{ old('recordCard') }}" class="form-control"
+                                   placeholder="Ingrese Ficha Catrastal">
+                        </div>
+                        <div class="form-group">
                             <label class="control-label">Nombre del Inmueble</label>
                             <input type="text" name="name" value="{{ old('name') }}" class="form-control"
                                    placeholder="Ingrese Numero de Documento">

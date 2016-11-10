@@ -6,7 +6,7 @@
         <!-- Page content-->
 <div class="content-wrapper">
 
-    <h3><a type="button" class="btn btn-primary pull-right">
+    <h3><a type="button" class="btn btn-primary pull-right" onclick="window.print();">
             <em class="fa fa-print fa-fw mr-sm"></em>Imprimir</a>
         Estado de Cuenta
         <small>{{$user->name}}</small>
@@ -21,26 +21,22 @@
                         <div class="col-lg-10">
                             <p class="form-control-static">{{$user->ci}}</p>
                         </div>
-                    </div>
-                    <div class="form-group">
+                    
                         <label class="col-lg-2 control-label">Nombre</label>
                         <div class="col-lg-10">
                             <p class="form-control-static">{{$user->name}}</p>
                         </div>
-                    </div>
-                    <div class="form-group">
+                    
                         <label class="col-lg-2 control-label">Apellido</label>
                         <div class="col-lg-10">
                             <p class="form-control-static">{{$user->last_name}}</p>
                         </div>
-                    </div>
-                    <div class="form-group">
+                    
                         <label class="col-lg-2 control-label">Correo Electronico</label>
                         <div class="col-lg-10">
                             <p class="form-control-static">{{$user->email}}</p>
                         </div>
-                    </div>
-                    <div class="form-group">
+                    
                         <label class="col-lg-2 control-label">Tipo de Usuario</label>
                         <div class="col-lg-10">
                             @if($user->type == 'superadmin')
@@ -53,14 +49,12 @@
                                 <p class="form-control-static">Asociado</p>
                             @endif
                         </div>
-                    </div>
-                    <div class="form-group mb">
+                    {{--
                         <label class="col-lg-2 control-label">Ultimo Ingreso</label>
                         <div class="col-lg-10">
                             <p class="form-control-static">Acomodar</p>
                         </div>
-                    </div>
-                    <div class="form-group">
+                    --}}
                         <label class="col-lg-2 control-label">Teléfono de Contacto</label>
                         <div class="col-lg-10">
                             @if($user->UserProfile)
@@ -102,6 +96,8 @@
                                             <p class="form-control-static">Deposito</p>
                                         @elseif($asset->payment == 'transfer')
                                             <p class="form-control-static">Transferencia</p>
+                                        @elseif($asset->payment == 'Nomina')
+                                            <p class="form-control-static">Descuento Nomina</p>
                                         @endif
                                     </td>
                                     <td>{{ $asset->payment_number }}</td>

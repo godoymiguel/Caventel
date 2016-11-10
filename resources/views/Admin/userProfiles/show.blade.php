@@ -6,7 +6,7 @@
         <!-- Page content-->
     <div class="content-wrapper">
 
-        <h3><a type="button" class="btn btn-primary pull-right">
+        <h3><a type="button" class="btn btn-primary pull-right" onclick="window.print();">
                 <em class="fa fa-print fa-fw mr-sm"></em>Imprimir</a>
             {{$user_profiles->name}}
             <small>Perfil de Usuario</small>

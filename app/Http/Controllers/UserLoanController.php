@@ -3,9 +3,7 @@
 namespace Caventel\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use Caventel\Http\Requests;
-
 use Caventel\Http\Requests\StoreUserLoanRequest;
 
 use Laracasts\Flash\Flash;
@@ -13,12 +11,10 @@ use Laracasts\Flash\Flash;
 use Carbon\Carbon;
 
 use Caventel\User;
-
 use Caventel\UserLoan;
-
 use Caventel\UserAsset;
-
 use Caventel\LoanPayment;
+use Caventel\PayRoll;
 
 class UserLoanController extends Controller
 {
@@ -62,12 +58,20 @@ class UserLoanController extends Controller
         $today = Carbon::now();
         $nextMonth = Carbon::now()->addMonth();
         $userLoan->nextamount = $request->amountAwarded;
+        $salary = PayRoll::SELECT('salary')->WHERE('user_ci', $request->user_ci)->get();
+        foreach ($salary as $value) {
+            $userLoan->salary = $value->salary*0.10;
+        }
+        $userLoan->amountFee =  (0.01 * $userLoan->amountAwarded)/(1-pow((1+0.01),-$userLoan->term));
         if ($user->count()) {
             foreach ($user as $user) {
                 $userLoan->user_id = $user->id;
                 $createdUser = $user->created_at;
-                $asset = $user->UserAsset->MAX('accumulated');
                 $loan = $user->UserLoan->MAX('id');
+            }
+            $asset = UserAsset::WHERE('user_id', $userLoan->user_id)->ORDERBY('id','DESC')->take(1)->get();
+            foreach ($asset as $value) {
+                $accumulated = $value->accumulated;
             }
             if ($asset) {
                 if ($today->diffInDays($createdUser) > 365) {
@@ -76,13 +80,36 @@ class UserLoanController extends Controller
                         $loanTerm = $_registry->term;
                         $loanFee = $_registry->canceledFee;
                     }
-                    if ($userLoan->typeLoan == 'personal' && $userLoan->term >= 12 && $userLoan->term <= 60) {
-                        if ($userLoan->amountAwarded <= ($asset * 0.80)) {
-                            if ($loan) {
-                                if ($loanFee >= $loanTerm) {
+                    if ($userLoan->amountFee <= $userLoan->salary) {
+                        if ($userLoan->typeLoan == 'personal' && $userLoan->term >= 12 && $userLoan->term <= 60) {
+                            if ($userLoan->amountAwarded <= ($accumulated * 0.80)) {
+                                if ($loan) {
+                                    if ($loanFee >= $loanTerm) {
+                                        $userLoan->dateLoan = $today;
+                                        $userLoan->nextPayment = $nextMonth;
+                                        
+                                        $userLoan->interest = 0.01 * $userLoan->amountAwarded;
+                                        $userLoan->amortization = $userLoan->amountFee - $userLoan->interest;
+                                        $userLoan->canceledFee = 0;
+                                        $userLoan->canceled = 0.0;
+                                        $userLoan->overdueFees = 0.0;
+                                        $userLoan->interestArrears = 0.0;
+                                        $userLoan->createdBy = $userLoan->updatedBy = \Auth::User()->ci;
+                                        $userLoan->save();
+
+                                        Flash::success('Nuevo Prestamo ¡Guardado con Exito!');
+
+                                        return redirect()->route('Admin.UserLoan.index');
+                                    } else {
+
+                                        Flash::error('¡El Asociado con Cedula (' . $request->user_ci . ') Tiene  Cuotas Pendiente ');
+
+                                        return redirect()->route('Admin.UserLoan.index');
+                                    }
+
+                                } else {
                                     $userLoan->dateLoan = $today;
                                     $userLoan->nextPayment = $nextMonth;
-                                    $userLoan->amountFee =  (0.01 * $userLoan->amountAwarded)/(1-pow((1+0.01),-$userLoan->term));
                                     $userLoan->interest = 0.01 * $userLoan->amountAwarded;
                                     $userLoan->amortization = $userLoan->amountFee - $userLoan->interest;
                                     $userLoan->canceledFee = 0;
@@ -95,17 +122,77 @@ class UserLoanController extends Controller
                                     Flash::success('Nuevo Prestamo ¡Guardado con Exito!');
 
                                     return redirect()->route('Admin.UserLoan.index');
-                                } else {
+                                }
+                            } else {
+                                Flash::error('¡El Monto del Prestamo No Puede Ser Mayor al 80% de los Haberes Acumulados!, Verifique su Información');
+                                return back()->withInput();
+                            }
+                        }elseif ($userLoan->typeLoan == 'guarantor' && $userLoan->term >= 12 && $userLoan->term <= 60) {
+                            if ($userLoan->amountAwarded <= ($accumulated * 0.80)) {
+                                if ($loan) {
+                                        if ($loanFee >= $loanTerm) {
+                                            $userLoan->dateLoan = $today;
+                                            $userLoan->nextPayment = $nextMonth;
+                                            
+                                            $userLoan->interest = 0.01 * $userLoan->amountAwarded;
+                                            $userLoan->amortization = $userLoan->amountFee - $userLoan->interest;
+                                            $userLoan->canceledFee = 0;
+                                            $userLoan->canceled = 0.0;
+                                            $userLoan->overdueFees = 0.0;
+                                            $userLoan->interestArrears = 0.0;
+                                            $userLoan->createdBy = $userLoan->updatedBy = \Auth::User()->ci;
+                                            $userLoan->save();
+                                            Flash::success('Nuevo Prestamo ¡Guardado con Exito!');
 
+                                            return redirect()->route('Admin.UserLoan.index');
+                                        } else {
+                                            Flash::error('¡El Asociado con Cedula (' . $request->user_ci . ') Tiene  Cuotas Pendiente ');
+
+                                            return redirect()->route('Admin.UserLoan.index');
+                                        }
+                                } else {
+                                    $userLoan->dateLoan = $today;
+                                    $userLoan->nextPayment = $nextMonth;
+                                    $userLoan->interest = 0.01 * $userLoan->amountAwarded;
+                                    $userLoan->amortization = $userLoan->amountFee - $userLoan->interest;
+                                    $userLoan->canceledFee = 0;
+                                    $userLoan->canceled = 0.0;
+                                    $userLoan->overdueFees = 0.0;
+                                    $userLoan->interestArrears = 0.0;
+                                    $userLoan->createdBy = $userLoan->updatedBy = \Auth::User()->ci;
+                                    $userLoan->save();
+                                    Flash::success('Nuevo Prestamo ¡Guardado con Exito!');
+
+                                    return redirect()->route('Admin.UserLoan.index');
+                                }
+                            } else {
+                                Flash::error('¡El Monto del Prestamo No Puede Ser Mayor al 80% de los Haberes Acumulados!, Verifique su Información');
+                                return back()->withInput();
+                            }
+                        } elseif ($userLoan->typeLoan == 'vehicle' && $userLoan->term > 36 && $userLoan->term <= 60) {
+                            if ($loan) {
+                                if ($loanFee >= $loanTerm) {
+                                    $userLoan->dateLoan = $today;
+                                    $userLoan->nextPayment = $nextMonth;
+                                    $userLoan->interest = 0.01 * $userLoan->amountAwarded;
+                                    $userLoan->amortization = $userLoan->amountFee - $userLoan->interest;
+                                    $userLoan->canceledFee = 0;
+                                    $userLoan->canceled = 0.0;
+                                    $userLoan->overdueFees = 0.0;
+                                    $userLoan->interestArrears = 0.0;
+                                    $userLoan->createdBy = $userLoan->updatedBy = \Auth::User()->ci;
+                                    $userLoan->save();
+                                    Flash::success('Nuevo Prestamo ¡Guardado con Exito!');
+
+                                    return redirect()->route('Admin.UserLoan.index');
+                                } else {
                                     Flash::error('¡El Asociado con Cedula (' . $request->user_ci . ') Tiene  Cuotas Pendiente ');
 
                                     return redirect()->route('Admin.UserLoan.index');
                                 }
-
                             } else {
                                 $userLoan->dateLoan = $today;
                                 $userLoan->nextPayment = $nextMonth;
-                                $userLoan->amountFee =  (0.01 * $userLoan->amountAwarded)/(1-pow((1+0.01),-$userLoan->term));
                                 $userLoan->interest = 0.01 * $userLoan->amountAwarded;
                                 $userLoan->amortization = $userLoan->amountFee - $userLoan->interest;
                                 $userLoan->canceledFee = 0;
@@ -114,42 +201,34 @@ class UserLoanController extends Controller
                                 $userLoan->interestArrears = 0.0;
                                 $userLoan->createdBy = $userLoan->updatedBy = \Auth::User()->ci;
                                 $userLoan->save();
-
                                 Flash::success('Nuevo Prestamo ¡Guardado con Exito!');
 
                                 return redirect()->route('Admin.UserLoan.index');
                             }
-                        } else {
-                            Flash::error('¡El Monto del Prestamo No Puede Ser Mayor al 80% de los Haberes Acumulados!, Verifique su Información');
-                            return back()->withInput();
-                        }
-                    }elseif ($userLoan->typeLoan == 'guarantor' && $userLoan->term >= 12 && $userLoan->term <= 60) {
-                        if ($userLoan->amountAwarded <= ($asset * 0.80)) {
+                        }elseif ($userLoan->typeLoan == 'mortgage' && $userLoan->term >= 60 && $userLoan->term <= 300) {
                             if ($loan) {
-                                    if ($loanFee >= $loanTerm) {
-                                        $userLoan->dateLoan = $today;
-                                        $userLoan->nextPayment = $nextMonth;
-                                        $userLoan->amountFee =  (0.01 * $userLoan->amountAwarded)/(1-pow((1+0.01),-$userLoan->term));
-                                        $userLoan->interest = 0.01 * $userLoan->amountAwarded;
-                                        $userLoan->amortization = $userLoan->amountFee - $userLoan->interest;
-                                        $userLoan->canceledFee = 0;
-                                        $userLoan->canceled = 0.0;
-                                        $userLoan->overdueFees = 0.0;
-                                        $userLoan->interestArrears = 0.0;
-                                        $userLoan->createdBy = $userLoan->updatedBy = \Auth::User()->ci;
-                                        $userLoan->save();
-                                        Flash::success('Nuevo Prestamo ¡Guardado con Exito!');
+                                if ($loanFee >= $loanTerm) {
+                                    $userLoan->dateLoan = $today;
+                                    $userLoan->nextPayment = $nextMonth;
+                                    $userLoan->interest = 0.01 * $userLoan->amountAwarded;
+                                    $userLoan->amortization = $userLoan->amountFee - $userLoan->interest;
+                                    $userLoan->canceledFee = 0;
+                                    $userLoan->canceled = 0.0;
+                                    $userLoan->overdueFees = 0.0;
+                                    $userLoan->interestArrears = 0.0;
+                                    $userLoan->createdBy = $userLoan->updatedBy = \Auth::User()->ci;
+                                    $userLoan->save();
+                                    Flash::success('Nuevo Prestamo ¡Guardado con Exito!');
 
-                                        return redirect()->route('Admin.UserLoan.index');
-                                    } else {
-                                        Flash::error('¡El Asociado con Cedula (' . $request->user_ci . ') Tiene  Cuotas Pendiente ');
+                                    return redirect()->route('Admin.UserLoan.index');
+                                } else {
+                                    Flash::error('¡El Asociado con Cedula (' . $request->user_ci . ') Tiene  Cuotas Pendiente ');
 
-                                        return redirect()->route('Admin.UserLoan.index');
-                                    }
+                                    return redirect()->route('Admin.UserLoan.index');
+                                }
                             } else {
                                 $userLoan->dateLoan = $today;
                                 $userLoan->nextPayment = $nextMonth;
-                                $userLoan->amountFee =  (0.01 * $userLoan->amountAwarded)/(1-pow((1+0.01),-$userLoan->term));
                                 $userLoan->interest = 0.01 * $userLoan->amountAwarded;
                                 $userLoan->amortization = $userLoan->amountFee - $userLoan->interest;
                                 $userLoan->canceledFee = 0;
@@ -163,89 +242,14 @@ class UserLoanController extends Controller
                                 return redirect()->route('Admin.UserLoan.index');
                             }
                         } else {
-                            Flash::error('¡El Monto del Prestamo No Puede Ser Mayor al 80% de los Haberes Acumulados!, Verifique su Información');
+                            Flash::error('¡El Tipo de Prestamo No Existe O No Tiene Un Plazo Correcto!, Verifique su Información');
                             return back()->withInput();
                         }
-                    } elseif ($userLoan->typeLoan == 'vehicle' && $userLoan->term > 36 && $userLoan->term <= 60) {
-                        if ($loan) {
-                            if ($loanFee >= $loanTerm) {
-                                $userLoan->dateLoan = $today;
-                                $userLoan->nextPayment = $nextMonth;
-                                $userLoan->amountFee =  (0.01 * $userLoan->amountAwarded)/(1-pow((1+0.01),-$userLoan->term));
-                                $userLoan->interest = 0.01 * $userLoan->amountAwarded;
-                                $userLoan->amortization = $userLoan->amountFee - $userLoan->interest;
-                                $userLoan->canceledFee = 0;
-                                $userLoan->canceled = 0.0;
-                                $userLoan->overdueFees = 0.0;
-                                $userLoan->interestArrears = 0.0;
-                                $userLoan->createdBy = $userLoan->updatedBy = \Auth::User()->ci;
-                                $userLoan->save();
-                                Flash::success('Nuevo Prestamo ¡Guardado con Exito!');
-
-                                return redirect()->route('Admin.UserLoan.index');
-                            } else {
-                                Flash::error('¡El Asociado con Cedula (' . $request->user_ci . ') Tiene  Cuotas Pendiente ');
-
-                                return redirect()->route('Admin.UserLoan.index');
-                            }
-                        } else {
-                            $userLoan->dateLoan = $today;
-                            $userLoan->nextPayment = $nextMonth;
-                            $userLoan->amountFee =  (0.01 * $userLoan->amountAwarded)/(1-pow((1+0.01),-$userLoan->term));
-                            $userLoan->interest = 0.01 * $userLoan->amountAwarded;
-                            $userLoan->amortization = $userLoan->amountFee - $userLoan->interest;
-                            $userLoan->canceledFee = 0;
-                            $userLoan->canceled = 0.0;
-                            $userLoan->overdueFees = 0.0;
-                            $userLoan->interestArrears = 0.0;
-                            $userLoan->createdBy = $userLoan->updatedBy = \Auth::User()->ci;
-                            $userLoan->save();
-                            Flash::success('Nuevo Prestamo ¡Guardado con Exito!');
-
-                            return redirect()->route('Admin.UserLoan.index');
-                        }
-                    }elseif ($userLoan->typeLoan == 'mortgage' && $userLoan->term >= 60 && $userLoan->term <= 300) {
-                        if ($loan) {
-                            if ($loanFee >= $loanTerm) {
-                                $userLoan->dateLoan = $today;
-                                $userLoan->nextPayment = $nextMonth;
-                                $userLoan->amountFee =  (0.01 * $userLoan->amountAwarded)/(1-pow((1+0.01),-$userLoan->term));
-                                $userLoan->interest = 0.01 * $userLoan->amountAwarded;
-                                $userLoan->amortization = $userLoan->amountFee - $userLoan->interest;
-                                $userLoan->canceledFee = 0;
-                                $userLoan->canceled = 0.0;
-                                $userLoan->overdueFees = 0.0;
-                                $userLoan->interestArrears = 0.0;
-                                $userLoan->createdBy = $userLoan->updatedBy = \Auth::User()->ci;
-                                $userLoan->save();
-                                Flash::success('Nuevo Prestamo ¡Guardado con Exito!');
-
-                                return redirect()->route('Admin.UserLoan.index');
-                            } else {
-                                Flash::error('¡El Asociado con Cedula (' . $request->user_ci . ') Tiene  Cuotas Pendiente ');
-
-                                return redirect()->route('Admin.UserLoan.index');
-                            }
-                        } else {
-                            $userLoan->dateLoan = $today;
-                            $userLoan->nextPayment = $nextMonth;
-                            $userLoan->amountFee =  (0.01 * $userLoan->amountAwarded)/(1-pow((1+0.01),-$userLoan->term));
-                            $userLoan->interest = 0.01 * $userLoan->amountAwarded;
-                            $userLoan->amortization = $userLoan->amountFee - $userLoan->interest;
-                            $userLoan->canceledFee = 0;
-                            $userLoan->canceled = 0.0;
-                            $userLoan->overdueFees = 0.0;
-                            $userLoan->interestArrears = 0.0;
-                            $userLoan->createdBy = $userLoan->updatedBy = \Auth::User()->ci;
-                            $userLoan->save();
-                            Flash::success('Nuevo Prestamo ¡Guardado con Exito!');
-
-                            return redirect()->route('Admin.UserLoan.index');
-                        }
-                    } else {
-                        Flash::error('¡El Tipo de Prestamo No Existe O No Tiene Un Plazo Correcto!, Verifique su Información');
+                    }else{
+                        Flash::error('¡La cuota mensual es mayor a lo establecido!, Verifique su Información');
                         return back()->withInput();
                     }
+                    
 
                 } else {
                     Flash::error('¡El Asociado con Cedula (' . $request->user_ci . ') Debe Tener Un(1) Año de Antiguedad!, Verifique su Información');

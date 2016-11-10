@@ -7,7 +7,7 @@
 <div class="content-wrapper">
 
     <h3>
-        <a type="button" class="btn btn-primary pull-right">
+        <a type="button" class="btn btn-primary pull-right" onclick="window.print();">
             <em class="fa fa-print fa-fw mr-sm"></em>Imprimir</a>
         Prestamos de Asociados
         <small>Consulta General Prestamos Registrados</small>
@@ -16,7 +16,7 @@
     <!-- START panel-->
     <div class="panel panel-default">
         <!-- START table-responsive-->
-        <div class="table-responsive">
+        <div id="widget" class="table-responsive widget">
             <table class="table table-striped table-bordered table-hover">
                 <thead>
                 <tr>
@@ -75,7 +75,8 @@
                      </div>
                      {!! Form::close() !!}--}}
                 </div>
-                <div class="col-lg-8"></div>
+                <div class="col-lg-8">
+                </div>
                 <div class="col-lg-2">
                     <div class="input-group pull-right">
                         {!! $userLoans->render() !!}
@@ -85,4 +86,24 @@
         </div>
     </div>
 </div>
+@endsection
+@section('js')
+    <script type="text/javascript">
+        $(function() { 
+            $("#btnSave").click(function() { 
+                html2canvas($("#widget"), {
+                    onrendered: function(canvas) {
+                        theCanvas = canvas;
+                        document.body.appendChild(canvas);
+
+                        // Convert and download as image 
+                        Canvas2Image.saveAsPNG(canvas); 
+                        $("#img-out").append(canvas);
+                        // Clean up 
+                        //document.body.removeChild(canvas);
+                    }
+                });
+            });
+        }); 
+    </script>
 @endsection
