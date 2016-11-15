@@ -21,12 +21,14 @@ class ReportsController extends Controller
      */
     public function invoice($id) 
     {
-        $data = Reports::find($id);        
+        $reports = Reports::find($id);
+        $data = $reports->body;
         $view =  \View::make('Admin.Reports.pdf', compact('data'))->render();
         $pdf = \App::make('dompdf.wrapper');
         $pdf->loadHTML($view);
         //return $pdf->stream('invoice');
-        //return $pdf->download('invoice');
+        return $pdf->download('');
+        //return $view;
     }
 
     public function index(Request $request)

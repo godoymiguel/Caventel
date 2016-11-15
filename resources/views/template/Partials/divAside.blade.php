@@ -190,13 +190,14 @@
                          @if(Auth::user()->type == 'superadmin' || Auth::user()->type == 'admin' || Auth::user()->type == 'secretary')
                             <li class=" ">
                                 <a href="{{ route('Admin.reports.create') }}" title="Reporte Anual">
-                                    <span>Reporte Anual</span>
+                                    <span>Redactar</span>
                                 </a>
                             </li>
                         @endif
                     </ul>
 
                 </li>
+                {{--
                 @if(Auth::user()->type == 'superadmin' || Auth::user()->type == 'admin' || Auth::user()->type == 'secretary')
                 <li class=" ">
                     <a href="#banking" title="Relaciones Bancarias" data-toggle="collapse">
@@ -227,6 +228,7 @@
                     </ul>
                 </li>
                 @endif
+                --}}
                 <li class=" ">
                     <a href="#user" title="Usuarios" data-toggle="collapse">
                         <em class="icon-user"></em>
